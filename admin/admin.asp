@@ -1149,7 +1149,7 @@ If Session("LogError") < 3 Then
 					 <form>
 					 <h4>Enviar ficheiros bibliográficos para o servidor</h4>
 <p>A atualização dos registos da sua biblioteca é efetuada pelo carregamento de um ficheiro ISO (formato ISO2709).<br /> Esse ficheiro é o exportado do programa de catalogação da sua biblioteca e deve conter todos os registos da base de dados.</p>
-					 <h5>Para carregar o ficheiro ISO: <br /><a href="#" onClick="javascript:window.open('admin_iso_upload.asp?window=yes', 'DocUpload', 'width=600, height=300, dependent=yes, left=150 , top=150, menubar=no, scrollbars=no,status=yes');">clique aqui para abrir uma nova janela e escolher o ficheiro a enviar</a></h5>
+					 <h5>Para carregar o ficheiro ISO: <br /><a href="#" onClick="javascript:window.open('admin_iso_upload.asp?window=yes', 'DocUpload', 'width=600, height=340, dependent=yes, left=150 , top=150, menubar=no, scrollbars=no,status=yes');">clique aqui para abrir uma nova janela e escolher o ficheiro a enviar</a></h5>
 					 </form>
 <p class="aviso">Importante: o nome do ficheiro terá de ter apenas a sigla concelhia da sua biblioteca mais a extensão .ISO (p. ex.: EBsol.iso). O uso de maiúsculas é indiferente.</p>
 <p>Aplicação das atualizações: semanalmente será executada uma rotina automática no servidor para integrar o seu novo ficheiro na base pesquisável pelo público.</p>
