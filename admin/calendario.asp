@@ -116,7 +116,7 @@ response.write "<div>Data: <input type=""text"" size=""4"" maxlength=""5"" name=
 response.write "<input type=""hidden"" id=""nreg"" name=""nreg"">"
 response.write "</form>"
 response.write "<table class=""sortable"" id=""users"" summary=""Tabela de férias e feriados"">"
-response.write "<th align=""center"">ID</th><th>Data</th><th>Designação</th>"
+response.write "<th align=""center"">ID</th><th>Data</th><th>Nome</th>"
 for i=0 to ubound(tabela)-1
    pos1=instr(tabela(i),"^a")
    pos2=instr(tabela(i),"^b")

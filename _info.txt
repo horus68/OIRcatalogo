@@ -7,12 +7,10 @@ Info: https://sites.google.com/view/opacrbe/oir/sobre
 
 
 ====== Alterações
-versão 1.0.0 - 14 maio 2018
-+ Rebranding OpacWin para OIR
-+ Design: rev. geral, formatação, css, ícones, layout elástico
-+ Funcionalidades adicionadas: Navegação por termos
-+ Funcionalidades recuperadas: importação ficheiros, edição reservas
-- Funcionalidades retiradas: comentários
+versão 1.0.1 - 06 junho 2018
++ Revisão importação Docbase e Biblionet
++ RGPD e Cookie consent
++ AddToAny substitui AddThis
 
 
 ================ Apoio a técnicos de informática
