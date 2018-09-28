@@ -2,9 +2,11 @@
 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
 '  <head>'/
 '   <META HTTP-EQUIV="Refresh" CONTENT="1;URL=../../cgi/www.exe/[in=lstcomm.in]?expr='(if v9000^n='expr' then v9000^v fi)'&mfn='(if v9000^n='mfn' then v9000^v fi)'&id='(if v9000^n='id' then v9000^v fi)'"/>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name=viewport content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css?version=001" type="text/css" />'/
 '</head>'/
 '<body>'/

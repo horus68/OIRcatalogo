@@ -1,4 +1,4 @@
-'<link rel="stylesheet" href="../css/default.min.css" type="text/css"  />'/
+'<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css"  />'/
 '<script language="JavaScript" src="../js/geral.min.js"></script>'/
 '<script LANGUAGE="JavaScript">'/
 
@@ -111,10 +111,6 @@
 ' url=url.substr(0,posi+10)+ escape(Trim(expr)) + url.substr(posf);'/
 ' window.parent.win.setURL(url); '/
 '}'/
-
-
-
-
 
 '</script>'/
 

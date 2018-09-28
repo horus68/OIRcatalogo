@@ -5,10 +5,13 @@ Response.AddHeader "pragma","no-cache"
 Response.AddHeader "cache-control","private" 
 Response.CacheControl = "no-cache" 
 %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
 <head>
-<title>Definição/Alteração do PIN de Leitor</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Definição/Alteração do PIN de Leitor</title>
 </head>
 <body>
 <form name="detalhes" id="type-details-form"> 

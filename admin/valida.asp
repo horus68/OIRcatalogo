@@ -11,7 +11,7 @@
 <title><%=stitulo%></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="robots" content="noindex, nofollow" />
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <style>
 #users table th {color:#000; font-weight: bold; background-color: rgb(240,240,240)}
 </style>
@@ -81,7 +81,7 @@ function correct(m,campo,base,expressao,texto)
 			
 			response.write "<span id=""toterros"" class=""aviso"" style=""float:right;font-size:9pt""></span><span style="";font-size:9pt"">[Base de dados: " & trim(ucase(request("base"))) & " - Critério de pesquisa: " & ucase(request("expressao")) & " MFN: [" & request("MFNde") & " - " & request("MFNate") & "]</span>"
 			
-			response.write "<table id=""users""><th align=""center"" width=""50"">MFN</th><th align=""center"" width=""600"">Erros: &nbsp;&nbsp;<span style=""color:black; font-weight:bold;"">0 - <a href=""javascript:void(0)"" onclick=""filtrar('')"">Todos</a></span>&nbsp;&nbsp;<span style=""color:red; font-weight:bold"">1</span><span> - <a href=""javascript:void(0)"" onclick=""filtrar('1')"">Crítico</a></span> &nbsp;<span style=""color:rgb(255,255,0); font-weight:bold""> 2</span><span> - <a href=""javascript:void(0)"" onclick=""filtrar('2')"">Importante</a></span> &nbsp;<span style=""color:green; font-weight:bold"">3</span> - <a href=""javascript:void(0)"" onclick=""filtrar('3')"">Sugestão</a></span></th>"	
+			response.write "<table id=""users""><th align=""center"" width=""50"">MFN</th><th align=""center"" width=""600"">Erros: &nbsp;&nbsp;[<span style=""color:black; font-weight:bold;"">0 - <a href=""javascript:void(0)"" onclick=""filtrar('')"">Todos</a></span>]&nbsp;&nbsp;[<span style=""color:red; font-weight:bold"">1</span><span> - <a href=""javascript:void(0)"" onclick=""filtrar('1')"">Crítico</a></span>] &nbsp;[<span style=""color:orange; font-weight:bold"">2</span><span> - <a href=""javascript:void(0)"" onclick=""filtrar('2')"">Importante</a></span>] &nbsp;[<span style=""color:green; font-weight:bold"">3</span> - <a href=""javascript:void(0)"" onclick=""filtrar('3')"">Sugestão</a></span>]</th>"	
             m=0
 			Do While Not MyFile.AtEndOfStream
 				strwork = MyFile.ReadLine

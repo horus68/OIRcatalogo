@@ -28,9 +28,8 @@ if s(v1091)='0' then
 
    '</form>'/
 '</div>'
+'</div>'
    '<br />'/
-  '<div class="caixapequena" style="width:75%">'
-  '</div>'/
 fi,
 else
  ,@wierro.pft,

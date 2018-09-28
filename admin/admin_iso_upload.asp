@@ -53,20 +53,20 @@ function TestEnvironment()
     on error resume next
     Set testFile = fso.CreateTextFile(fileName, true)
     If Err.Number<>0 then
-        TestEnvironment = "<B>Pasta de UPLOAD sem permissıes de escrita.</B>"
+        TestEnvironment = "<B>Pasta de UPLOAD sem permiss√µes de escrita.</B>"
         exit function
     end if
     Err.Clear
     testFile.Close
     fso.DeleteFile(fileName)
     If Err.Number<>0 then
-        TestEnvironment = "<B>Pasta de UPLOAD sem permissıes para eliminar ficheiros</B>, embora possua permissıes de escrita.<br>"
+        TestEnvironment = "<B>Pasta de UPLOAD sem permiss√µes para eliminar ficheiros</B>, embora possua permiss√µes de escrita.<br>"
         exit function
     end if
     Err.Clear
     Set streamTest = Server.CreateObject("ADODB.Stream")
     If Err.Number<>0 then
-        TestEnvironment = "<B>O objecto ADODB <I>Stream</I> n„o est· disponÌvel no servidor.</B>"
+        TestEnvironment = "<B>O objecto ADODB <I>Stream</I> n√£o est√° dispon√≠vel no servidor.</B>"
         exit function
     end if
     Set streamTest = Nothing
@@ -88,7 +88,7 @@ function SaveFiles
             SaveFiles = SaveFiles & Upload.UploadedFiles(fileKey).FileName & " (" & Upload.UploadedFiles(fileKey).Length & "B) "
         next
     else
-        SaveFiles = "Nenhum ficheiro selecionado ou nome de ficheiro inv·lido."
+        SaveFiles = "Nenhum ficheiro selecionado ou nome de ficheiro inv√°lido."
     end if
 
 end function
@@ -101,7 +101,8 @@ end function
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name=viewport content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow" />
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" title="styles" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" title="styles" />
 <style>
  td {font-size: 1em}
  td.fecho{font-size: 0.9em}
@@ -132,14 +133,14 @@ function validar(user){
 
   s= s.substring(posi+1,pos);
   s= s.toUpperCase();
-  if (s=="")  { alert("O campo NOME do ficheiro n„o pode ficar vazio! \nUtilize o bot„o ESCOLHER FICHEIRO e repita a operaÁ„o."); return false;}
+  if (s=="")  { alert("O campo NOME do ficheiro n√£o pode ficar vazio! \nUtilize o bot√£o ESCOLHER FICHEIRO e repita a opera√ß√£o."); return false;}
   
   if (fext=='ISO')
   {
 	  
 	  if (s != user) 
 	  {
-		  var r=confirm("O sistema detetou que o nome do ficheiro ISO n„o confere com o nome do UTILIZADOR atual.\nATEN«√O: O ficheiro ISO ser· carregado mas n„o ser· processado. \nTem a certeza que pretende continuar?")
+		  var r=confirm("O sistema detetou que o nome do ficheiro ISO n√£o confere com o nome do UTILIZADOR atual.\nATEN√á√ÉO: O ficheiro ISO ser√° carregado mas n√£o ser√° processado. \nTem a certeza que pretende continuar?")
 		  if (r==true) return true; else return false;
 	  }
   }
@@ -149,7 +150,7 @@ function validar(user){
 function onSubmitForm() {
     var formDOMObj = document.frmSend;
     if (formDOMObj.attach1.value == "" )
-        alert("O campo NOME do ficheiro n„o pode ficar vazio! \nUtilize o bot„o ESCOLHER FICHEIRO e repita a operaÁ„o.")
+        alert("O campo NOME do ficheiro n√£o pode ficar vazio! \nUtilize o bot√£o ESCOLHER FICHEIRO e repita a opera√ß√£o.")
     else
         return validar('<%=session("user")%>');
     return false;

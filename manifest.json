@@ -1,0 +1,48 @@
+{
+  "name": "Catálogo Rede XPTO",
+  "short_name": "CatXPTO",
+  "description": "Catálogo coletivo - Rede de Bibliotecas XPTO.",
+  "start_url": "default.asp",
+  "display": "browser",
+  "background_color": "#eeeee0",
+  "lang": "pt-PT",
+  "orientation": "any",
+  "icons": [
+  {
+   "src": "/rbcatalogo/imagens/app/icon-36x36.png",
+   "sizes": "36x36",
+   "type": "image/png",
+   "density": "0.75"
+  },
+  {
+   "src": "/rbcatalogo/imagens/app/icon-48x48.png",
+   "sizes": "48x48",
+   "type": "image/png",
+   "density": "1.0"
+  },
+  {
+   "src": "/rbcatalogo/imagens/app/icon-72x72.png",
+   "sizes": "72x72",
+   "type": "image/png",
+   "density": "1.5"
+  },
+  {
+   "src": "/rbcatalogo/imagens/app/icon-96x96.png",
+   "sizes": "96x96",
+   "type": "image/png",
+   "density": "2.0"
+  },
+  {
+   "src": "/rbcatalogo/imagens/app/icon-144x144.png",
+   "sizes": "144x144",
+   "type": "image/png",
+   "density": "3.0"
+  },
+  {
+   "src": "/rbcatalogo/imagens/app/icon-192x192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "density": "4.0"
+  }
+ ]
+}

@@ -8,9 +8,12 @@ strASPVersion = ScriptEngine & " Version " & _
 ScriptEngineMajorVersion & "." & _
 ScriptEngineMinorVersion
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <style type="text/css"><!--
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -19,8 +22,8 @@ h2 { font-family: arial, helvetica, sans-serif; font-size: 14pt; font-weight: bo
 body, td { font-family: arial, helvetica, sans-serif; font-size: 10pt; }
 th { font-family: arial, helvetica, sans-serif; font-size: 10pt; font-weight: bold; }
 //--></style>
-<title>aspinfo()</title></head>
-
+<title>aspinfo()</title>
+</head>
 <body>
 <div align="center">
 <table width="80%" border="0" bgcolor="#000000" cellspacing="1" cellpadding="3">

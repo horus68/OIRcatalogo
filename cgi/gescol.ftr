@@ -27,7 +27,5 @@ if val(v1002)>0 then
    '</form>'/
 '</div></div>'
    '<br />'/
-  '<div class="caixapequena" style="width:75%">'
-  '</div>'/
 fi
 '</BODY>'

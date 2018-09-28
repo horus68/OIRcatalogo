@@ -18,11 +18,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt" lang="pt">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name=viewport content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Catálogo coletivo <%=stitulo%></title>
-  <link rel="stylesheet" href="css/default.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
   <script defer type="text/javascript" src="js/geral.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
@@ -34,6 +34,7 @@
   <script defer async src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
   <link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />
   <link rel="shortcut icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json">
   <meta name="description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
   <meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca" />
   <meta name="author" content="Rede Concelhia de Bibliotecas" />
@@ -169,12 +170,6 @@
   </div>
 </div>
 <!-- Segmento Top Títulos - FIM -->
-<!-- Segmento Antiframe -->
-<div id="noprint">
-<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch" ></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" title="Abrir numa janela a toda a largura"></i></span>[A ver em telemóvel ou numa janela pequena?] <br />
-<a href="default.asp" target="_blank" rel="noopener"><button type="button" class="botao botao5" style="width:50%;">Carregue aqui para abrir numa janela a toda a largura</button></a></p>
- </div><br />
-<!-- Segmento Antiframe - FIM -->
 <!-- Segmento Extra -->
   <div>
   <p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch" ></i><i class="fas fa-book" data-fa-transform="shrink-8" title="O que pode fazer aqui?"></i></span>Pesquise os <b>documentos</b> existentes nas <b>bibliotecas</b> deste concelho. <br />
@@ -197,6 +192,12 @@
   </div>
   </div>
 <!-- Segmento Logótipo - FIM -->
+<!-- Segmento Antiframe -->
+<div id="noprint">
+<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch" ></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" title="Abrir numa janela a toda a largura"></i></span>[A ver em telemóvel ou numa janela pequena?] <br />
+<a href="default.asp" target="_blank" rel="noopener"><button type="button" class="botao botao5" style="width:50%;">Carregue aqui para abrir numa janela a toda a largura</button></a></p>
+ </div><br />
+<!-- Segmento Antiframe - FIM -->
 <!-- AddToAny - Local de exibição dos botões de partilha -->
 <div align="center" class="a2a_kit a2a_kit_size_32 a2a_default_style">
 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>

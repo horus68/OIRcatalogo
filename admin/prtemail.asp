@@ -3,7 +3,7 @@
 <head>
 <title>Imprimir email</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <body><br><br>
 <%    
 	destinatario=request("destinatario")

@@ -8,7 +8,7 @@
 	<meta name="robots" content="noindex, nofollow" />
 	
 	<title><%= sentidade %></title>	
-	<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script language="JavaScript" src="../js/tools.js"></script>
 </head>
 <body>

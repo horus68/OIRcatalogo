@@ -4,16 +4,20 @@
 '   <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">'/
 '   <META HTTP-EQUIV="Pragma" CONTENT="no-cache">'/
 '   <META HTTP-EQUIV="Expires" CONTENT="0">'/
-'   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name=viewport content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
+'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
 '<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
 '<script language="JavaScript" src="/rbcatalogo/js/prototype.js"></script>'/
 '<script type="text/javascript" src="/rbcatalogo/js/jquery-3.3.1.min.js"></script>'/
-'<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.js"></script>'/
+'<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.min.js"></script>'/
 '<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.css" type="text/css" />'/
 '<script type="text/javascript" src="/rbcatalogo/js/jqueryRater/jquery.rater.min.js"></script>'/
+'<script defer async src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>'/
+'<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'
 '<script>'/
  putenv('exp='(if v9000^n='expressao' then v9000^v fi))
  putenv('termo='(if v9000^n='termo' then v9000^v fi))
@@ -51,10 +55,6 @@
 '		 if(window.focus) popup.focus(); '
 '}'
 '</script>'/
-'<style>'/
-'div.autosize { display: table; width: 1px; }'/
-'div.autosize > div { display: table-cell; }'/
-'</style>'/
 '</head>'/
 '<body id="topopagina" onload="grava_historico();toggle_filtro();">'/
 '<script language="JavaScript">'/
@@ -143,21 +143,21 @@
 		    fi
         
  
-	'  » Resultado</p>	'/   
-	''/
+	'  » Resultado</p>	'/
 '   </div>  '/
 '   <div class="col3" id="lblutilizador">Utilizador: ' 
         if getenv('user')='guest' then 'Visitante' else getenv('user') fi
         '</span>' if getenv('user')<>'guest' then ' [ <a href="/rbcatalogo/logout.asp?sys=admin">Sair</a> ] ' fi ' '/
 '   </div>  '/
 '   </div>  '/
-	'<div id="principal" class="resultado"> '/
-	'  <!-- '/		
- '  <div id="basket" style="background-color: #efefef; padding: 0px; 'if getenv('user')<>'guest' and getenv('user')<>'ADMIN' then '' else 'display:none' fi '">'/
+	'  <!-- '/
+'  <div class="navegatopo" style="padding: 0px; 'if getenv('user')<>'guest' and getenv('user')<>'ADMIN' then '' else 'display:none' fi '">'/
+'<br />'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><span class="fa-layers fa-fw" style="font-size:2.2em" align="absmiddle"><i class="fas fa-circle-notch" ></i><i class="fas fa-user" data-fa-transform="shrink-9" title="Alterar o meu PIN"></i></span></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)" align="absmiddle"><span class="fa-layers fa-fw" style="font-size:2.2em"><i class="fas fa-circle-notch" ></i><i class="fas fa-shopping-cart" data-fa-transform="shrink-9" title="As minhas reservas"></i></span></a>'/
 '	<table border="0">'/
 '		<tr>'/
-'			<td width='if getenv('nuser')<>'' then '"762"' else '"800"' fi'></td><td>'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><img src="../../imagens/setnav/pic_person.png"  border="0" alt="Alterar o meu PIN" title="Alterar o meu PIN" align="absmiddle"></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)"><img src="../../imagens/setnav/pic_basket.png"  border="0" alt="As minhas reservas" align="absmiddle"></a></td>'/
+'			<td></td><td></td>'/
 '		</tr>'
 '	</table>'/
 '</div>'/
 ' -->'/
+	'<div id="principal" class="resultado"> '/

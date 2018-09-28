@@ -121,10 +121,10 @@ FI/
 IF S(V675,V700,V701,V702,V710,V711,V712,V856)<>'' THEN
 '  <tr>'/
 
-'    <td width="20%"  valign="top" align="left"><strong><i>Ver também...</i></strong></td>'/
+'    <td width="20%"  valign="top" align="left"><strong><i>Ver também2...</i></strong></td>'/
 '    <td width="65%" valign="top" align="left">'/
 
-     if p(v856) then mpl,(|<img src="../../imagens/picactions/icon_open.png"> Web |V856^z|<br>|/) mhl,FI/
+     if p(v856) then mpl,(|<img src="/rbcatalogo/imagens/picactions/icon_open.png"> Web |V856^z|<br>|/) mhl,FI/
      if p(v675) then ('CDU 'V675^a'<br>'/) FI/
      if p(v700) then (V700^a,| |V700^b| |,V700^c,| |V700^f'<br>'/) FI/
      if p(v701) then (V701^a,| |V701^b| |,V701^c,| |V701^f'</a><br>'/) FI/

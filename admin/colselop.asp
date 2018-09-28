@@ -9,7 +9,7 @@
 	<meta name="robots" content="noindex, nofollow" />
 	
 	<title><%=stitulo%></title>	
-	<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 	<script type="text/javascript" src="../js/users.min.js"></script>
 </head>
 <body>

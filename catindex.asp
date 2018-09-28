@@ -13,7 +13,7 @@
   <meta name=viewport content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow" />
 	<title>Navegar por termos - <%=sentidade%></title>
-  <link rel="stylesheet" href="css/default.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
 	<script language="JavaScript" src="js/geral.min.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>

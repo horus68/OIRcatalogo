@@ -8,7 +8,7 @@
 '     <td width="15%"   align="center" unselectable="on">'
 '     <strong>MFN='mfn'</strong> '
 '     </td>'/
-'     <td width="80%"  align="left" unselectable="on"><strong>Campos Unimarc</strong></td>'/
+'     <td width="80%"  align="left" unselectable="on"><strong>Dados Unimarc</strong></td>'/
 '  </tr>'/
 '<span id="unimarc">'/
 ,MPL,

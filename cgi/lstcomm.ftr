@@ -1,6 +1,6 @@
 if val(v1091)=7 then
   '<br>'/
-  '<p class="aviso">Não foram encontrados registos </p>'/
+  '<p class="aviso">Não foram encontrados comentários </p>'/
 fi
 '</div>'/
 '<div id="fb-root"></div>'/

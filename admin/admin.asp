@@ -14,11 +14,11 @@
 <meta name="robots" content="noindex, nofollow" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><%=stitulo%></title>
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
-<link rel="stylesheet" href="../css/tabcontent.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
+<link rel="stylesheet" href="../css/tabcontent.min.css" type="text/css" />
 <script type="text/javascript" src="../js/geral.min.js"></script>
 <script type="text/javascript" src="../js/prototype.js"></script>
-<script type="text/javascript" src="../js/tabcontent.js"></script>		
+<script type="text/javascript" src="../js/tabcontent.min.js"></script>		
 <script type="text/javascript" src="../js/users.min.js"></script>
 <script type="text/javascript" src="../js/md5.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -942,7 +942,7 @@ If Session("LogError") < 3 Then
 						 <% end select %>
 					  </dl>
 				   </div>
-				  <div id="tab7" class="tabcontent" style="margin-left:80px;margin-top:67px">
+				  <div id="tab7" class="tabcontent" style="margin-left:5px;margin-top:67px">
 						 <h4>Avaliação das existências<h4>
 						 <form name="frmgescol" id="frmgescol" action="" method="post" >  
 						 <input type="hidden" name="ut" value="<%=ucase(session("user"))%>">
@@ -980,19 +980,100 @@ If Session("LogError") < 3 Then
 						   
 						   <dl style="margin-left:5px;margin-top:15px;">
 						   <dt >
-						   <a href="admin.asp?id=4&mnbases=1" <% if request("mnbases")="1" or request("mnbases")="" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff"""%>>Validar registos</a>
-						   <a href="admin.asp?id=4&mnbases=2" <% if request("mnbases")="2" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff"""%>>Exportar registos</a>
-						   <a href="admin.asp?id=4&mnbases=3" <% if request("mnbases")="3" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff"""%>>Enviar ficheiros para o servidor</a>
+						   <a href="admin.asp?id=4&mnbases=1" <% if request("mnbases")="1" or request("mnbases")="" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff"""%>>Carregar ISO</a>
+						   <a href="admin.asp?id=4&mnbases=2" <% if request("mnbases")="2" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff"""%>>Exportar</a>
+						   <a href="admin.asp?id=4&mnbases=3" <% if request("mnbases")="3" then response.write "class=""tabfakeon""" else response.write "class=""tabfakeoff"""%>>Validar registos</a>
 						   </dt><br>
 						   </dl>
 						   <dl class="tabsubmenu1">
 						   <% select case request("mnbases")
-						     		 
-					       case "","1" 
+
+					       case "","1" 					     		 
 						   Set fs = CreateObject("Scripting.fileSystemObject")
 						   if uflag or ucase(session("user"))="ADMIN"  then
 						   
 						   %> 
+
+					 <h4>Enviar ficheiros bibliográficos para o servidor</h4>
+<p>A atualização dos registos da sua biblioteca é efetuada pelo carregamento de um ficheiro ISO (formato ISO2709).<br /> Esse ficheiro é o exportado do programa de catalogação da sua biblioteca e deve conter todos os registos da base de dados.</p>
+					 <form>
+					 <h5 >Carregar o ficheiro ISO: <br /><a href="#" onClick="javascript:window.open('admin_iso_upload.asp?window=yes', 'DocUpload', 'width=600, height=340, dependent=yes, left=150 , top=150, menubar=no, scrollbars=no,status=yes');"><button type="button" class="botao botao3" style="width:50%;">Clique aqui para abrir uma nova janela e escolher o ficheiro a enviar</button></a></h5>
+					 </form>
+  <div class="destaquemoldura">
+<p class="aviso">Importante: o nome do ficheiro terá de ter apenas a sigla concelhia da sua biblioteca mais a extensão .ISO (p. ex.: EBsol.iso). O uso de maiúsculas é indiferente.</p>
+<p>Aplicação das atualizações: semanalmente será executada uma rotina automática no servidor para integrar o seu novo ficheiro na base pesquisável pelo público.</p>
+			  </div>				
+						 <div style="padding-left:20px">
+						    <br /><hr>
+						    <h4>Último carregamento efetuado: </h4>
+							<p><% if lcase(session("user"))="admin" then %>
+							  Selecione a entidade: <br />
+							  <select id="base2" name="base" style="width:80%" onChange="muda_base(this)">
+							  <% for i=0 to ubound(entidades)-1 %>
+								 <option value="<%=lcase(entidades(i))%>"><%=entidades(i)%></option>
+							  <% next%>
+							  </select>
+							  </p>
+							 <% end if %>
+							<div style="display:inline-block">
+							<ul style="padding-left:40px;list-style-type: none;">
+								<li><div style="width:100px;display:inline-block">ISO 2709: </div> <span class="aviso" id="fiso"></span><span class="aviso" id="fsize"></span></li>
+								<li><div style="width:100px;display:inline-block">Data/hora:</div> <span class="aviso" id="time"></span></li>
+								<li><div style="width:100px;display:inline-block">Software:</div> <span class="aviso" id="soft"></span></li>
+								<li><div style="width:100px;display:inline-block">Codificação:</div> <span class="aviso" id="codepage"></span>&nbsp;<span class="aviso" id="alerta"></span></li>
+							</ul> 
+							</div>   
+						</div>
+                           <% else 
+						      response.write "Nota: Esta entidade não tem catálogo na REDE" 
+						  end if %>	 
+					    
+						 <% case "2" %>	
+
+						 <% if uflag or ucase(session("user"))="ADMIN"  then %>
+						<h4>Exportação de registos [formato ISO 2709]</h4>
+						 				
+						 <input type="hidden" name="user" value="<%=lcase(session("user"))%>">
+						 <input type="hidden" name="isofilepath" value="../tmp/">
+						 <input type="hidden" name="tmppath" value="../tmp/">
+						 <input type="hidden" name="lim_inicio" value="1">
+						 <input type="hidden" name="limites" id="limites" value="<%=totregs%>">
+						 <input type="hidden" name="expressao" id="expressao" value="$">
+<div class="col5-contentor">
+    <div class="col5">					 
+						 <% if lcase(session("user"))="admin" then %>				 
+						  Base de dados: <br /> 
+						  <select id="base1" name="base" onChange="muda_base(this)">
+						  <% for i=0 to ubound(entidades)-1 %>
+						     <option value="<%=lcase(entidades(i))%>"><%=entidades(i)%></option>
+						  <% next%>
+						  </select>  
+					<% else %>
+					 	<input type="hidden" id="base1" name="base" value="<%=lcase(session("user"))%>"> 
+					<%end if%>
+						  </div>
+    <div class="col5">MFN's: (de) <br /><input type="text" id="MFNde1" name="MFNde" value="1" size="7">&nbsp; 
+
+    </div>
+    <div class="col5">até (de) <br /><input type="text" id="MFNate1" name="MFNate" value="<%=totregs%>" size="7"  onkeyup="checkValInput(this)">
+    </div>
+	</div>
+				 
+						 <div id="exportparam"> 
+						 <p><b>Nome do ficheiro (guardar como)</b>
+						 <br />
+						 Nota: No final do nome deve adicionar <b>.iso</b> (a extensão é precedida de um ponto, como em <b>exportado.iso</b>)<br />	
+						 <input type="text" id="expfile" name="expfile" size="30" style="width:80%" onChange="limpa_msg();" onClick="setText();"> <input type="button" name="exportar" value="Exportar" class="botao botao1" onClick="chkfields();">
+						 <br>
+						 </div>
+						 <div id="nocat2" style="margin:0 0 0 -80px"></div> 
+						 <div id="msgISO" style="display:none;text-align:center"></div>
+						  <% else 
+						      response.write "Nota: Esta entidade não tem catálogo na REDE" 
+						  end if %>
+						 </p>			  
+
+						  <%case "3" %>
 						     
 							 <form name="frmvalid" id="frmvalid" action="valida.asp" method="post">  
 							 <input type="hidden" name="ut" value="<%=ucase(session("user"))%>">
@@ -1095,87 +1176,7 @@ If Session("LogError") < 3 Then
 </div>
 							</form>
 							<div id="nocat1" style="margin:30px 0 0 -80px"></div> 
-							 <br />
-                           <% else 
-						      response.write "Nota: Esta entidade não tem catálogo na REDE" 
-						  end if %>				  
-						    
-						 <% case "2" %>	
-
-						 <% if uflag or ucase(session("user"))="ADMIN"  then %>
-						<h4>Exportação de registos [formato ISO 2709]</h4>
-						 				
-						 <input type="hidden" name="user" value="<%=lcase(session("user"))%>">
-						 <input type="hidden" name="isofilepath" value="../tmp/">
-						 <input type="hidden" name="tmppath" value="../tmp/">
-						 <input type="hidden" name="lim_inicio" value="1">
-						 <input type="hidden" name="limites" id="limites" value="<%=totregs%>">
-						 <input type="hidden" name="expressao" id="expressao" value="$">
-<div class="col5-contentor">
-    <div class="col5">					 
-						 <% if lcase(session("user"))="admin" then %>				 
-						  Base de dados: <br /> 
-						  <select id="base1" name="base" onChange="muda_base(this)">
-						  <% for i=0 to ubound(entidades)-1 %>
-						     <option value="<%=lcase(entidades(i))%>"><%=entidades(i)%></option>
-						  <% next%>
-						  </select>  
-					<% else %>
-					 	<input type="hidden" id="base1" name="base" value="<%=lcase(session("user"))%>"> 
-					<%end if%>
-						  </div>
-    <div class="col5">MFN's: (de) <br /><input type="text" id="MFNde1" name="MFNde" value="1" size="7">&nbsp; 
-
-    </div>
-    <div class="col5">até (de) <br /><input type="text" id="MFNate1" name="MFNate" value="<%=totregs%>" size="7"  onkeyup="checkValInput(this)">
-    </div>
-	</div>
-				 
-						 <div id="exportparam"> 
-						 <p><b>Nome do ficheiro (guardar como)</b>
-						 <br />
-						 Nota: No final do nome deve adicionar <b>.iso</b> (a extensão é precedida de um ponto, como em <b>exportado.iso</b>)<br />	
-						 <input type="text" id="expfile" name="expfile" size="30" style="width:80%" onChange="limpa_msg();" onClick="setText();"> <input type="button" name="exportar" value="Exportar" class="botao botao1" onClick="chkfields();">
-						 <br>
-						 </div>
-						 <div id="nocat2" style="margin:0 0 0 -80px"></div> 
-						 <div id="msgISO" style="display:none;text-align:center"></div>
-						  <% else 
-						      response.write "Nota: Esta entidade não tem catálogo na REDE" 
-						  end if %>
-<p>
-						  <%case "3" %>
-
-					 <form>
-					 <h4>Enviar ficheiros bibliográficos para o servidor</h4>
-<p>A atualização dos registos da sua biblioteca é efetuada pelo carregamento de um ficheiro ISO (formato ISO2709).<br /> Esse ficheiro é o exportado do programa de catalogação da sua biblioteca e deve conter todos os registos da base de dados.</p>
-					 <h5>Para carregar o ficheiro ISO: <br /><a href="#" onClick="javascript:window.open('admin_iso_upload.asp?window=yes', 'DocUpload', 'width=600, height=340, dependent=yes, left=150 , top=150, menubar=no, scrollbars=no,status=yes');">clique aqui para abrir uma nova janela e escolher o ficheiro a enviar</a></h5>
-					 </form>
-<p class="aviso">Importante: o nome do ficheiro terá de ter apenas a sigla concelhia da sua biblioteca mais a extensão .ISO (p. ex.: EBsol.iso). O uso de maiúsculas é indiferente.</p>
-<p>Aplicação das atualizações: semanalmente será executada uma rotina automática no servidor para integrar o seu novo ficheiro na base pesquisável pelo público.</p>
-					
-						 <div style="padding-left:20px">
-						    <br /><hr>
-						    <h4>Último carregamento efetuado: </h4>
-							<p><% if lcase(session("user"))="admin" then %>
-							  Selecione a entidade: <br />
-							  <select id="base2" name="base" style="width:80%" onChange="muda_base(this)">
-							  <% for i=0 to ubound(entidades)-1 %>
-								 <option value="<%=lcase(entidades(i))%>"><%=entidades(i)%></option>
-							  <% next%>
-							  </select>
-							  </p>
-							 <% end if %>
-							<div style="display:inline-block">
-							<ul style="padding-left:40px;list-style-type: none;">
-								<li><div style="width:100px;display:inline-block">ISO 2709: </div> <span class="aviso" id="fiso"></span><span class="aviso" id="fsize"></span></li>
-								<li><div style="width:100px;display:inline-block">Data/hora:</div> <span class="aviso" id="time"></span></li>
-								<li><div style="width:100px;display:inline-block">Software:</div> <span class="aviso" id="soft"></span></li>
-								<li><div style="width:100px;display:inline-block">Codificação:</div> <span class="aviso" id="codepage"></span>&nbsp;<span class="aviso" id="alerta"></span></li>
-							</ul> 
-							</div>   
-						</div>
-									 	
+							 <br />								 	
 					<% end select%>
 					</dl>	
 					</div>
@@ -1250,7 +1251,7 @@ If Session("LogError") < 3 Then
 	<!-- Separador parametrizações FIM -->
 <!-- Separador Social -->
 					<div id="tab11" class="tabcontent">							
-						 <dl style="margin-left:80px;margin-top:67px;">
+						 <dl style="margin-left:5px;margin-top:67px;">
 					     <dd><a href="/rbcatalogo/cgi/www.exe/[in=lstcomm.in]?expr=$&ut=<%=session("user")%>">Comentários</a></dd>
 					     <dd><a href="lstvotos.asp?id=7" >Votações</a></dd>			
 						 </dl>
@@ -1258,7 +1259,7 @@ If Session("LogError") < 3 Then
 <!-- Separador Social FIM -->
 <!-- Separador Infos -->
 					<div id="tab12" class="tabcontent">
-						 <dl style="margin-left:80px;margin-top:27px;">
+						 <dl style="margin-left:5px;margin-top:27px;">
 						 <dt>Catálogo Coletivo</dt>
   					     <dd>Entidade: <a style="text-decoration:none" href="<%=surlPORTAL%>" target="_blank"><%=sentidadelonga%></a></dd>
   					     <dd>Bibliotecas parceiras: <a style="text-decoration:none" href="/rbcatalogo/admin/fpdf/main.asp" target="_blank">Nomes e contactos (em PDF)</a></dd>

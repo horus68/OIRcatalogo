@@ -9,10 +9,12 @@
    putenv('ori=' (if v9000^n='flag' then v9000^v fi))
 '<head>'/
 '<META HTTP-EQUIV="Refresh" CONTENT="7;URL=/rbcatalogo/cgi/www.exe/'if getenv('ori')='cat' then '[in=pesqres.in]' else '[in=gesres.in]' fi '?'if getenv('ori')='cat' then 'base=reservas&expressao=REQ 's(getenv('user')) else, if getenv('user')='ADMIN' then 'base=reservas&express=$'  else 'base=reservas&express=REQ '(if v9000^n='ut' then v9000^v fi) fi, fi'&lim_inicio=1&limites=999999&ut='(if v9000^n='ut' then v9000^v fi)'&dbmin='(if v9000^n='dbmin' then v9000^v fi)'&nut='getenv('nut')';"/>'/
-'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
-'	<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name=viewport content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '	<title>'ref(['_cnf']1,v100)'</title>'/ 	
-'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
+'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />'/
 '<script type="text/javascript" src="/rbcatalogo/js/prototype.js"></script>'/
 '<script>'/
 'function avisar()'/

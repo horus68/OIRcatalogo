@@ -20,5 +20,5 @@
  popup=window.open(loc,"Export","toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=yes,width=350,height=130,left=200,top=210"); 
            }  
            </script>' 
-           '<img src="../../imagens/setnav/pic_save.png" border="0"  title="'v3000'" style="cursor:pointer" onclick="javascript:export_reg();">'/
+           '<a href="#" onclick="javascript:export_reg();"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch"></i><i class="fas fa-save" data-fa-transform="shrink-9" title="'v3000'"></i></span></a>'/
      

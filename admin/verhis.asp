@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="../js/sorttable.min.js"></script>
 <script type="text/javascript" src="../js/tableH.js"></script>
 <script type="text/javascript" src="../js/prototype.js"></script>
@@ -125,18 +125,22 @@ function clean_his()
 			              break;	
 			case "Projeção e vídeo": tipodoc="GM";
 			              break;							  
-			case "Registos áudio":tipodoc="IM";
+			case "Sonoros não musical":tipodoc="IM";
                           break;
-			case "Registos Musicais":tipodoc="JM";
+			case "Sonoros musicais":tipodoc="JM";
                           break;
 			case "Material gráfico 2D":tipodoc="KM";
                           break;
-			case "Produtos de computador":tipodoc="LM";
+			case "Recursos eletrónicos":tipodoc="LM";
                           break;
 			case "Periódicos":tipodoc="AS";
                           break;		
 			case "Analíticos":tipodoc="AA";
                           break;	
+			case "Miscelânea":tipodoc="AC";
+                          break;
+			case "Recurso integrante":tipodoc="AI";
+                          break;
 			case "Multimédia":tipodoc="MM";
                           break;
 			case "Artefactos 3D e realia":tipodoc="RM";
@@ -269,6 +273,10 @@ function clean_his()
 				     tdoc="Periódicos"		  
 				  case "AA"
 				     tdoc="Analíticos"
+				  case "AI"
+				     tdoc="Recurso integrante"		  
+				  case "AC"
+				     tdoc="Miscelânea"
 				  case else
 				     tdoc="Não definido"
 				  end select 	 

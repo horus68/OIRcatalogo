@@ -64,15 +64,15 @@ Set objXmlHttp = Nothing
 <title>Gráficos - <%=sentidade %></title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name=viewport content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
-<link rel="stylesheet" href="../css/tabcontent.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
+<link rel="stylesheet" href="../css/tabcontent.min.css" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
     if (typeof jQuery == 'undefined') {
     document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
     } 
     </script>
-<script type="text/javascript" src="../js/tabcontent.js"></script> 
+<script type="text/javascript" src="../js/tabcontent.min.js"></script> 
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>    
 <script type="text/javascript">
 

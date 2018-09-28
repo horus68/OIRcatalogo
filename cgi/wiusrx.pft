@@ -3,7 +3,7 @@
 '  <tr>'/
 
 '    <td width="20%"  valign="top" align="left"><strong><i>Ver também...</i></strong></td>'/
-'    <td width="65%" valign="top" align="left">'/
+'    <td width="80%" valign="top" align="left">'/
       
      if p(v856) then mpl,(|<img src="../../imagens/picactions/icon_open.png"> Web <a href="|V856^u|" target="_blank">|V856^z|</a><br>|/) mhl,FI/
      if p(v675) then ('CDU <a href="javascript:window.location.href=ChkLinkHref(2,&quot;wiusr&quot;,&quot;CDU ',MHU,V675^a,MHL,'&quot;)">'V675^a'</a><br>'/) FI/

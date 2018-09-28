@@ -9,7 +9,7 @@
 	<meta name="robots" content="noindex, nofollow" />
 	
 	<title><%=stitulo%></title>
-    <link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+    <link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 	<script language="JavaScript" src="../js/geral.min.js"></script> 
     <link rel="icon" href="../favicon.ico" type="image/ico"/>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
@@ -64,9 +64,9 @@
 		  <option value="IM">Registos sonoros não musicais</option>
 		  <option value="JM">Registos sonoros musicais</option>
 		  <option value="KM">Material gráfico a duas dimensões</option>
-		  <option value="LM">Produtos de computador</option>
+		  <option value="LM">Recursos eletrónicos</option>
 		  <option value="MM">Multimédia</option>
-		  <option value="RM">Artefactos 3D e realia</option>
+		  <option value="RM">Artefactos tridimensionais e realia</option>
 		  <option value="AA">Analítico</option>
 		  <option value="AS">Publicação periódica</option>
 		</select>

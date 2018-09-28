@@ -42,7 +42,7 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="robots" content="follow,index" />
 	<title>Pesquisas <%=stitulo%></title>
-  <link rel="stylesheet" href="css/default.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
 	<script language="JavaScript" src="js/geral.min.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
@@ -204,19 +204,19 @@
 	<p>Tipo de documento:<br /> 
         <select  size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
           <option selected value="XX">Todos os documentos</option>
-          <option value="AM">Monografia (Texto Impresso)</option>
-          <option value="BM">Monografia (Texto Manuscrito)</option>
-          <option value="CM">Partituras Musicais - Impressas</option>
-          <option value="DM">Partituras Musicais - Manuscritas</option>
-          <option value="EM">Material Cartográfico - Impresso</option>
-          <option value="FM">Material Cartográfico - Manuscrito</option>
-          <option value="GM">Material de Projeção e Vídeo</option>
-          <option value="IM">Registos Sonoros não Musicais</option>
-          <option value="JM">Registos Sonoros Musicais</option>
-          <option value="KM">Material Gráfico a duas dimensões</option>
-          <option value="LM">Produtos de Computador</option>
+          <option value="AM">Monografia (Texto impresso)</option>
+          <option value="BM">Monografia (Texto manuscrito)</option>
+          <option value="CM">Partituras musicais - Impressas</option>
+          <option value="DM">Partituras musicais - Manuscritas</option>
+          <option value="EM">Material cartográfico - Impresso</option>
+          <option value="FM">Material cartográfico - Manuscrito</option>
+          <option value="GM">Material de projeção e vídeo</option>
+          <option value="IM">Registos sonoros não nusicais</option>
+          <option value="JM">Registos sonoros nusicais</option>
+          <option value="KM">Material gráfico a duas dimensões</option>
+          <option value="LM">Recursos eletrónicos</option>
           <option value="MM">Multimédia</option>
-          <option value="RM">Artefatos 3D e realia</option>
+          <option value="RM">Artefatos tridimensionais e realia</option>
           <option value="AA">Analítico</option>
           <option value="AS">Publicação periódica</option>
         </select>
@@ -468,19 +468,19 @@
 		<p>Tipo de documento:<br /> 
           <select  size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
             <option selected value="XX">Todos os documentos</option>
-            <option value="AM">Monografia (Texto Impresso)</option>
-            <option value="BM">Monografia (Texto Manuscrito)</option>
-            <option value="CM">Partituras Musicais - Impressas</option>
-            <option value="DM">Partituras Musicais - Manuscritas</option>
-            <option value="EM">Material Cartográfico - Impresso</option>
-            <option value="FM">Material Cartográfico - Manuscrito</option>
-            <option value="GM">Material de Projeção e Vídeo</option>
-            <option value="IM">Registos Sonoros não Musicais</option>
-            <option value="JM">Registos Sonoros Musicais</option>
-            <option value="KM">Material Gráfico a duas dimensões</option>
-            <option value="LM">Produtos de Computador</option>
+            <option value="AM">Monografia (Texto impresso)</option>
+            <option value="BM">Monografia (Texto manuscrito)</option>
+            <option value="CM">Partituras musicais - Impressas</option>
+            <option value="DM">Partituras musicais - Manuscritas</option>
+            <option value="EM">Material cartográfico - Impresso</option>
+            <option value="FM">Material cartográfico - Manuscrito</option>
+            <option value="GM">Material de projeção e Vídeo</option>
+            <option value="IM">Registos sonoros não musicais</option>
+            <option value="JM">Registos sonoros musicais</option>
+            <option value="KM">Material gráfico a duas dimensões</option>
+            <option value="LM">Recursos eletrónicos</option>
             <option value="MM">Multimédia</option>
-            <option value="RM">Artefatos 3D e realia</option>
+            <option value="RM">Artefatos tridimensionias e realia</option>
             <option value="AA">Analítico</option>
             <option value="AS">Publicação periódica</option>
           </select>
@@ -567,21 +567,21 @@
 		  <p>Tipo de documento:<br /> 
           <select  size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
             <option selected value="XX">Todos os documentos</option>
-            <option value="AM">Monografia (Texto Impresso)</option>
-            <option value="BM">Monografia (Texto Manuscrito)</option>
-            <option value="CM">Partituras Musicais - Impressas</option>
-            <option value="DM">Partituras Musicais - Manuscritas</option>
-            <option value="EM">Material Cartográfico - Impresso</option>
-            <option value="FM">Material Cartográfico - Manuscrito</option>
-            <option value="GM">Material de Projeção e Vídeo</option>
-            <option value="IM">Registos Sonoros não Musicais</option>
-            <option value="JM">Registos Sonoros Musicais</option>
-            <option value="KM">Material Gráfico a duas dimensões</option>
-            <option value="LM">Produtos de Computador</option>
+            <option value="AM">Monografia (Texto impresso)</option>
+            <option value="BM">Monografia (Texto manuscrito)</option>
+            <option value="CM">Partituras musicais - Impressas</option>
+            <option value="DM">Partituras musicais - Manuscritas</option>
+            <option value="EM">Material cartográfico - Impresso</option>
+            <option value="FM">Material cartográfico - Manuscrito</option>
+            <option value="GM">Material de projeção e vídeo</option>
+            <option value="IM">Registos sonoros não Musicais</option>
+            <option value="JM">Registos sonoros Musicais</option>
+            <option value="KM">Material gráfico a duas dimensões</option>
+            <option value="LM">Recursos eletrónicos</option>
             <option value="MM">Multimédia</option>
-            <option value="RM">Artefatos 3D e realia</option>
+            <option value="RM">Artefatos tridimensionais e realia</option>
             <option value="AA">Analítico</option>
-            <option value="AS">Publicação periódica</option>
+            <option value="AS">Publicação periódica</option>          
           </select>
           </p>
           <p>Ano de publicação:<br />

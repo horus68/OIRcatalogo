@@ -1,9 +1,11 @@
-'<table border="0" width="100%" cellpadding="0">'
-'  <tr>'
-'     <td width="25%">'/
+'<div class="col5-contentor" style="width:100%">'  
+'<div class="col5">'/
 ,@toolbar.pft,
-'</td>'
-'     <td width="30%" valign="middle" align="center"><h5>Resultados da pesquisa:<br><span style="font-size:90%">'V1002' ficha(s) com documento(s)</span></h5></td>'/
-'     <td width="40%" valign="middle" align="right"><span style="font-size:80%"><strong>Base:</strong> 'MHU,V1051,' ('f(maxmfn-1,0,0),MHL' fichas no total)</span></td>'/
-'  </tr>'
-'</table>'
+'</div>'
+'<div class="col5">'
+'     <strong>Resultados da pesquisa:</strong><br /><span style="font-size:90%">'V1002' ficha(s) com documento(s)</span>'/
+'</div>' 
+'<div class="col5">'
+'     <span style="font-size:80%">Base: 'MHU,V1051,' <br />('f(maxmfn-1,0,0),MHL' fichas no total)</span>'/
+'</div>'  
+'</div>'

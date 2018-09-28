@@ -20,7 +20,7 @@
       className: 'tagBox',
       tagInputClassName: '',
       tagButtonClassName: '',
-      tagButtonTitle: '../../imagens/picactions/icon_tags.gif',
+      tagButtonTitle: '../../imagens/picactions/icon_tags.png',
       confirmRemoval: false,
       confirmRemovalText: 'Pretende mesmo remover a etiqueta?',
       completeOnSeparator: true,

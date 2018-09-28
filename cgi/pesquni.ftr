@@ -1,6 +1,6 @@
 if s(v1091)='0' then
    '<TEXTAREA ID="guardatexto" STYLE="display:none;"></TEXTAREA>'/
-   '<br><input type="button" onclick="ClipBoard();" value="Copiar">   <input TYPE="button" VALUE="Fechar" ONCLICK="javascript:self.close()">'/
+   '<br><input type="button" onclick="ClipBoard();" value="Copiar" class="botao botao3">   <input TYPE="button" VALUE="Fechar" ONCLICK="javascript:self.close()" class="botao botao4">'/
 else
 ,@wierro.pft,
 fi,

@@ -13,7 +13,7 @@
      response.redirect "/rbcatalogo/cgi/www.exe/[in=newtag.in]?tag="& server.urlencode(request("tag"))&"&ip="&request("ip")&"&expr1="&tmp(0)&"&expr2="&tmp(1)&"&leitor="&request("ltr")&"&mfn="&request("nreg")
   end if
   response.write "<head><meta http-equiv=""refresh"" content=""2;URL=vertags.asp?user="& request("ltr")& "&mfn=" & server.urlencode( request("mfn")) & "&nreg=" & request("nreg")&"""></head>"
-  response.write "<link href=""../css/default.min.css"" rel=""stylesheet"" type=""text/css"" />"
+  response.write "<link href=""../css/default.min.css?version=001"" rel=""stylesheet"" type=""text/css"" />"
   response.write "</head>"
   response.write "<body><p class=""aviso"" style=""margin-top: 100px"">ATENÇÃO: A etiqueta introduzida já existe</p></body>"
 

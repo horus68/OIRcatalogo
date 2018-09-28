@@ -7,7 +7,7 @@
  strMAIL=getUrl(strURL)
  tmp=split(request("mfn"),"@@")
 %>  
-<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="/rbcatalogo/js/geral.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>

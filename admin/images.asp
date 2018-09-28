@@ -7,11 +7,13 @@ Response.AddHeader "pragma","no-cache"
 Response.AddHeader "cache-control","private" 
 Response.CacheControl = "no-cache" 
 %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
 <head>
-<title>Selecionar imagens</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Selecionar imagens</title>
 <script type="text/javascript" src="../js/prototype.js"></script>
 <script>
 function fixar(fpath)
@@ -184,11 +186,9 @@ function fixar(fpath)
 						  toggleImage();
 						}
 					</script>
-					
-			  </head>
-					
+			<title>Imagens guardadas no servidor</title>					
+			  </head>					
 			<body onload="init();window.focus();">
-			<title>Imagens guardadas no servidor</title>
 				 <div id="lista">
 				    Escolha a imagem pretendida a partir da lista e depois pressione o botão SELECIONAR FICHEIRO (<img SRC="../imagens/navImages/yes.gif" align="absbottom">) para atualizar. <br> Caso queira, poderá CARREGAR A IMAGEM PARA O SERVIDOR (<img SRC="../imagens/navImages/upload.gif" align="absbottom">) a partir do seu computador. 
 					<table WIDTH="100%">

@@ -2,13 +2,16 @@
 '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
 '<head>'
 '<TITLE>'v9001'</TITLE>
-'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name=viewport content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
 '<META HTTP-EQUIV="Pragma" CONTENT="no-cache">'
 '<META HTTP-EQUIV="Expires" CONTENT="-1">'
 '<meta name="description" content="'v9002'" />'
 '<meta name="keywords"  content="'v9003'" />'
 '<script language="JavaScript" src="'v9000'/js/tools.js"></script>
-'<link rel="stylesheet" href="'v9000'/css/default.min.css" type="text/css" />'
+'<link rel="stylesheet" href="'v9000'/css/default.min.css?version=001" type="text/css" />'
 '</head><body>'
 '      <h3><span>Utilizadores</span></h3>'
 '      <script>'

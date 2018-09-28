@@ -33,7 +33,7 @@
 %>
 
  <title>Gráfico comparativo da coleção <%if sigla="X" then response.write "em toda a Rede" else response.write "no Agrupamento"%></title>
-  <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../js/jqplot/excanvas.js"></script><![endif]-->
+  <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../js/jqplot/excanvas.min.js"></script><![endif]-->
   
   <link rel="stylesheet" href="../js/jqplot/jquery.jqplot.min.css" type="text/css" />
   <!-- BEGIN: load jquery -->

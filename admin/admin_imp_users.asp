@@ -3,7 +3,7 @@
 <!--#include file="config.asp"-->
 <!--#include file="functions.asp"-->
 <!--#INCLUDE FILE="clsUpload.asp"-->
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" title="styles" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" title="styles" />
 <script language="JavaScript">
 var flag=false;
 var ob;

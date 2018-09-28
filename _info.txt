@@ -7,8 +7,11 @@ Info: https://sites.google.com/view/opacrbe/oir/sobre
 
 
 ====== Alterações
-versão 1.0.2 - 28 junho 2018
-+ Carregamento alternativo de ISOS
+versão 1.0.3 - 6 julho 2018
++ Pesquisa fluída na vista completa
++ Manifesto para Apps
++ Imagens SVG na pesquisa
++ CSS com versões
 
 
 ================ Apoio a técnicos de informática

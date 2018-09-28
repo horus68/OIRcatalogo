@@ -4,7 +4,12 @@
 '<title>Listagem para impressão (Pré-visualização)</title>'/
 '<META HTTP-EQUIV="Pragma" CONTENT="no-cache">'/
 '<META HTTP-EQUIV="Expires" CONTENT="-1">'/
-' <link rel="stylesheet" href="/rbcatalogo/css/print.css" type="text/css" />'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'<meta name=viewport content="width=device-width, initial-scale=1" />'/
+'<meta name="robots" content="noindex, nofollow" />'/
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'/
+'<link rel="stylesheet" href="/rbcatalogo/css/print.min.css" type="text/css" />'/
+'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
 ' <script>
  function doSaveAs()
   {
@@ -48,9 +53,6 @@
 	 ' </div>'/
 '</div>'/
 '<!-- fim do titulo -->'/
-
-
-'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
 
 
 '<div id="globalprint">'/

@@ -4,14 +4,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
 <head>
-<title><%=stitulo%></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
+<link rel="icon" href="../favicon.ico" type="image/ico"/>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Leitor - entrada no sistema</title>
 <% Response.CacheControl = "no-cache" %>
 <% Response.AddHeader "Pragma", "no-cache" %> 
 <% Response.Expires = -1 %>
 <!--#include file="md5.asp"-->
-<link rel="stylesheet" href="../css/default.min.css" type="text/css" />
+<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="../js/md5.js"></script>
 <script type="text/javascript" src="../js/rc4.js"></script>
 <script type="text/javascript" src="../js/prototype.js"></script>
@@ -87,8 +90,8 @@ Function log_erro(msg)
 	writeLog("LOGIN (insucesso) - Leitor:" & ucase(nu) & msg )
 	response.write "<p>&nbsp;</p>"						 
 	response.write "<h4 style=""font: 9pt Verdana;color:red"">Acesso negado. O leitor não tem acesso ao sistema...</h3>"
-	response.write "<p style=""font: 8pt Verdana"">Mensagem:" & msg & "</p>"
-	response.write "<p style=""font: 8pt Verdana"">Contacte o administrador em " & strHTML & "</p>"
+	response.write "<p style=""font: 8pt Verdana"">Mensagem: " & msg & "</p>"
+	response.write "<p style=""font: 8pt Verdana"">Contacte o administrador do sistema " & strHTML & "</p>"
 	'Session("LogError")=Session("LogError")+1        
 	response.write "<div align=""right"" style=""font: 8pt Verdana;margin-right:10px""><a href=""javascript:window.self.close();"" >Fechar</a></div>"
 	on error goto 0
@@ -211,10 +214,6 @@ If Session("LogError") < 3 Then
    else
 
 		%>
-		<head>
-		 <title>Leitor - entrada no sistema</title>
-    <link rel="icon" href="../favicon.ico" type="image/ico"/>
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
 		</head>
 		<body onLoad="window.focus();" style="margin-left:15px;text-align:left">
   <div class="destaque1">    <h4>Catálogo Coletivo - Leitores</h4>
