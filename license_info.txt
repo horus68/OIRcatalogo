@@ -1,0 +1,53 @@
+=== OIR - aplicação de catálogo OPAC
+Sistema para pesquisa em catálogo coletivo de bibliotecas.
+OIR (de OPAC-ISIS-RBE) é um software que permite a disponibilização de 
+um serviço de pesquisa bibliográfica em catálogos coletivos criados de
+forma não síncrona. 
+O catálogo público (OPAC) é criado a partir das bases individuais de 
+cada biblioteca de um concelho, que continuam a utilizar os seus 
+próprios programas de catalogação. 
+
+
+=== Copyright/Direitos de Autor
+(c) Copyright RBE 2005-2018 <redes.concelhias@mail-rbe.org>
+
+O OIR, criado em set. 2018, é uma aplicação gratuita e de código aberto 
+com base em software CDS/ISIS da Unesco, adaptada pela 
+Rede de Bibliotecas Escolares (RBE) do Ministério da Educação de Portugal.
+Incorpora e é o sucessor do software anterior, designado por "OpacWin" 
+(2005-2015), que inclui código resultante da colaboração de uma empresa
+externa no âmbito de um projeto apoiado pela RBE (2005-2009).
+
+
+=== Responsabilidade
+O software é disponibilizado tal como está e sem qualquer garantia.
+A RBE declina qualquer responsabilidade pelo uso do software. 
+
+
+=== Direitos de autor
+
+Copyright (c) 2005-2018 RBE. Todos os direitos reservados.
+
+Inclui ficheiros e código com direitos de entidades terceiras, conforme notas nos ficheiros
+
+
+=== Licença
+O pacote completo do sistema é distribuído sob a licença GNU AGPL-3.0 
+- Licença Pública Geral Affero GNU, versão 3 ou posterior.
+
+GNU AFFERO GENERAL PUBLIC LICENSE, Version 3, 19 November 2007 - 
+Free Software Foundation https://www.gnu.org/licenses/agpl-3.0.html
+
+
+=== Licenças e direitos de autor adicionais
+O pacote inclui ficheiros e código que utilizam outras licenças.
+Existem ainda direitos detidos por entidades terceiras, conforme indicado nos ficheiros específicos.
+
+
+
+=== Código e Informações
+Projeto RedesConcelhias.RBE
+Informações: https://sites.google.com/view/opacrbe/oir/
+Software: https://github.com/RBErecon
+
+Porto, 01/09/2018

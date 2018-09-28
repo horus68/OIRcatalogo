@@ -1,0 +1,27 @@
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'  <head>'/
+'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'	<meta name="robots" content="noindex, nofollow" />'/
+'	<title>'ref(['_cnf']1,v100)'</title>'/	
+'	<link rel="stylesheet" href="/rbcatalogo/css/default.min.css" type="text/css" />'/
+'</head>'/
+'<body id="topopagina">'/
+
+'<script language="JavaScript" src="/rbcatalogo/js/geral.min.js"></script>'/
+
+'<script language="JavaScript">'/
+
+'function ChkLinkHref(tipo,formato,linha_in)'/
+'{'/
+'  var dim=0;'/
+'  var tmp="",car="";'/
+'  tmp=ConvUp(linha_in);'/
+'  var param="/rbcatalogo/cgi/www.exe/[in=pesqger.in]?base='(if v9000^n='base' then v9000^v fi)'&ut='(if v9000^n='ut' then v9000^v fi)'&nut='(if v9000^n='nut' then v9000^v fi)'&nomemnu='(if v9000^n='nomemnu' then v9000^v fi)'&formato="+formato+"&lim_inicio=1&limites='(if v9000^n='limites' then v9000^v fi)'&iso2709='(if v9000^n='iso2709' then v9000^v fi)'&sortfmt='(if v9000^n='sortfmt' then v9000^v fi)'&user='(if v9000^n='user' then v9000^v fi)'&expressao=";'/
+'  dim=tmp.length;'/
+'  car=tmp.charAt(dim-1);'/
+'  if (tipo=="1" && car==")") tmp=tmp.substring(0,dim-1);'/
+'  return(param + ChkChars(tmp));'/
+'}'/
+
+'</script>'/

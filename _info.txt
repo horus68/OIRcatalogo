@@ -1,0 +1,43 @@
+Software OIR (OPAC-isis-RBE)
+Sistema de pesquisa em catálogo coletivo 
+
+Reponsável: Projeto RedesConcelhias.RBE 
+(Rede de Bibliotecas Escolares)
+Info: https://sites.google.com/view/opacrbe/oir/sobre
+
+
+====== Alterações
+versão 1.0.0 - 14 maio 2018
++ Rebranding OpacWin para OIR
++ Design: rev. geral, formatação, css, ícones, layout elástico
++ Funcionalidades adicionadas: Navegação por termos
++ Funcionalidades recuperadas: importação ficheiros, edição reservas
+- Funcionalidades retiradas: comentários
+
+
+================ Apoio a técnicos de informática
+Guia de instalação e administração:
+https://sites.google.com/view/opacrbe/tec
+
+
+================ Apoio a bibliotecários
+Guia de gestão:
+https://sites.google.com/view/opacrbe/biblio
+
+
+================ Guia do utilizador
+Pesquisa pelo público: 
+https://sites.google.com/view/pesquisarcatalogo
+
+
+================ Direitos de autor e Licenças
+Copyright (c) 2005-2018 RBE. Todos os direitos reservados.
+Distribuído pela licença GNU AGPL-3.0 ou posterior 
+Ver detalhes no ficheiro license_info.txt
+
+
+================ Projeto RedesConcelhias.RBE
+Email: redes.concelhias@mail-rbe.org
+Infos e recursos: https://sites.google.com/view/redesconcelhias
+Sítio RBE (Redes Concelhias): https://www.rbe.mec.pt/np4/redesconcelhias/
+

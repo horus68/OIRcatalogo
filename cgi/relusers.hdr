@@ -1,0 +1,65 @@
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<head>'/
+'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'	<title>'ref(['_cnf']1,v100)'</title>'/ 
+'<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
+'<script type="text/javascript" src="../../js/tableH.js"></script>'/
+'<script type="text/javascript" src="../../js/prototype.js"></script>'/
+'<script>
+function start() {
+    if (!document.getElementsByTagName || !document.createTextNode) return;
+    var rows = document.getElementById("users").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+    for (i = 0 ; i < rows.length; i++) {
+        rows[i].onclick = function() {
+			document.getElementById("expressao").value="\"SIGLA "+ this.cells[0].firstChild.nodeValue+"\"";
+	 		document.getElementById("frmseluser").submit();
+        }
+    }
+} '
+'function chk_iso(us,codigo) '/
+' {'/
+' var user=us.toLowerCase();'/
+' url = "../../admin/chkiso.asp?file="+user+".iso&r="+new Date().getTime();'/
+' new Ajax.Request (url, { '/
+' method:"get",   '/
+' onSuccess: function(transport) {    '/
+' var response = transport.responseText; '/
+
+' if (response != codigo.toLowerCase() ) '/
+'    if (response=="Erro") '/
+'      $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_stop.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Ficheiro ISO NÃO ENCONTRADO ou não foi possível ler o ficheiro.\">";'/
+'    else '/ 
+'     if (response=="misc") '/
+'       $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_question.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente com mistura do padrão ANSI com o padrão ASCII.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\">";'/
+'     else '/
+'       $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_aviso.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente NÃO CONFERE com a parametrização.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\">";'/
+' else  $("td"+us).innerHTML = "<img style=\"cursor:pointer\" src=\"../../imagens/picactions/info_checked.png\" width=\"15\" border=\"0\" align=\"absmiddle\" title=\"Codificação do ficheiro ISO aparentemente VÁLIDA.\r\nATENÇÃO: convém notar que o método heurístico de validação não é absolutamente garantido\"/>";'/
+' }, '/
+' onFailure: function() {alert("Ocorreu um erro. Contacte o administrador.")}
+ }); '/
+'  }'/
+'</script>'/
+'</head>'/
+'<body onload="start();">'/
+'<div class="destaque1">'/
+'<h1>Catálogo Coletivo: Edição de entidades</h1>'/
+'</div>'/
+'<div class="col3-contentor">'/
+'<div class="col3">'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> »  <a href="../../admin/admin.asp">Administração</a> » Seleção de utilizador</p>'/
+'</div>'/
+'<div class="col3" id="lblutilizador">'/
+'Utilizador: <span id="utilizador">'mhu,(if v9000^n='ut' then v9000^v fi),mhl'&nbsp; [ <a href="../../admin/admin.asp?Logout=1">Sair</a> ]</span> '/		
+'</div>'/
+'</div>'/
+'<div id="principal"> '/
+'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?mnut=1"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div>'
+'<br />'/
+'<div align="center">'/
+'<form name="frmseluser" id="frmseluser" action="../../cgi/www.exe/[in=pesquser.in]" method="post" >  '/
+' <input type="hidden" name="ut" value="admin">'/
+' <input type="hidden" name="expressao" id="expressao" value="">'/
+'<table id="users" class="sortable" style="text-align:left" summary="Seleção de utilizadores">'/
+'<th>Sigla</th><th>Dependência</th><th>Nome</th><th><img src="../../imagens/picactions/login.gif" width="15"  title="Permissões"/></th><th align="center"><img src="../../imagens/picactions/basedados.png" width="15" title="Base bibliográfica"/></th>'/

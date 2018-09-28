@@ -1,0 +1,120 @@
+'<link rel="stylesheet" href="../css/default.min.css" type="text/css"  />'/
+'<script language="JavaScript" src="../js/geral.min.js"></script>'/
+'<script LANGUAGE="JavaScript">'/
+
+'  window.status="Resultado da pesquisa";'/
+
+'function FindReplace_2(linha,str1,str2)'
+'{'
+'   var s1,s2;'
+'   var linha_in=linha;'
+'   var c=linha_in.length;'
+'   var p=0;'
+
+'   while ((p>-1))'
+'      {'
+'       p=linha_in.substring(0,c).lastIndexOf(str1);'
+'       if (p>=0)'
+'           {'
+'            s1=linha_in.substring(0,p);'
+'            s2=linha_in.substring(p+str1.length,linha_in.length);'
+
+'            linha_in=s1+str2+s2;'
+'            c=p-1;'
+'           };'
+'      }'
+'  return linha_in;    '
+'}'
+
+'function ChkChars(form)'/
+'{'/
+'  var sep="",termo=form.expressao.value;'/
+'  termo=termo.toUpperCase();'/
+'  lista=new Array("+","*","^"," AND "," OR "," NOT "," AND NOT ","(",")");'/
+'  for (i=0;i<9;i++)'/
+'      {'/
+'       if (termo.indexOf(lista[i])>=0)'/
+'          {'/
+'           sep="\"";'/
+'           break;'/
+'          }'/
+'       }'/
+'  form.expressao.value=sep+termo+sep;'/
+'}'/
+
+
+'function ChkChars_2(texto)'/
+'{'/
+'  var sep="",termo=texto;'/
+'  termo=termo.toUpperCase();'/
+'  lista=new Array("+","*","^"," AND "," OR "," NOT "," AND NOT ","(",")");'/
+'  for (i=0;i<9;i++)'/
+'      {'/
+'       if (termo.indexOf(lista[i])>=0)'/
+'          {'/
+'           sep="\"";'/
+'           break;'/
+'          }'/
+'       }'/
+'  return(sep+termo+sep);'/
+'}'/
+
+'function ChangePrefix(texto)'/
+'{'/
+'  var sep="",termo=texto;'/
+'  termo=termo.toUpperCase();'/
+'  lista=new Array("TRM ","TG ","TE ","TA ","UP ","AR ");'/
+'  for (i=0;i<6;i++)'/
+'      {'/
+'       if (termo.indexOf(lista[i])>=0)'/
+'          {'/
+'           sep=FindReplace_2(texto,lista[i],"AS ");'/
+'           break;'/
+'          }'/     
+'       }'/
+'  if (sep == "")'/
+'   { '/
+'   sep = termo; '/
+'   if (sep.indexOf("CDU ") == -1) {sep = "AS "+ sep;} '/
+'   };'/
+'  return(sep);'/
+'}'/
+
+
+
+'function SelTrmLista(form,ob)'/
+'{'/
+'  var sel_term=0,n_term=0,i=0,expressao="",oper="";'/
+'      n_term=form.Lexico.options.length;'/
+'  for (i=0;i<n_term;i++)'/
+'      {'/
+'        if (form.Lexico.options[i].selected==true)'/
+'           {'/
+'            sel_term++;'/
+'            if (sel_term>1) oper=" + ";'/
+'               expressao = expressao + oper + ChkChars_2(form.Lexico.options[i].text);'/
+'           }'/
+'      }'/
+' eval("window.parent.pori."+ob+".value = expressao;"); '/
+' window.parent.fecharIndex();'/
+' return (false);'/
+'}'/
+
+'function Trim(str){return str.replace(/^\s+|\s+$/g,"");}'/
+
+
+'function proxTrm(expr)'/
+'{'/
+' url=window.parent.win.getURL();'/
+' posi= url.indexOf("expressao=");'/
+' posf= url.indexOf("&",posi);'/
+' url=url.substr(0,posi+10)+ escape(Trim(expr)) + url.substr(posf);'/
+' window.parent.win.setURL(url); '/
+'}'/
+
+
+
+
+
+'</script>'/
+

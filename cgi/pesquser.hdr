@@ -1,0 +1,77 @@
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'  <head>'/
+'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'	<meta name="robots" content="noindex, nofollow" />'/
+'	<title>'ref(['_cnf']1,v100)'</title>'/	
+'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'<script language="JavaScript" src="../../js/tools.js"></script>'/
+'</head>'/
+'<body>'/
+'<div class="destaque1">'/
+'<h1>Catálogo Coletivo: Utilizadores</h1>'/
+'</div>'/
+'      <script>'
+'      function onEnter(event){'
+'       var bolOldBrowser = (document.layers) ? true : false;'
+'       var intKeyCode = 0;'
+'       if (bolOldBrowser)'
+'         intKeyCode = event.which;'
+'         else'
+'         intKeyCode = event.keyCode;'
+'         if (intKeyCode == 13)'
+'          novapesq();'
+'       }'
+
+'       function fechar(){'
+'        window.location.href="../../cgi/www.exe/[in=relusers.in]?ut='(if v9000^n='ut' then v9000^v fi)'";'
+'}'
+'       function validadados() {'
+'       var status=true;'
+'       var msgconf="";'
+'       var msg="";' 
+'       var senha=document.getElementById("v7").value;'
+'       var confirma=document.getElementById("confirma").value;'
+'        if (senha!=confirma)'
+'        { msgconf= "As senhas não coincidem.\n";status=false; }'
+'        if (document.getElementById("v1").value=="")'
+'        {msg = "ID"; status=false; }'
+'        if (document.getElementById("v2").value=="")'
+'        {msg= (msg != "") ? msg+ ",SIGLA": msg+"SIGLA"; status=false; }'
+'        if (document.getElementById("v3").value=="")'
+'        {msg=  (msg != "") ? msg +",NOME": msg+ "NOME"; status=false; }'
+'        if (document.getElementById("v7").value=="")'
+'        {msg= (msg != "") ? msg +",SENHA": msg+ "SENHA" ; status=false; }'
+'        if (msg != "")  msg= "Os campos " + msg + " são obrigatórios.";'
+'        if (!status) alert ("ATENÇÃO! Existem erros no preenchimento do formulário.\n\n" + msgconf + "\n" + msg);'
+'        return status;'
+'       }'
+'       function edUser(us,nreg){'
+'       window.location.href="../../cgi/www.exe/[in=edituser.in]?base=users&lim_inicio=1&limites=1000&ut=admin&expressao=\"SIGLA "+us+"\"";'
+'       }'
+'       function dlUser(us,nreg){' 
+'       if (confirmaSubmit(us)) ' 
+'          window.location.href="../../cgi/www.exe/[in=deluser.in]?base=users&lim_inicio=1&limites=1000&ut=admin&mfn="+nreg;'
+'       }'
+'       function permUser(us){'
+'       window.location.href="../../cgi/www.exe/[in=permuser.in]?base=prmusr&lim_inicio=1&limites=1000&ut=admin&expressao=\"SIGLA "+us+"\"";'
+'       }'
+'       function permNovo(us){'
+'       var sim=confirm("O utilizador "+us+ " não tem permissões definidas. Vai ser criado um novo registo para configuração das permissões.");'          
+'       if (sim) '
+'       window.location.href="../../cgi/www.exe/[in=permnovo.in]?base=prmusr&lim_inicio=1&limites=1000&ut=admin&expressao=\"SIGLA "+us+"\"&user="+us;'
+'       }'
+'       function confirmaSubmit(us){'
+'       var sim=confirm("Tem a certeza que quer eliminar o utilizador " + us +"?");'
+'       if (sim) return true ; else return false ;}'
+'      </script>'
+'<div class="col3-contentor">'/
+'<div class="col3">'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp">Administração</a> » Utilizadores</p>'/
+'</div>'/
+'<div class="col3" id="lblutilizador">'/
+'Utilizador: <span id="utilizador">'mhu,(if v9000^n='ut' then v9000^v fi),mhl'&nbsp; [ <a href="../../admin/admin.asp?Logout=1">Sair</a> ]</span> '/		
+'</div>'/
+'</div>'/
+'      <div id="principal">'
+'      <span style="float:right"><a href="javascript:fechar();"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></span><br><br>'/

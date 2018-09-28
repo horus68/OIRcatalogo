@@ -1,0 +1,11 @@
+if val(v1001)=1  then
+        '<table id="users" summary="Editar utilizadores [Leitores]" >'/
+        '<th width="10%">MFN</th><th width="15">N.º leitor</th><th width="65%">Nome</th><th width="10%"></th>'/
+fi        
+     (
+		if p(v1) then
+ 			    
+        '<tr><td> 'mfn(1)'</td><td> 'v1'</td><td> 'v2'</td><td style="width:85px"><a href="javascript:void(0)" onclick="javascript:edLeitor(&quot;'v1'&quot;,&quot;'v20'&quot;)"><img src="../../imagens/picactions/icon_edit.gif" border=0 alt="Editar registo" title="Editar registo"></a> <a href="javascript:void(0)" onclick="javascript:dlLeitor(&quot;'v1'&quot;,&quot;'v2'&quot;,&quot;'v20'&quot;,&quot;'mfn'&quot;)"><img src="../../imagens/picactions/icon_delete.gif" border=0 alt="Eliminar registo" title="Eliminar registo"></a> <a href="javascript:void(0)" onclick="javascript:chkpin(&quot;'v1'&quot;,&quot;'v20'&quot;)"><img src="../../imagens/picactions/keys.gif" border=0 alt="Definir/Alterar PIN"></a></td></td></tr>'/      
+ 		
+        fi
+    )

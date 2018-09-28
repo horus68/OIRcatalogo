@@ -1,0 +1,6 @@
+ctttype=text/html
+tcg=9000
+pfxtag=T
+prolog=@index.hdr
+cgi=@index.cgi
+epilog=@index.ftr

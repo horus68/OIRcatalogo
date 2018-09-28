@@ -1,0 +1,28 @@
+
+if val(v1001)=1 then
+
+'      <table>'/
+fi/
+putenv('lt='(if v9000^n='letra' then v9000^v fi))
+
+if v1<>'' then 
+     
+     proc('D9700A9700~'replace(replace(replace(replace(replace(replace(replace(replace(replace(V1,'AU ',''),'TI ',''),'AS ',''),'CT ',''),'COL ',''),'ISBN ',''),'ISSN ',''),'CDU ',''),'LED ', '')'~')
+     proc('D9701A9701~'mid(v9700,1,1)'~')
+     putenv('prox='v9700[1])
+     ,if v9701 <> getenv('lt') then
+     putenv('fim=true')
+     else
+     '<tr><td><a style="text-decoration:none" href="javascript:window.location.href=ChkLinkHref(0,&quot;wiusr&quot;,&quot;'V1'&quot;);">'v9700'</a></td></tr>'/
+    
+     fi,
+else
+'</table>'/
+' <p></p>'/
+,if getenv('fim')='' then
+
+'<div align="center"><input type="button"  onclick="showPanel('(if v9000^n='tab' then v9000^v fi)',&quot;'getenv('prox')'&quot;,true)" value="Pag. seguinte"></div>'/
+fi,
+' <p></p>'/
+
+fi/

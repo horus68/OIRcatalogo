@@ -1,0 +1,47 @@
+'<!DOCTYPE html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml">'/
+'<head>'/
+'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'	<title>'ref(['_cnf']1,v100)'</title>'/ 
+'<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
+'<script type="text/javascript" src="../../js/geral.min.js"></script>'/
+'<script  type="text/javascript" src="../../js/tableH.js"></script>'/
+
+'<script>
+
+function start() {
+    if (!document.getElementsByTagName || !document.createTextNode) return;
+    var rows = document.getElementById("users").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+    for (i = 0 ; i < rows.length; i++) {
+        rows[i].onclick = function() {
+			document.getElementById("mfn").value= this.cells[0].firstChild.nodeValue;
+	 		document.getElementById("frmselres").submit();
+        }
+    }
+}	
+   
+</script>'/
+'</head>'/
+'<body onload="start();">'/
+'<div class="destaque1">'/
+'<h1>Catálogo Coletivo: Histórico de reservas</h1>'/
+'</div>'/
+'<div class="col3-contentor">'/
+'<div class="col3">'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp?id=2">Administração </a> » Histórico de reservas</p>'/
+'</div>'/
+'<div class="col3" id="lblutilizador">'/
+'<span id="utilizador">'(if v9000^n='ut' then v9000^v fi)'</span>&nbsp;[ <a href="../../admin/admin.asp?Logout=1">Sair</a> ] '/		
+'</div>'/
+'</div>'/
+'<div id="principal"> '/
+'<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?id=2"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../../imagens/picactions/icon_imprimir.gif" border=0 alt="Imprimir lista de reservas" title="Imprimir lista de reservas"></a></div>'/
+'<div align="center">'/
+'<form name="frmselres" id="frmselres" action="../../cgi/www.exe/[in=pesqhistres.in]" method="get" >  '/
+' <input type="hidden" name="ut" value="admin">'/
+' <input type="hidden" name="mfn" id="mfn" value="">'/
+' <input type="hidden" name="mnu" id="mnu" value="mnuhist">'/
+'<div style="text-align:left">&nbsp;Resultado da pesquisa: <span id="nhistres"></span> [critério: '(if v9000^n='express1' then v9000^v fi)']</div>'/
+'<table id="users" class="sortable" style="text-align:left" summary="Histórico de reservas" onMouseOver="javascript:trackTableHighlight(event, &quot;#FFFF99&quot;);" onMouseOut="javascript:highlightTableRow(0);">'/
+'<th align="center">Nº</th><th align="center">Título</th><th align="center">Agrup.º</th><th align="center">Bib.</th><th  align="center">Data</th><th align="center">Requisitante</th><th align="center">Estado</th><th title="Situação">Sit.</th>'/

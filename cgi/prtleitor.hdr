@@ -1,0 +1,34 @@
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<head>'
+'<title>'ref(['_cnf']1,v100)'</title>'/
+'<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'
+'<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'
+'<script type="text/javascript" src="../../js/sorttable.min.js"></script>'/
+'<script  type="text/javascript" src="../../js/tableH.js"></script>'/
+'<STYLE type="text/css">
+@media print {
+     table#users {width:17cm; font-size: 12pt;}
+}
+@media print {
+     table#users td{border-style:solid 1px;}
+}
+</STYLE>'
+'</head><body>'
+ putenv('user='mhu,(if v9000^n='ut' then v9000^v fi),mhl)
+'<div class="destaque1">'/
+'<h1>Catálogo Coletivo: Utilizadores</h1>'/
+'</div>'/
+'<div class="col3-contentor">'/
+'<div class="col3">'/
+'<p class="fil">» <a href="../../default.asp">Zona pública</a> » <a href="../../admin/admin.asp?'if getenv('user')='ADMIN' then 'mnut=2' else 'id=5' fi'">Administração</a> » Lista de leitores</p>'/
+'</div>'/
+'<div class="col3" id="lblutilizador">'/
+'Utilizador: <span id="utilizador">'mhu,(if v9000^n='ut' then v9000^v fi),mhl'&nbsp; [ <a href="../../admin/admin.asp?Logout=1">Sair</a> ]</span>'/		
+'</div>'/
+'</div>'/
+'<div id="principal">'
+'	<div id="admbotoes" style="float:right"><a href="javascript:history.back()"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir lista de utilizadores" alt="Imprimir lista de utilizadores"></a></div><h3>Lista de leitores</h3>'/
+'<table id="users" class="sortable" summary="Lista de leitores");"
+  onMouseOut="javascript:highlightTableRow(0);">'
+'  <th 'if getenv('user')<>'ADMIN' then 'style="display:none"' fi'>Biblioteca</th><th>Nº</th><th>Nome</th><th>Morada</th><th>Cod. Postal</th><th>Data nasc.</th>'

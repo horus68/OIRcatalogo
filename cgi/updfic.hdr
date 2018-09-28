@@ -1,0 +1,11 @@
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+
+'<head><META HTTP-EQUIV="Refresh" CONTENT="2;URL=../www.exe/[in=seluser.in]?base=users&ut='(if v9000^n='ut' then v9000^v fi)'&expressao='(if v9000^n='expressao' then v9000^v fi)'&r=1">'/
+'    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
+'	<meta name="robots" content="noindex, nofollow" />'/
+'	<title>'ref(['_cnf']1,v100)'</title>'/	
+'	<link rel="stylesheet" href="../../css/default.min.css" type="text/css" />'/
+'<script language="JavaScript" src="../../js/tools.js"></script>'/
+'</head>'/
+'<body>'/

@@ -1,0 +1,160 @@
+      
+	  putenv('base='replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(v100^s,'A','a'),'B','b'),'C','c'),'D','d'),'E','e'),'F','f'),'G','g'),'H','h'),'I','i'),'J','j'),'K','k'),'L','l'),'M','m'),'N','n'),'O','o'),'P','p'),'Q','q'),'R','r'),'S','s'),'T','t'),'U','u'),'V','v'),'W','w'))
+	  putenv('base='replace(replace(replace(getenv('base'),'X','x'),'Y','y'),'Z','z'))
+	  putenv('dia='v999^b*6.2)
+	  putenv('mes='v999^b*4.2)
+	  putenv('ano='v999^b.4)
+	  putenv('mes='v999^b*4.2)
+	  if val(v999^b*4.2)=4 or val(v999^b*4.2)=6  or val(v999^b*4.2)=9 or val(v999^b*4.2)=11  then
+	      putenv('dd=30')
+	  else if val(v999^b.4)=2 then
+	          if val(v999^b.4)/100=0 or val(v999^b.4)=val(f(val(f(val(v999^b.4)/4,0,0))*4)) then 
+			    putenv('dd=28')
+			  else
+  			    putenv('dd=29')
+			  fi
+		   else
+               putenv('dd=31')		   
+           fi		   
+	  fi 
+	  
+	  if val(v999^b*6.2)+ val(ref(['param']2,v20)) > val(getenv('dd')) then
+	       	putenv('dia='f(val(v999^b*6.2)+ val(ref(['param']2,v20))-val(getenv('dd')),0,0))
+			putenv('mes='f(val(v999^b*4.2)+1,0,0))
+			putenv('ano='v999^b.4)
+	  else
+	        putenv('dia='f(val(v999^b*6.2)+ val(ref(['param']2,v20)),0,0))
+	  fi
+	  if val(mid(date,19,3))-val(v999^b*18.3) >= val(ref(['param']2,v20)) then
+	     putenv('estado=cancelada')
+	  else
+	     putenv('estado=em curso')
+      fi	  
+	  '<div style="font-size:1.3em;font-weight:bold"><span id="aviso" style="color:red;float:right;font-size:0.8em">'if getenv('estado')='em curso' then 'ATENÇÃO! Falta(m) 'f(val(ref(['param']2,v20))-(val(mid(date,19,3))-val(v999^b*18.3)),0,0)' dia(s) para expirar a reserva&nbsp;' fi '</span>Reserva nº'mfn(1)'</div>'	  
+	  	  
+	  '<fieldset class="users"><legend>Dados da reserva</legend><br />'
+  '<div class="col5-contentor" style="width:100%">'  
+    '<div class="col5">'
+	  '<label for="dini">Data de início</label> <input type="text" id="dini" name="dini" value="'v999^b*6.2|-|v999^b*4.2|-|v999^b.4'" size="12" readonly>'
+    '</div>'
+    '<div class="col5">'
+	  '<label for="dfim">Data de expiração</label> <input type="text" id="dfim" name="dfim" value="'getenv('dia')'-'getenv('mes')'-'getenv('ano')'" size="12" readonly>'
+    '</div>'  
+  '</div>'
+  '<div class="col5-contentor" style="width:100%">'  
+    '<div class="col5">'
+	  '<label for="estado"><span>Estado: </span></label>'if getenv('estado')='cancelada' then '<img src="../../imagens/picactions/res_cancelada.png" border="0" alt="Reserva cancelada" title="Reserva cancelada" align="absmiddle"> (cancelada)' else '<img src="../../imagens/picactions/res_circulando.png" border="0" alt="Reserva em curso" title="Reserva em curso" align="absmiddle"> (em curso)' fi 	
+    '</div>'
+    '<div class="col5">'
+	  '<label for="situa"><span>Situação: </span></label>'if v200^a='0' then '<img src="../../imagens/picactions/res_relogio.gif" border="0" alt="Reserva pendente" title="Reserva pendente" align="absmiddle"> (pendente)' else '<img src="../../imagens/picactions/res_lock.gif" border="0" alt="Reserva confirmada" title="Reserva confirmada" align="absmiddle"> (confirmada)' fi
+    '</div>'  
+  '</div>'
+	  '</fieldset>'
+	  '<br /><br />'	  
+	  '<fieldset class="users" style="background-color:#f9f9ed;"><legend>Dados do documento</legend><br />'
+ 	'<div class="col5-contentor" style="width:100%">'
+	'<div class="col5">'
+	  '<label for="bib">Biblioteca</label> <input type="text" id="bib" name="bib" value="'v300^a'" size="10" readonly>'
+	'</div>'
+	  '<label for="nbib">Designação</label> <input type="text" id="nbib" name="nbib" value="'ref(['users']L(['users']'SIGLA 'v300^a),v3)'" size="50" readonly>'
+    '<div class="col5">'
+    '</div>'
+	'</div>'	
+	'<div class="col5-contentor" style="width:100%">'
+	'<div class="col5">'
+	  '<label>Agrupamento</label> <input type="text" id="agr" name="agr" value="'v100^s'" size="10" readonly>'
+	'</div>'
+    '<div class="col5">'
+	  '<label for="nagr">Designação</label> <input type="text" id="nagr" name="nagr" value="'ref(['users']L(['users']'SIGLA 'v100^s),v3)'" size="50" readonly>'
+    '</div>'
+	'</div>'
+	'<div>'
+	  '<label for="tit" >Título</label> <input type="text" id="tit" name="tit" value="'v100^a'" readonly>'
+	  '<label for="aut" >Autor</label> <input type="text" id="aut" name="aut" value="'replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(ref([getenv('base')]val(v100^r),v200^f),'ß','á'),'Æ','ã'),'‚','é'),'§','º'),'‡','ç'),'ˆ','ê'),'¢','ó'),'¦','ª'),'µ','Á'),' ','á'),'£','ú') if ref([getenv('base')]val(v100^r),v200^g)<>'' then ' ; ' fi, replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(ref([getenv('base')]val(v100^r),v200^g),'ß','á'),'Æ','ã'),'‚','é'),'§','º'),'‡','ç'),'ˆ','ê'),'¢','ó'),'¦','ª'),'µ','Á'),' ','á'),'£','ú')'" readonly>'
+	'</div>'	  
+	'<div class="col5-contentor" style="width:100%">'
+	'<div class="col5">'
+	  '<label for="nreg">Nº registo</label> <input style="background-color:lightgreen" type="text"  id="nreg" name="nreg" value="'v100^r'" readonly>'
+	'</div>'
+    '<div class="col5">'
+	  '<label for="cot" >Cota</label> <input type="text" id="cot" name="cot" value="'v100^c'" readonly>'
+    '</div>'
+	'</div>'
+	'<div class="col5-contentor" style="width:100%">'
+	'<div class="col5">'
+	'<label for="mfn" >MFN (catálogo coletivo)</label> <input style="background-color:lightgreen" type="text" id="mfn" name="mfn" value="'ref([getenv('base')]L([getenv('base')]'NR 'v100^r),mfn)'" readonly>'
+	'</div>'
+    '<div class="col5">'
+	'<label for="nex">Nº ex.</label> <input type="text"  id="nex" name="nex" value="'v100^e'" readonly>' 
+    '</div>'
+	'</div>'	
+	'</fieldset>'
+	  '<br /><br />'
+	  '<fieldset class="users"><legend>Dados do requisitante</legend><br />'
+	  if type(v999^a)='N' then
+  '<div class="col5-contentor" style="width:100%">'  
+    '<div class="col5">'
+	  '<label for="nlt" ><span>Leitor nº</span></label> <input class="extra" type="text" id="nlt" name="nlt" value="'v100^e'" size="8" readonly>'
+    '</div>'
+    '<div class="col5">'
+	  '<label class="esp" for="tipo">Tipo</label> <input type="text"  id="tipo" name="tipo" value="'ref(['leitor']val(v999^a),v19)'" size="2" readonly>'
+    '</div>'  
+    '<div class="col5">'
+	  '<label class="esp" for="bibpref">Biblioteca preferêncial</label> <input type="text"  id="bibpref" name="bibpref" value="'ref(['leitor']val(v999^a),v20)'" size="13" readonly>' 
+    '</div>'
+	'</div>'
+  '<div class="col5-contentor" style="width:100%">'  
+    '<div class="col5">'
+	  '<label for="quem" >Nome</label> <input type="text" id="quem" name="quem" value="'ref(['leitor']val(v999^a),v2)'" readonly>'
+    '</div>'
+    '<div class="col5">'
+	  '<label for="email" >Email</label> <input type="text" id="email" name="email" value="'ref(['leitor']val(v999^a),v8)'" readonly>'
+    '</div>'  
+  '</div>'
+  '<div class="col5-contentor" style="width:100%">'  
+    '<div class="col5">'
+	'<label for="mora" >Morada</label> <input type="text" id="mora" name="mora" value="'ref(['leitor']val(v999^a),v3)'" readonly>'
+    '</div>'
+    '<div class="col5">'
+	'<label for="localid" >Localidade</label> <input type="text" id="localid" name="localid" value="'ref(['leitor']val(v999^a),v10)'" readonly>'
+    '</div>'  
+  '</div>'
+	  else 
+  '<div class="col5-contentor" style="width:100%">'  
+    '<div class="col5">'
+	  '<label for="quem" >Biblioteca</label> <input type="text" id="quem" name="quem" value="'ref(['users']L(['users']'SIGLA 'v300^a),v3)'" readonly>'
+    '</div>'
+    '<div class="col5">'
+	'<label for="bagr">Agrup.º</label> <input type="text" id="bagr" name="bagr" value="'ref(['users']L(['users']'SIGLA 'v300^a),v21)'" readonly>'
+    '</div>'  
+  '</div>'
+  '<div class="col5-contentor" style="width:100%">'  
+  '<div class="col5">'
+	  '<label for="bmora" >Morada</label> <input type="text" id="bmora" name="bmora" value="'ref(['users']L(['users']'SIGLA 'v300^a),v4)'" readonly>'
+  '</div>'
+    '<div class="col5">'
+	  '<label for="blocal" >Localidade</label> <input type="text" id="blocal" name="blocal" value="'ref(['users']L(['users']'SIGLA 'v300^a),v10)'" readonly>'
+    '</div>'  
+  '</div>'
+  '<div class="col5-contentor" style="width:100%">'    
+    '<div class="col5">'
+	  '<label for="bconc" >Concelho</label> <input type="text" id="bconc" name="bconc" value="'ref(['users']L(['users']'SIGLA 'v300^a),v5)'" readonly>'
+    '</div>'
+    '<div class="col5">'
+	  '<!--<label for="bcoord" >Responsável Biblioteca</label> <input type="text" id="bcoord" name="bcoord" value="'ref(['users']L(['users']'SIGLA 'v300^a),v17)'" readonly>-->'
+    '</div>'  
+  '</div>'
+  '<div class="col5-contentor" style="width:100%">'    
+    '<div class="col5">'
+	  '<label for="btelf" >Telefone</label> <input type="text" id="btelf" name="btelf" value="'ref(['users']L(['users']'SIGLA 'v300^a),v9)'" readonly>'
+    '</div>'
+    '<div class="col5">'
+	  '<label for="bmail">Email</label> <input type="text"  id="bmail" name="bmail" value="'ref(['users']L(['users']'SIGLA 'v300^a),v11)'" readonly>'
+    '</div>'  
+  '</div>'
+	  fi
+      '</fieldset>'
+	  '<br /><br />'
+      '<div align="center">'
+	  '<input type="button" name="bt2" value="Voltar" class="botao botao5" onclick="javascript:history.go(-1);"></center>'
+      '</div>'

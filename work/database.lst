@@ -1,0 +1,9 @@
+MASTER=^b..\basestmp\rbcatalogo^pchk_dup_c966.prc^cRBCATALOGO
+AUXDB=^b..\basestmp\BMEST
+AUXDB=^b..\basestmp\AESOL
+UNIDB=^b..\basestmp\EBSOL1
+UNIDB=^b..\basestmp\EBSOL2
+AUXDB=^b..\basestmp\AELUA
+UNIDB=^b..\basestmp\EBLUA1
+UNIDB=^b..\basestmp\EBLUA2
+UNIDB=^b..\basestmp\EBLUA3

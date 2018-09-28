@@ -1,0 +1,19 @@
+putenv('ob='(if v9000^n='nobj' then v9000^v fi))
+if val(v1001)=1 then
+
+'<form>'/
+'         <table>'/
+'           <tr>'/
+'              <td>'/
+'                 <select MULTIPLE SIZE="10" NAME="Lexico" size="2" style="font-size:9pt;width:200px">'/
+fi/
+
+if v1<>'' then '<option value="'V1'">' replace(replace(replace(replace(replace(replace(replace(replace(replace(V1,'AU ',''),'TI ',''),'AS ',''),'CT ',''),'COL ',''),'ISBN ',''),'ISSN ',''),'CDU ',''),'LED ', '')'</option>'/
+
+else/
+' </select></td></tr>'/
+
+'<tr><td align="center" style="padding-top:1px;"><div style="width:40px;float:right;font-size:80%"><a href="javascript:proxTrm(&quot;'S(v1032)'&quot;)">Próx. »</a></div><div><input TYPE="submit" VALUE="Selecionar" ONCLICK="SelTrmLista(this.form,&quot;'getenv('ob')'&quot;)" NAME="PesqTrm" style="font-size:9pt"></div></td>'/
+'</tr></table>'/
+'</form>'
+fi/

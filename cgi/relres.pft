@@ -1,0 +1,12 @@
+if val(mid(date,19,3))-val(v999^b*18.3) >= val(ref(['param']2,v20)) then
+	     putenv('estado=cancelada')
+else
+	     putenv('estado=em curso')
+fi	
+putenv('tmp='(if v9000^n='situacao' then v9000^v fi))
+if (getenv('tmp')='13' or getenv('tmp')='1') and getenv('estado')='cancelada' then
+''
+else
+
+'<tr><td>'mfn(1)'</td><td>'v100^a'</td><td>'if v100^s=v300^a then '----' else v100^s fi '</td><td>'v300^a'</td><td style="width:80px">'v999^b*6.2|-|v999^b*4.2|-|v999^b*2.2| |v999^b*9.2|:|v999^b*11.2'</td><td>'if type(v999^a)='N' then v999^d '('v999^c')' else v999^a fi'</td><td align="center">'if getenv('estado')='cancelada' then '<img src="../../imagens/picactions/res_cancelada.png" border="0" alt="Reserva cancelada" title="Reserva cancelada" align="absmiddle">' else '<img src="../../imagens/picactions/res_circulando.png" border="0" alt="Reserva em curso" title="Reserva em curso" align="absmiddle">' fi'</td><td align="center">'if v200^a='0' then '<img src="../../imagens/picactions/res_relogio.gif" border="0" alt="Reserva pendente" title="Reserva pendente" align="absmiddle">' else '<img src="../../imagens/picactions/res_lock.gif" border="0" alt="Reserva confirmada" title="Reserva confirmada" align="absmiddle">' fi'</td></tr>'/
+fi
