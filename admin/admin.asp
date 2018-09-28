@@ -672,10 +672,10 @@ If Session("LogError") < 3 Then
 	<div class="col6-contentor" style="width:100%">
 		<div class="col6" style="background-color:#f9f9ed">
 			<label for="v24" >Software de catalogação</label><select id="v24" name="v24" onblur="chgColor(this,false)" onfocus="chgColor(this,true)">
-			<option value="">Não definido</option><option value="Bibliobase" >Bibliobase</option><option value="Porbase" >Porbase5/Prisma</option><option value="Docbase" >Docbase</option><option value="GIB" >GIB</option><option value="Horizon" >Horizon</option><option value="Biblionet" >Biblio.net</option><option value="Docbasev16" >Docbase Isis</option></select>
+			<option value="">Não definido</option><option value="Bibliobase" >Bibliobase</option><option value="Porbase" >Porbase5/Prisma</option><option value="Docbase" >Docbase/Docbase 3W</option><option value="GIB" >GIB</option><option value="Horizon" >Horizon</option><option value="Biblionet" >Biblio.net</option><option value="Docbaseisis" >Docbase Isis</option><option value="Koha" >Koha</option></select>
 		</div>
 		<div class="col6" style="background-color:#f9f9ed">
-			<label for="v26" >Codificação do ISO2709 (Prisma, Horizon, Docbase, Biblio.net = ANSI. Outros = ASCII)</label><select id="v26" name="v26" onblur="chgColor(this,false)" onfocus="chgColor(this,true)">
+			<label for="v26" >Codificação do ISO2709 (Bibliobase, Docbase Isis = ASCII. Outros = ANSI)</label><select id="v26" name="v26" onblur="chgColor(this,false)" onfocus="chgColor(this,true)">
 			<option value="ansi">Ansi</option><option value="ascii" >Ascii</option></select>
 		</div>
 	</div>
@@ -1228,7 +1228,7 @@ If Session("LogError") < 3 Then
 		<input type="hidden" name="expressao" id="expressao" value="">
 		<input type="button" class="botao botao5" onClick="javascript:document.frmsetcal.submit();" value="Férias e feriados">
 		</form>
-		<br />
+		<br /><br />
 		</fieldset></p>
     </div>
     <div class="col5" style="min-width:50%;background-color:#f9f9ed;">

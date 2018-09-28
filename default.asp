@@ -239,8 +239,6 @@ a2a_config.locale = "pt-PT";
 <!-- Fecho de código da aplicação -->
   <% end if%>
 <!-- Fecho de código da aplicação FIM -->
-<!-- Código AddThis para partilha social - Pode alterar o ID e personalizar criando conta em addthis.com -->
-<!-- Begin Cookie Consent script https://cookiescript.info/ -->
 <!-- Cookie Consent script https://cookieconsent.insites.com - Início -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 <script>
@@ -248,7 +246,8 @@ window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
     "popup": {
-      "background": "#1d8a8a"
+      "background": "#285E6C",
+      "text": "#ffffff"
     },
     "button": {
       "background": "#62ffaa"
