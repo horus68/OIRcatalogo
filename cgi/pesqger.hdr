@@ -16,7 +16,7 @@
 '<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.min.js"></script>'/
 '<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.css" type="text/css" />'/
 '<script type="text/javascript" src="/rbcatalogo/js/jqueryRater/jquery.rater.min.js"></script>'/
-'<script defer async src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>'/
+'<script defer async src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>'/
 '<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'
 '<script>'/
  putenv('exp='(if v9000^n='expressao' then v9000^v fi))
@@ -78,7 +78,7 @@
        flag="Marcar todos"; 
     }
 	var $b = $("input[type=checkbox]");
-	if ($b.filter(":checked").length >0 ) $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" ficha(s) selecionada(s)");
+	if ($b.filter(":checked").length >0 ) $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" ficha(s) selecionada(s) [carregue no ícone para ocultar as restantes]");
     else $("#lblfilter").html("");  	
 	return flag;
 }'/
@@ -89,7 +89,7 @@
 	if ($b.filter(":checked").length >0 ) 
 	{
 	  $("#img").show();  
-      $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" ficha(s) selecionada(s)"); 
+      $("#lblfilter").html("&nbsp;" +$b.filter(":checked").length+" ficha(s) selecionada(s) [carregue no ícone para ocultar as restantes]"); 
 	} else {
 	       $("#img").hide(); 
 	       $("#lblfilter").html(Array(39).join("&nbsp;")); 

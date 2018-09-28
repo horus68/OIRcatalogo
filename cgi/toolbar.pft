@@ -19,3 +19,8 @@ fi,
 
 /* Imprimir */
 '<a href="#" onclick="javascript:Imprimir(&quot;'V1051'&quot;,&quot;'(if v9000^n='formato' then v9000^v fi)'&quot;,&quot;'V1021'&quot;,&quot;'V1001'&quot;,&quot;'f(val(v1032)+val(v1083),0,0)'&quot;,&quot;'(if v9000^n='entidade' then v9000^v fi)'&quot;)"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch"></i><i class="fas fa-print" data-fa-transform="shrink-9" title="Imprimir as fichas desta página"></i></span></a>'
+
+/* Enviar por Mail */
+/*
+'<a href="#" onclick="javascript:MailIt(&quot;'V1051'&quot;,&quot;mailit&quot;,&quot;'V1021'&quot;,&quot;'V1001'&quot;,&quot;'f(val(v1032)+val(v1083),0,0)'&quot;);"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch"></i><i class="fas fa-envelope" data-fa-transform="shrink-9" title="Enviar fichas por email"></i></span></a>'
+*/

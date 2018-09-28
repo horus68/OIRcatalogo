@@ -21,7 +21,7 @@
   <meta name=viewport content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Catálogo coletivo <%=stitulo%></title>
+  <title>Catálogo <%=stitulo%></title>
   <link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
   <script defer type="text/javascript" src="js/geral.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,10 +31,16 @@
     } 
     </script>
   <script type="text/javascript" src="js/jqueryRater/jquery.rater.min.js"></script>
-  <script defer async src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+  <script defer async src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+  <link rel="manifest" href="manifest.json?v=001">
+  <meta name="msapplication-config" content="IEconfig.xml?v=001">
   <link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />
   <link rel="shortcut icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
-  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
+  <link rel="icon" type="image/png" sizes="194x194" href="/rbcatalogo/imagens/app/favicon-194x194.png?v=001" />
+  <link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png" />
+  <link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
+  <meta name="theme-color" content="#eeeee0">
   <meta name="description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
   <meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca" />
   <meta name="author" content="Rede Concelhia de Bibliotecas" />
@@ -55,6 +61,12 @@
 <!-- Código Google Analytics - Global site tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71820207-1" defer></script>
 <script>window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);} gtag('js', new Date());  gtag('config', 'UA-71820207-1');</script>
+<!-- Registo de service works para móveis - Utilizar apenas em https
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/rbcatalogo/sw.js');
+} -->
+</script>
 </head>
 <body>
   <div class="destaque1">

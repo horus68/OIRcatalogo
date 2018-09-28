@@ -1,7 +1,7 @@
 {
   "name": "Catálogo Rede XPTO",
   "short_name": "CatXPTO",
-  "description": "Catálogo coletivo - Rede de Bibliotecas XPTO.",
+  "description": "Catálogo coletivo - Rede de Bibliotecas XPTO",
   "start_url": "default.asp",
   "display": "browser",
   "background_color": "#eeeee0",

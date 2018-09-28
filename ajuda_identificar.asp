@@ -32,7 +32,7 @@
     document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
     } 
     </script>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
 	<link rel="icon" href="favicon.ico" type="image/ico"/>
  	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 	<meta name="description" content="Identificar bibliotecas no Catálogo coletivo da Rede de Bibliotecas do Concelho"/>
