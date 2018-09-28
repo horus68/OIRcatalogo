@@ -7,11 +7,11 @@ Info: https://sites.google.com/view/opacrbe/oir/sobre
 
 
 ====== Alterações
-versão 1.0.3 - 6 julho 2018
-+ Pesquisa fluída na vista completa
-+ Manifesto para Apps
+versão 1.0.4 - 17 julho 2018
 + Imagens SVG na pesquisa
 + CSS com versões
++ Revisão da ajuda
++ Revisão das bases Demo
 
 
 ================ Apoio a técnicos de informática

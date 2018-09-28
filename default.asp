@@ -165,7 +165,7 @@
       <br />Pequenos truques para obter melhores resultados<br /> na pesquisa de documentos
     </p>
     <p class="fil"><a style="text-decoration:none" href="ajuda_identificar.asp"><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch" ></i><i class="fas fa-question" data-fa-transform="shrink-8" title="Como identificar bibliotecas"></i></span>Ajuda - <b>Identificar e localizar bibliotecas</b></a>
-      <br />A pesquisa permite saber identificar no mapa<br /> a biblioteca que tenha o documento pretendido
+      <br />A pesquisa permite identificar no mapa<br /> a biblioteca que tenha o documento pretendido
     </p>
   </div>
 </div>

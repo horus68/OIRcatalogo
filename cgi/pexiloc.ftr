@@ -2,8 +2,8 @@ if val(v1002)=0 then
 '<tr><td colspan=5><br><b>Não foram encontrados registos</b></td></tr>'/
 fi
 '</table>
-<p align="right" style="margin-top:4px"><font size="1">
-<img src="../../imagens/picactions/res_disponivel.png" border="0" alt="Disponível para empréstimo" title="Disponível para empréstimo"> : disponível para empréstimo
+<p align="right" style="margin-top:4px"><font size="2">
+<img src="../../imagens/picactions/res_disponivel.png" border="0" alt="Disponível para reservas de leitura" title="Disponível para reservas de  leitura"> : disponível para reservas de leitura
 <!--<img src="../../imagens/picactions/res_relogio.gif" border="0" alt="Reserva pendente" title="Reserva pendente"> : reserva pendente
 <img src="../../imagens/picactions/res_lock.gif" border="0" alt="Reserva confirmada" title="Reserva confirmada"> : reserva confirmada-->
 </font></p>

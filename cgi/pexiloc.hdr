@@ -119,7 +119,7 @@ putenv('sigla='(if v9000^n='sigla' then v9000^v fi))
 '<body topmargin="0" leftmargin="0">'
 '<table id="showex" border="1" cellspacing="0" width="100%" style="font:0.8em Verdana">'
 '<th title="Arrumação na biblioteca">Cota</th>
- <th width="25%" title="N.º inventário">N.º invent.</th>
+ <th width="25%" title="Número de inventário">N.º invent.</th>
  <th width="6%" title="Exemplares">Exempl.</th>
- <th width="20%" title="Disponibilidade">Disponib.</th>
+ <th width="20%" title="Disponibilidade para leitura">Disponib.</th>
  <th ><!-- Reservar --></th>' 
