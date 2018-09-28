@@ -1,5 +1,5 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '<head><META HTTP-EQUIV="Refresh" CONTENT="2;URL=../www.exe/[in=editreg.in]?base='(if v9000^n='base' then v9000^v fi)'&expressao='(if v9000^n='from' then v9000^v fi)'&campo='(if v9000^n='campo' then v9000^v fi)'&texto='(if v9000^n='texto' then v9000^v fi)'">'/
 '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />'/
 '<meta name=viewport content="width=device-width, initial-scale=1" />'/

@@ -1,48 +1,38 @@
 {
-  "name": "Catálogo Rede XPTO",
-  "short_name": "CatXPTO",
-  "description": "Catálogo coletivo - Rede de Bibliotecas XPTO",
-  "start_url": "default.asp",
-  "display": "browser",
-  "background_color": "#eeeee0",
-  "lang": "pt-PT",
-  "orientation": "any",
+  "short_name": "CatXPTO2",
+  "name": "Catálogo XPTO",
   "icons": [
   {
-   "src": "/rbcatalogo/imagens/app/icon-36x36.png",
-   "sizes": "36x36",
+   "src": "/rbcatalogo/imagens/app/android-chrome-128x128.png?v=001",
    "type": "image/png",
-   "density": "0.75"
+   "sizes": "128x128"
   },
   {
-   "src": "/rbcatalogo/imagens/app/icon-48x48.png",
-   "sizes": "48x48",
+   "src": "/rbcatalogo/imagens/app/android-chrome-192x192.png?v=001",
    "type": "image/png",
-   "density": "1.0"
+   "sizes": "192x192"
+  },
+ {
+   "src": "/rbcatalogo/imagens/app/android-chrome-512x512.png?v=001",
+   "type": "image/png",
+   "sizes": "512x512"
+ },
+ {
+    "src": "/rbcatalogo/imagens/app/apple-touch-icon.png?v=001",
+    "type": "image/png",
+    "sizes": "180x180"
   },
   {
-   "src": "/rbcatalogo/imagens/app/icon-72x72.png",
-   "sizes": "72x72",
-   "type": "image/png",
-   "density": "1.5"
-  },
-  {
-   "src": "/rbcatalogo/imagens/app/icon-96x96.png",
-   "sizes": "96x96",
-   "type": "image/png",
-   "density": "2.0"
-  },
-  {
-   "src": "/rbcatalogo/imagens/app/icon-144x144.png",
-   "sizes": "144x144",
-   "type": "image/png",
-   "density": "3.0"
-  },
-  {
-   "src": "/rbcatalogo/imagens/app/icon-192x192.png",
-   "sizes": "192x192",
-   "type": "image/png",
-   "density": "4.0"
+    "src": "/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001",
+    "type": "image/png",
+    "sizes": "180x180"
   }
- ]
+ ],
+  "description": "Catálogo coletivo - Rede de Bibliotecas XPTO",
+  "start_url": "/rbcatalogo/default.asp",
+  "display": "standalone",
+  "background_color": "#cdc8b1",
+  "theme_color": "#cdc8b1",
+  "lang": "pt-PT",
+  "orientation": "any"
 }

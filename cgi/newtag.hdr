@@ -1,5 +1,5 @@
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'/
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">'/
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">'/
 '  <head>'/
 putenv('tag='(if v9000^n='tag' then v9000^v fi))
 '   <META HTTP-EQUIV="Refresh" CONTENT="2;URL=/rbcatalogo/cgi/www.exe/[in=updmain.in]?expr1='(if v9000^n='expr1' then v9000^v fi)'&expr2='(if v9000^n='expr2' then v9000^v fi)'&ltr='(if v9000^n='leitor' then v9000^v fi)'&from='(if v9000^n='mfn' then v9000^v fi)'&tag='getenv('tag')'"/>'/

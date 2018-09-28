@@ -15,14 +15,14 @@
   stitulo = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "PORTAL", "titulo")
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt" lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt-PT" lang="pt-PT">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta name=viewport content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Catálogo <%=stitulo%></title>
-  <link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
+  <link rel="stylesheet" href="css/default.min.css?v=001" type="text/css" />
   <script defer type="text/javascript" src="js/geral.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
@@ -32,32 +32,51 @@
     </script>
   <script type="text/javascript" src="js/jqueryRater/jquery.rater.min.js"></script>
   <script defer async src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
-  <link rel="manifest" href="manifest.json?v=001">
-  <meta name="msapplication-config" content="IEconfig.xml?v=001">
-  <link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />
-  <link rel="shortcut icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
-  <link rel="icon" type="image/png" sizes="194x194" href="/rbcatalogo/imagens/app/favicon-194x194.png?v=001" />
-  <link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png" />
-  <link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
-  <meta name="theme-color" content="#eeeee0">
-  <meta name="description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
-  <meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca" />
+  <meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca, OPAC, registo bibliográfico" />
   <meta name="author" content="Rede Concelhia de Bibliotecas" />
+  <meta name="description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
+  <!-- Favicon Geral -->
+  <link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
+  <!-- Favicon Android -->
+  <link rel="manifest" href="manifest.json?v=001" />
+  <meta name="theme-color" content="#cdc8b1" />
+  <!-- Favicon Windows IE -->
+  <meta name="msapplication-config" content="IEconfig.xml?v=001" />
+  <meta name="application-name" content="Catálogo XPTO" />
+  <meta name="msapplication-TileColor" content="#afa782" />
+  <!-- Favicon iOS -->
+  <link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001" />
+  <link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
+  <!-- OpenGraph Facebook -->
   <meta property="og:title" content="XPTO - Catálogo da Rede de bibliotecas" />
   <meta property="og:image" content="http://www.pesquisardocumentos.com/rbcatalogo/partilhasocial.png" />
-  <meta property="og:description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
-  <meta property="og:type" content="library" />
+  <meta property="og:description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Catálogo - Rede de bibliotecas de XPTO" />
+  <meta property="og:locale" content="pt_PT" />
   <span itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="XPTO"/>
     <meta itemprop="alternateName" content="XPTO"/>
-    <meta itemprop="description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos e saiba onde os pode requisitar. Ler, ver, sentir e viver">
+    <meta itemprop="description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver">
     <meta itemprop="url" href="http://www.pesquisardocumentos.com/rbcatalogo/"/>
     <meta itemprop="logo" src="http://www.pesquisardocumentos.com/rbcatalogo/imagens/logotipo.png"/>
     <meta itemprop="image" src="http://www.pesquisardocumentos.com/rbcatalogo/partilhasocial.png"/>
     <meta itemprop="sameAs" href="https://www.facebook.com/rbeportugal/"/>
   </span>
+  <!-- Dublin Core metadata -->
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.Title" content="Catálogo RB XPTO" />
+<meta name="DC.Creator" content="RB XPTO" />
+<meta name="DC.Publisher" content="Projeto RedesConcelhias.RBE">
+<meta name="DC.Subject" content="OPAC, catálogo, registo bibliográfico, biblioteca" />
+<meta name="DC.Description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos e saiba onde os pode requisitar" />
+<meta name="DC.date.created" content="2018-07-20" />
+<meta name="DC.type" content="Dataset">
+<meta name="DC.Format" content="text/html">
+<meta name="DC.Source" content="Catálogos das bibliotecas integrantes da Rede Concelhia" />
+<meta name="DC.Language" content="pt-PT" />
+<meta name="DC.audience" content="leitores, bibliotecas, docentes, alunos"/>
+<meta name="DC.coverage" content="Portugal"/>
 <!-- Código Google Analytics - Global site tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71820207-1" defer></script>
 <script>window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);} gtag('js', new Date());  gtag('config', 'UA-71820207-1');</script>
