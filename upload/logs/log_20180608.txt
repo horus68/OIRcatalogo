@@ -1,8 +1,8 @@
 ******** Fusão das bases bibliográficas ******** 
 ************************************************ 
-Início da rotina: 14:53:09,11 [20180513] 
+Início da rotina: 16:53:03,96 [20180608] 
 == FASE 1 : Inversão das bases bibliográficas == 
 == FASE 2 : Processamento dos duplicados      == 
 == FASE FINAL == 
-Fim da rotina: 14:53:11,51 [20180513] 
-Tempo de execução: 0h:0m:2s,400ms  
+Fim da rotina: 16:53:08,26 [20180608] 
+Tempo de execução: 0h:0m:4s,300ms  

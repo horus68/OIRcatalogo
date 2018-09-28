@@ -124,7 +124,7 @@ for i=0 to ubound(tabela)-1
    if pos3>0 then compr=pos3 else compr=len(tabela(i))
    data=mid(tabela(i),pos1+2,4)
    texto=mid(tabela(i),pos2+2, compr-pos2-2)       
-   response.write "<tr><td >" & mid(tabela(i),1,pos1-1) & "</td><td width=""40"">" & mid(data,3,2) & "-" & mid(data,1,2) & "</td><td width=""180"">" & texto & "</td></tr>"
+   response.write "<tr><td >" & mid(tabela(i),1,pos1-1) & "</td><td >" & mid(data,3,2) & "-" & mid(data,1,2) & "</td><td width=""180"">" & texto & "</td></tr>"
  next
  response.write "</table>"   
 %>
