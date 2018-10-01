@@ -1,0 +1,12 @@
+// dependencies package.json
+
+{
+  "name": "it-depends",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "dependencies": {
+    "jQuery": "^4.16.2",
+  },
+
+}
