@@ -6,7 +6,7 @@
   "main": "/js/geral.js",
 
   "dependencies": {
-    "jQuery": "^3.3.1",
+    "jquery": "^3.3.1",
   },
 
 }
