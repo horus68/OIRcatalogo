@@ -1,12 +1,12 @@
 // dependencies package.json
 
 {
-  "name": "it-depends",
+  "name": "geral",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "geral.js",
 
   "dependencies": {
-    "jQuery": "^4.16.2",
+    "express": "^3.3.1",
   },
 
 }
