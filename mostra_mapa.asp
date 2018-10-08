@@ -1,26 +1,45 @@
+<%
+concelho= request("concelho")
+if request("concelho")="" then concelho="Porto"
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
 <head>
-<title>Ver itinerário</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<title>Ver itinerário</title>
+	<style type="text/css">
+		body {
+			font-family: Verdana, Arial, sans serif;
+			margin: 2px;
+		}
 
- <style type="text/css">
-    body {
-      font-family: Verdana, Arial, sans serif;
-      margin: 2px;
-    }
-	table.directions td{ font-size: 8pt}
-    table.directions th {
+		table.directions td {
+			font-size: 8pt
+		}
 
-	  font-size: 8pt;
-    }
-    img {
-      color: #000000;
-    }
-	a:link, a:visited {font-size: 9pt; font-weight:normal; color: magenta}
-    form {font-size: 9pt;}
+		table.directions th {
+			font-size: 8pt;
+		}
+
+		img {
+			color: #000000;
+		}
+
+		a:link,
+		a:visited {
+			font-size: 9pt;
+			font-weight: normal;
+			color: magenta
+		}
+
+		form {
+			font-size: 9pt;
+		}
+
 	</style>
+
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
 
@@ -177,51 +196,56 @@ function voltar() {
 }
 </script>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5choX45DhceDg5KX2jUQhL-LsstJz31w&callback=initMap"
-  type="text/javascript"></script>
-  
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5choX45DhceDg5KX2jUQhL-LsstJz31w&callback=initMap" type="text/javascript"></script>
+
 </head>
-<%
 
-concelho= request("concelho")
-if request("concelho")="" then concelho="Porto"
-%>
 <body onload="showAddress('<%=request("entidade")%>','<%=request("morada")%>'+', '+'<%=concelho%>','<%=request("lat")%>','<%=request("long")%>')">
-<div id="map" style="width: 630px; height: 480px"></div>
-<div id="link">
-<form action="#" onsubmit="itinerario(this.ori_itinerario.value, this.dest_itinerario.value); return false" method="post">
-<span style="margin-left:5px;font-size:.8em"><b> Origem(A): </b></span> <input style="font-size:.9em; width:160px" type="text" id="ori_itinerario" name="ori_itinerario" value="<%=concelho%>, PT">
-<span style="font-size:.8em"><b> Destino(B): </b></span><input style="font-size:.9em;width:226px" type="text" name="dest_itinerario" value="<%=request("morada")%>,<%=concelho%>, PT">
-<input style="font-size:.9em" type="submit"  value="Ver itinerário">
-</form>
-</div>
+	<div id="map" style="width: 630px; height: 480px"></div>
+	<div id="link">
+		<form action="#" onsubmit="itinerario(this.ori_itinerario.value, this.dest_itinerario.value); return false" method="post">
+			<span style="margin-left:5px;font-size:.8em"><b> Origem (A): </b></span>
+			<input style="font-size:.9em; width:160px" type="text" id="ori_itinerario" name="ori_itinerario" value="<%=concelho%>, PT">
+			<span style="font-size:.8em"><b> Destino (B): </b></span>
+			<input style="font-size:.9em;width:226px" type="text" name="dest_itinerario" value="<%=request("morada")%>, <%=concelho%>, PT">
+			<input style="font-size:.9em" type="submit" value="Ver itinerário">
+		</form>
+	</div>
 
-<div id="itinerario" style="display:none">
-    <span style="float:right;padding-right:20px;font-size:0.8em">Modo: <select id="modo" onchange="calcRoute();"><option value="">de carro</option><option value="walking">a pé</option></select></span><h4>Como se deslocar até à biblioteca?</h4>
-    <form action="#" id="frmpath" onsubmit="calcRoute(); return false">
-      <table class="directions" >
-        <tr>
-          <td width="230">
-		    Origem:
-            <input style="font-size:1em;width:170px" type="text"  id="from" name="from" value=""/>
-		  </td>	
-          <td>
-            Destino:
-            <input style="font-size:1em;width:205px" type="text" id="to" name="to" value="" /> 
-          </td>
-		  <td><input style="font-size:1em" type="submit" name="submit" value="Atualizar" /></td>
-		  <td align="right"><input style="font-size:1em" type="button" value="Voltar" onclick="voltar();" /></td>
-        </tr> 
-     </table>
-    </form>
-    <table class="directions">
-      <tr>
-        <td valign="top">
-          <div id="directions" style="width: 230px"></div>
-        </td>
-        <td valign="top">
-          <div id="map_canvas" style="margin-top:9px;width:390px; height: 400px"></div>
-        </td>
-      </tr>
-    </table>   
-</div>	
+	<div id="itinerario" style="display:none">
+		<span style="float:right;padding-right:20px;font-size:0.8em">Modo: <select id="modo" onchange="calcRoute();">
+				<option value="">de carro</option>
+				<option value="walking">a pé</option>
+			</select></span>
+		<h4>Como chegar até à biblioteca?</h4>
+		<form action="#" id="frmpath" onsubmit="calcRoute(); return false">
+			<table class="directions">
+				<tr>
+					<td width="230">
+						Origem:
+						<input style="font-size:1em;width:170px" type="text" id="from" name="from" value="" />
+					</td>
+					<td>
+						Destino:
+						<input style="font-size:1em;width:205px" type="text" id="to" name="to" value="" />
+					</td>
+					<td>
+						<input style="font-size:1em" type="submit" name="submit" value="Atualizar" />
+					</td>
+					<td align="right">
+						<input style="font-size:1em" type="button" value="Voltar" onclick="voltar();" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		<table class="directions">
+			<tr>
+				<td valign="top">
+					<div id="directions" style="width: 230px"></div>
+				</td>
+				<td valign="top">
+					<div id="map_canvas" style="margin-top:9px;width:390px; height: 400px"></div>
+				</td>
+			</tr>
+		</table>
+	</div>

@@ -26,6 +26,6 @@ if val(v1002)>0 then
   fi
    '</form>'/
 '</div></div>'
-   '<br />'/
+   '<br>'/
 fi
 '</BODY>'

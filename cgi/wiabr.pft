@@ -8,7 +8,7 @@
 if val(v1002)>1 then
 
 '    <td>'/
-'    <input  onclick="this.value=check(forms[0].T8000);return false;" src="../../imagens/picactions/icon_select_all.png" name="img" type="image" title="Marcar/desmarcar todas as fichas desta página">'/
+'    <input  onclick="this.value=check(forms[0].T8000);return false;" src="../../imagens/picactions/icon_select_all.png" name="img" type="image" alt="Marcar/desmarcar todas as fichas desta página" title="Marcar/desmarcar todas as fichas desta página">'/
 '</td>'/
 '<td valign="top">'
 if S((if v9000^n='selrec' then v9000^v fi))='1' then
@@ -25,10 +25,10 @@ if S((if v9000^n='selrec' then v9000^v fi))='1' then
    '<input type="hidden" name="user" value="'(if v9000^n='user' then v9000^v fi)'">'
    '<input type="hidden" name="nut" value="'(if v9000^n='nut' then v9000^v fi)'">'
    '<input type="hidden" name="sortfmt" value="'(if v9000^n='sortfmt' then v9000^v fi)'">'
-   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img"  type="image" title="Ver fichas selecionadas...">'
+   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img"  type="image" alt="Ver fichas selecionadas..." title="Ver fichas selecionadas...">'
 else 
    '       '/
-   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img"  type="image" title="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!"'
+   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img"  type="image" alt="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!" title="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!"'
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' onclick="javascript:alert(&quot;ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!&quot;)">'
 ,fi,
 else
@@ -76,7 +76,7 @@ fi
 '  </tr>'
 '</table>'/
 ,if S(V930,V966)<>''  and v1051='rbcatalogo' then
-'<span style="float:right;font-size:0.7em;margin:-7px 8px 0 0;"><img id="vermais'mfn'" onclick="expandir(&quot;'mfn'&quot;,&quot;'v1051'&quot;,&quot;'v966^l[1]'&quot;,&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;,&quot;'getenv('ent')'&quot;);" src="../../imagens/picactions/plus.gif" border="0" align="absbottom" style="cursor:pointer" title="Expandir" alt="Expandir" ></span>'/
+'<span style="float:right;font-size:0.7em;margin:-7px 8px 0 0;"><img id="vermais'mfn'" onclick="expandir(&quot;'mfn'&quot;,&quot;'v1051'&quot;,&quot;'v966^l[1]'&quot;,&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;,&quot;'getenv('ent')'&quot;);" src="../../imagens/picactions/plus.gif" border="0" align="absbottom" style="cursor:pointer" alt="Expandir" title="Expandir"></span>'/
 fi
 '<table  width="99%" cellpadding=2 cellspacing=0 class="Description">'/
 ,if S(V930,V966)<>'' THEN

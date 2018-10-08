@@ -103,7 +103,7 @@ if request("op")="vp" then
       if not session("LeitorIn") then
 	           response.write "<br><br>"
 			   response.write "<center><h3 class=""aviso"">AVISO</h3></center> " 
-			   response.write "<p style=""font:10pt bold Arial"">Não é possível continuar...A sua sessão expirou!</p>"
+			   response.write "<p style=""font:10pt bold Arial"">Não é possível continuar... a sua sessão expirou!</p>"
 			   response.write "<div align=""right""> » <a style=""font:10pt bold Arial"" href=""javascript:window.self.close();"">Fechar</a> &nbsp;</div>"
 			   response.End 
 			
@@ -260,7 +260,7 @@ If Session("LogError") < 3 Then
 <% end if
 Else
 		writeLog("LOGIN (insucesso): nº máx de tentativas")
-		Response.Write("<br /><p>&nbsp;</p><p>Esgotou as três tentativas de ENTRADA. <br />Terá de fechar esta janela e iniciar nova sessão!</p>")
+		Response.Write("<br><p>&nbsp;</p><p>Esgotou as três tentativas de ENTRADA. <br />Terá de fechar esta janela e iniciar nova sessão!</p>")
 	
 End If
 

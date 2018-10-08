@@ -51,7 +51,7 @@ return true;
 '  <div align="center">'/
 '  <center>'/
 '  <img src="../../imagens/logotipo.png" ><h3>DENÚNCIA DE COMENTÁRIO ABUSIVO</h3>'/
-'  <br />'/
+'  <br>'/
 '  <table border=0 width="640" cellspacing="1">'/
 '    <tr valign="top">'/
 '      <td  width="201"><b>Remetente</b></td>'/

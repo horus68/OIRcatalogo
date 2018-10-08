@@ -7,32 +7,37 @@ Response.CacheControl = "no-cache"
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name=viewport content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Definição/Alteração do PIN de Leitor</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow">
+	<title>Definição/Alteração do PIN de Leitor</title>
 </head>
+
 <body>
-<form name="detalhes" id="type-details-form"> 
-<input type="hidden" value="<%=request("mfn")%>" name="mfn" id="mfn">
-<fieldset style="text-align:left">
-<legend>PIN do Leitor</legend><br />
-<label><%=request("us")%></label><br><br />
-<label for="details" style="width:120px">PIN: (4 números)</label>
-<input  type="text"  size="10" name="details" id="details" value="<%=request("pin")%>">&nbsp;&nbsp;
-<label for="activo" style="width:120px">Ativo:</label>
-<input type="radio" id="activo1" name="activo" <% if request("est")=1 then response.write "checked"%>>Sim<input type="radio" id="activo2" name="activo" <% if request("est")=0 then response.write "checked"%>>Não<br />
-<label for="msg" style="width:120px">Mensagem:</label> 
-<input  type="text" name="msg" id="msg" size="38" value="<%=request("msg")%>">
-<br /> <br />
-<div align="center">
-<input type="button" name="update" value="Confirmar" onclick="lerdados()" class="add-button" /> 
-<input type="button" name="close" value="Fechar" onclick="closeLightbox();" class="add-button" /> <br /><br />
-</div>
-</fieldset>
-</form>
-<script>document.getElementById("details").focus();</script>
+	<form name="detalhes" id="type-details-form">
+		<input type="hidden" value="<%=request("mfn")%>" name="mfn" id="mfn">
+		<fieldset style="text-align:left">
+			<legend>PIN do leitor</legend><br>
+			<label><%=request("us")%></label><br><br>
+			<label for="details" style="width:120px">PIN: (4 números)</label>
+			<input type="text" size="10" name="details" id="details" value="<%=request("pin")%>">&nbsp;&nbsp;
+			<label for="activo" style="width:120px">Ativo:</label>
+			<input type="radio" id="activo1" name="activo" <% if request("est")=1 then response.write "checked" %>>Sim<input type="radio" id="activo2" name="activo" <% if request("est")=0 then response.write "checked" %>>Não<br />
+			<label for="msg" style="width:120px">Mensagem:</label>
+			<input type="text" name="msg" id="msg" size="38" value="<%=request("msg")%>">
+			<br> <br>
+			<div align="center">
+				<input type="button" name="update" value="Confirmar" onclick="lerdados()" class="add-button" />
+				<input type="button" name="close" value="Fechar" onclick="closeLightbox();" class="add-button" /> <br><br>
+			</div>
+		</fieldset>
+	</form>
+	<script>
+		document.getElementById("details").focus();
+
+	</script>
 </body>
 <%
 'DecodeUTF8
@@ -72,4 +77,5 @@ end function
 
 
 %>
+
 </html>

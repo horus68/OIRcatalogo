@@ -7,64 +7,74 @@
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
 <head>
-<title><%=stitulo%></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="robots" content="noindex, nofollow" />
-<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
-<style>
-#users table th {color:#000; font-weight: bold; background-color: rgb(240,240,240)}
-</style>
-<script>
-function filtrar (tipo)
-{
-   window.location.href="valida.asp?ut=<%=request("ut")%>&mnu=6&expressao=<%=request("expressao")%>&base=<%=request("base")%>&nregs=<%=request("nregs")%>&MFNde=<%=request("MFNde")%>&MFNate=<%=request("MFNate")%>&tipoerro="+tipo;
-}
-function ChkLinkHref(base,expressao)
-{
-   var loc="../cgi/www.exe/[in=vregisto.in]?base="+base+"&expressao="+expressao;
-   var texto = "Visualização do registo";
-   var janela =  "vregisto"; 
-   popup=window.open("",janela,"toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=yes,width=500,height=300,left=100,top=50");
-   ndoc=popup.document;
-   ndoc.location.href=loc;
-}
+	<title><%=stitulo%></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="robots" content="noindex, nofollow" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
+	<style>
+		#users table th {
+			color: #000;
+			font-weight: bold;
+			background-color: rgb(240, 240, 240)
+		}
 
-function correct(m,campo,base,expressao,texto)
-{
-   texto= texto.replace(/\^/g,"[$]");
-   texto= texto.replace(/</g,"[menor]");
-   texto= texto.replace(/>/g,"[maior]");
-   var loc="../cgi/www.exe/[in=editreg.in]?base="+base+"&expressao="+expressao+"&campo="+campo+"&texto="+escape(texto)+"&ind="+m;
-   var texto = "Edição do registo";
-   var janela =  "edregisto"; 
-   popup=window.open("",janela,"toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,width=670,height=460,left=100,top=50");
-   ndoc=popup.document;
-   ndoc.location.href=loc;
-   if (window.focus) {popup.focus()} 
+	</style>
+	<script>
+		function filtrar (tipo) {
+			window.location.href="valida.asp?ut=<%=request("ut")%>&mnu=6&expressao=<%=request("expressao")%>&base=<%=request("base")%>&nregs=<%=request("nregs")%>&MFNde=<%=request("MFNde")%>&MFNate=<%=request("MFNate")%>&tipoerro="+tipo;
+		}
 
-}
-</script>
-<body >
-  <div class="destaque1">
-    <h1>Catálogo Coletivo: Validação de registos</h1>
-  </div>    
-<!-- Segmento Navegação topo -->
-  <div class="col3-contentor">
-    <div class="col3">
-    <p class="fil">» <a href="../default.asp">Zona Pública</a> » <a href="admin.asp?id=4">Administração</a> » Validação de registos
-</p>
-    </div>
-    <div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
-        <% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%><%if Session("LoggedIn") then%> &nbsp;[ <a href="admin.asp?Logout=1">Sair</a> ]<%else%> &nbsp;[ <a href="admin.asp">Entrar</a> ]<%end if%>
-        </span>
-    </div>
-  </div>
-<!-- Segmento Navegação topo - FIM -->
-<div id="principal"> 
-<div id="admbotoes" style="float:right"><a href="admin.asp?id=4"><img src="../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir lista de erros" alt="Imprimir lista de erros"></a></div>
-<h3>Validação de registos: listagem de erros </h3>
-<%		
+		function ChkLinkHref(base,expressao) {
+			var loc="../cgi/www.exe/[in=vregisto.in]?base="+base+"&expressao="+expressao;
+			var texto = "Visualização do registo";
+			var janela =  "vregisto"; 
+			popup=window.open("",janela,"toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=yes,width=500,height=300,left=100,top=50");
+			ndoc=popup.document;
+			ndoc.location.href=loc;
+		}
+
+		function correct(m,campo,base,expressao,texto) {
+			texto= texto.replace(/\^/g,"[$]");
+			texto= texto.replace(/</g,"[menor]");
+			texto= texto.replace(/>/g,"[maior]");
+			var loc="../cgi/www.exe/[in=editreg.in]?base="+base+"&expressao="+expressao+"&campo="+campo+"&texto="+escape(texto)+"&ind="+m;
+			var texto = "Edição do registo";
+			var janela =  "edregisto"; 
+			popup=window.open("",janela,"toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,width=670,height=460,left=100,top=50");
+			ndoc=popup.document;
+			ndoc.location.href=loc;
+			if (window.focus) {popup.focus()
+			}
+
+		}
+
+	</script>
+
+<body>
+	<div class="destaque1">
+		<h1>Catálogo Coletivo: Validação de registos</h1>
+	</div>
+	<!-- Segmento Navegação topo -->
+	<div class="col3-contentor">
+		<div class="col3">
+			<p class="fil">» <a href="../default.asp">Zona Pública</a> » <a href="admin.asp?id=4">Administração</a> » Validação de registos
+			</p>
+		</div>
+		<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
+				<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
+				<%if Session("LoggedIn") then%> &nbsp;[ <a href="admin.asp?Logout=1">Sair</a> ]
+				<%else%> &nbsp;[ <a href="admin.asp">Entrar</a> ]
+				<%end if%>
+			</span>
+		</div>
+	</div>
+	<!-- Segmento Navegação topo - FIM -->
+	<div id="principal">
+		<div id="admbotoes" style="float:right"><a href="admin.asp?id=4"><img src="../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir lista de erros" alt="Imprimir lista de erros"></a></div>
+		<h3>Validação de registos: listagem de erros </h3>
+		<%		
 			if request("MFNde")="" then desde= "1" else desde=request("MFNde")
 			if request("MFNate")="" then ate=request("nregs") else ate=request("MFNate")
 			strHTML=getUrl(strROOT & "/cgi/www.exe/[in=chkregs.in]?base=" & request("base") & "&expressao=" & request("expressao") & "&lim_inicio=" & Clng(desde) & "&limites=" & Clng(ate) & "&tipo=" & request("tipoerro")) 
@@ -147,6 +157,4 @@ function correct(m,campo,base,expressao,texto)
 			response.write "<br>"
 	end sub		
 			
-%>	
-				
-	
+%>

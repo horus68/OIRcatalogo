@@ -29,7 +29,7 @@ if s(v1091)='0' then
    '</form>'/
 '</div>'
 '</div>'
-   '<br />'/
+   '<br>'/
 fi,
 else
  ,@wierro.pft,

@@ -16,7 +16,7 @@
 '<script type="text/javascript" src="/rbcatalogo/js/jquery-tagbox/js/jquery.tagbox.min.js"></script>'/
 '<link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.css" type="text/css" />'/
 '<script type="text/javascript" src="/rbcatalogo/js/jqueryRater/jquery.rater.min.js"></script>'/
-'<script defer async src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>'/
+'<script defer async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>'/
 '<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/ico" />'
 '<script>'/
  putenv('exp='(if v9000^n='expressao' then v9000^v fi))
@@ -152,7 +152,7 @@
 '   </div>  '/
 	'  <!-- '/
 '  <div class="navegatopo" style="padding: 0px; 'if getenv('user')<>'guest' and getenv('user')<>'ADMIN' then '' else 'display:none' fi '">'/
-'<br />'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><span class="fa-layers fa-fw" style="font-size:2.2em" align="absmiddle"><i class="fas fa-circle-notch" ></i><i class="fas fa-user" data-fa-transform="shrink-9" title="Alterar o meu PIN"></i></span></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)" align="absmiddle"><span class="fa-layers fa-fw" style="font-size:2.2em"><i class="fas fa-circle-notch" ></i><i class="fas fa-shopping-cart" data-fa-transform="shrink-9" title="As minhas reservas"></i></span></a>'/
+'<br>'if getenv('nuser')<>'' then '<span style="font: 8pt Arial">Alterar PIN</span> <a  href="javascript:void(0)"   onclick="javascript:alterarPin()"><span class="fa-layers fa-fw" style="font-size:2.2em" align="absmiddle"><i class="fas fa-circle-notch" ></i><i class="fas fa-user" data-fa-transform="shrink-9" alt="Alterar o meu PIN" title="Alterar o meu PIN"></i></span></a> ' fi'  <span style="font: 8pt Arial"> As minhas reservas </span> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;)" align="absmiddle"><span class="fa-layers fa-fw" style="font-size:2.2em"><i class="fas fa-circle-notch" ></i><i class="fas fa-shopping-cart" data-fa-transform="shrink-9" alt="As minhas reservas title="As minhas reservas"></i></span></a>'/
 '	<table border="0">'/
 '		<tr>'/
 '			<td></td><td></td>'/

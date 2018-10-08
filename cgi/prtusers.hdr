@@ -34,4 +34,4 @@
 '<h3>Lista de utilizadores</h3>'/
 '<table id="users" class="sortable" summary="Lista de utilizadores");"
   onMouseOut="javascript:highlightTableRow(0);">'
-'  <th>Sigla</th><th>Designação</th><th>Dependência</th><th>Morada</th><th>Localiade</th><th>Cod. Postal</th><th>Telefone</th><th>Email</th>'
+'  <th>ID</th><th>Sigla</th><th>Designação</th><th>Dependência</th><th>Morada</th><th>Localiade</th><th>Cod. Postal</th><th>Telefone</th><th>Email</th>'

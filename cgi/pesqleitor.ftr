@@ -4,7 +4,7 @@ if val(v1091)=7 then
   '<br>'/
   '<p class="aviso">Não foram encontrados registos </p>'/
 else
-'<br />'/
+'<br>'/
 '<div align="right">'
 
    if val(v1032)<=val(v1002) and val(v1002)>val(v1083)  

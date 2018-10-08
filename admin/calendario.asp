@@ -23,92 +23,106 @@ Set objXmlHttp = nothing
 <!--#include file="functions.asp"-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
 <head>
-<title>Férias e feriados></title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="robots" content="noindex, nofollow" />
-<meta name=viewport content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
-<script type="text/javascript" src="../js/sorttable.min.js"></script>
-<script type="text/javascript" src="../js/tableH.js"></script>
-<script type="text/javascript">
-onload = function() {
-    if (!document.getElementsByTagName || !document.createTextNode) return;
-    var rows = document.getElementById('users').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-    for (i = 0; i < rows.length; i++) {
-        rows[i].onclick = function() {
-		    var data=rows[this.rowIndex-1].cells[1].innerText || rows[this.rowIndex-1].cells[1].textContent;
-			var motivo=rows[this.rowIndex-1].cells[2].innerText || rows[this.rowIndex-1].cells[2].textContent;
-			var nreg=rows[this.rowIndex-1].cells[0].innerText || rows[this.rowIndex-1].cells[0].textContent;
-			document.getElementById("data").value=data;
-			document.getElementById("motivo").value=motivo;
-			document.getElementById("nreg").value=nreg;
-        }
-    }
-}
-function submeter(id){
-    var msg="";
-	var flag=false;
-	var vdt = new Date();
-	var ano= vdt.getYear();
-		    
-    switch (id){
-	  case 0:  var data = document.getElementById("data").value;	
-			   data = data.replace(/-/g,'');
-			   var dia=parseInt(data.substring(0,2));
-			   var mes=parseInt(data.substring(3,4));
-			   if((mes==4 && dia > 30) || (mes==6 && dia > 30) || (mes==9 && dia > 30) || (mes==11 && dia > 30))
-					 flag=true;    
-			   else
-					 if(ano%4!=0 && mes==2 && dia>28) flag=true; 
-					 else 
-						 if(ano%4==0 && mes==2 && dia>29) flag=true;
-				if (data.length !=4) 
-				   flag=true;
-				else if (isNaN(data)) 
-						flag=true;
-					 else 
-						  if (parseInt(data.substring(0,2)) < 1 || parseInt(data.substring(0,2)) > 31)
-							 flag=true;
-				if (flag) {alert ("Erro no formato da data [dd-mm]"); document.getElementById("data").focus();return}
-						  document.getElementById("frmTabela").action="calendario.asp?op=gravar";
-						  document.getElementById("frmTabela").submit();
-						  break;
-	  case 1: document.getElementById("frmTabela").action="calendario.asp?op=del";
-	  		  document.getElementById("frmTabela").submit();
-			  break;
-	  		  
-	}
-}
-</script>
-<style>
-table#users {width: 350px;font-size:1em}
+	<title>Férias e feriados></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
+	<script type="text/javascript" src="../js/sorttable.min.js"></script>
+	<script type="text/javascript" src="../js/tableH.js"></script>
+	<script type="text/javascript">
+		onload = function() {
+			if (!document.getElementsByTagName || !document.createTextNode) return;
+			var rows = document.getElementById('users').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+			for (i = 0; i < rows.length; i++) {
+				rows[i].onclick = function() {
+					var data=rows[this.rowIndex-1].cells[1].innerText || rows[this.rowIndex-1].cells[1].textContent;
+					var motivo=rows[this.rowIndex-1].cells[2].innerText || rows[this.rowIndex-1].cells[2].textContent;
+					var nreg=rows[this.rowIndex-1].cells[0].innerText || rows[this.rowIndex-1].cells[0].textContent;
+					document.getElementById("data").value=data;
+					document.getElementById("motivo").value=motivo;
+					document.getElementById("nreg").value=nreg;
+				}
+			}
+		}
+
+		function submeter(id) {
+			var msg="";
+			var flag = false;
+			var vdt = new Date();
+			var ano = vdt.getYear();
+
+			switch (id) {
+				case 0:
+					var data = document.getElementById("data").value;
+					data = data.replace(/-/g, '');
+					var dia = parseInt(data.substring(0, 2));
+					var mes = parseInt(data.substring(3, 4));
+					if ((mes == 4 && dia > 30) || (mes == 6 && dia > 30) || (mes == 9 && dia > 30) || (mes == 11 && dia > 30))
+						flag = true;
+					else
+					if (ano % 4 != 0 && mes == 2 && dia > 28) flag = true;
+					else
+					if (ano % 4 == 0 && mes == 2 && dia > 29) flag = true;
+					if (data.length != 4)
+						flag = true;
+					else if (isNaN(data))
+						flag = true;
+					else
+					if (parseInt(data.substring(0, 2)) < 1 || parseInt(data.substring(0, 2)) > 31)
+						flag = true;
+					if (flag) {
+						alert("Erro no formato da data [dd-mm]");
+						document.getElementById("data").focus();
+						return
+					}
+					document.getElementById("frmTabela").action = "calendario.asp?op=gravar";
+					document.getElementById("frmTabela").submit();
+					break;
+				case 1:
+					document.getElementById("frmTabela").action = "calendario.asp?op=del";
+					document.getElementById("frmTabela").submit();
+					break;
+
+			}
+		}
+
+	</script>
+	<style>
+		table#users {width: 350px;font-size:1em}
 </style>
-<link rel="icon" href="../favicon.ico" type="image/ico"/>
-<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="../favicon.ico" type="image/ico" />
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-  <div class="destaque1">
-    <h1>Catálogo Coletivo: Calendário</h1>
-  </div> 
-<!-- Segmento Navegação topo -->
-  <div class="col3-contentor">
-    <div class="col3">
-    <p class="fil">» <a href="../default.asp">Zona pública</a> » <a href="admin.asp?id=5">Administração</a> » Calendário</p>
-    </div>
-    <div class="col3" id="lblutilizador">Utilizador: <span id="utilizador"> 
-        <% if session("user")="" then response.write "Visitante" else response.write ucase(session("user")) end if%>
-		<%if Session("LoggedIn") then%> [ <a href="admin.asp?Logout=1">Sair</a> ]
-		<%end if%>
-	</span> 
-    </div>
-  </div>
-<!-- Segmento Navegação topo - FIM -->
-<div id="principal">
-<div id="admbotoes" style="float:right"><a href="../admin/admin.asp?id=5"><img src="../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a><% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir esta página" alt="Imprimir esta página"></a><%end if%></div><h3>Férias e feriados [<%=year(date)%>]</h3>  
-<br>
-<%
+	<div class="destaque1">
+		<h1>Catálogo Coletivo: Calendário</h1>
+	</div>
+	<!-- Segmento Navegação topo -->
+	<div class="col3-contentor">
+		<div class="col3">
+			<p class="fil">» <a href="../default.asp">Zona pública</a> » <a href="admin.asp?id=5">Administração</a> » Calendário</p>
+		</div>
+		<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
+				<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user")) end if%>
+				<%if Session("LoggedIn") then%> [ <a href="admin.asp?Logout=1">Sair</a> ]
+				<%end if%>
+			</span>
+		</div>
+	</div>
+	<!-- Segmento Navegação topo - FIM -->
+	<div id="principal">
+		<div id="admbotoes" style="float:right"><a href="../admin/admin.asp?id=5"><img src="../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a>
+			<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 title="Imprimir esta página" alt="Imprimir esta página"></a>
+			<%end if%>
+		</div>
+		<h3>Férias e feriados [
+			<%=year(date)%>]</h3>
+		<br>
+		<%
 resp=getUrl(strROOT & "/cgi/www.exe/[in=getcal.in]")
 tabela=split(resp,",")
 response.write "<form name=""frmtabela"" id=""frmTabela"" method=""post"" action="""">"
@@ -128,4 +142,4 @@ for i=0 to ubound(tabela)-1
  next
  response.write "</table>"   
 %>
-</div>
+	</div>

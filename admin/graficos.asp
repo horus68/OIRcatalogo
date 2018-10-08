@@ -156,153 +156,234 @@ Set objXmlHttp = Nothing
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>   
-<title>Gráficos - <%=sentidade %></title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name=viewport content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
-<link rel="stylesheet" href="../css/tabcontent.min.css" type="text/css" />
-<link rel="stylesheet" id="ui-theme" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/ui-lightness/jquery-ui.css" type="text/css"/>
-<link rel="stylesheet" href="../js/jquery.jui_dropdown.css" type="text/css" />
-<script type="text/javascript" src="../js/tableH.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../js/jquery-3.3.1.min.js"><\/script>')</script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../js/jquery.jui_dropdown.min.js"></script>
-<script type="text/javascript" src="../js/tabcontent.min.js"></script>
-<script>
-var base='<%=base%>';
-function start() {
-    if (!document.getElementsByTagName || !document.createTextNode) return;
-    var rows = document.getElementById("users").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
-    for (i = 1 ; i < rows.length; i++) {
-	    rows[i].title="Clique para ver a coleção desta entidade";
-        rows[i].onclick = function() {
-			window.location.href="graficos.asp?base="+this.cells[0].firstChild.nodeValue.toLowerCase()+"&op=<%=request("op")%>&criterio=<%=request("criterio")%>&voltar=true&sigla="+ this.cells[0].firstChild.nodeValue;
-	 		//document.getElementById("frmseluser").submit();
-        }
-    }
-}
-function ver_grafcomp() {
-   var loc ="CDUcomp.asp?base=<%=request("base")%>&sBase=<%=siglaBase%>&sigla=<%=sigla%>"; 
-   popup=window.open(loc,"ID","toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=no,width=740,height=450,left=50,top=50"); 
-   if (window.focus) {popup.focus()}
-   return false;
-}
-function verCDU(bib) {
-				    window.location.href="graficos.asp?base="+base.toLowerCase()+"&op=<%=request("op")%>&mnu=3&criterio=<%=trim(request("criterio"))%>&voltar=true&sigla="+bib;
-}
-</script>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script> 
- <script type="text/javascript">
-	<% if sp<>"3" then %>           
-		google.load("visualization", "1", {packages:["<%if valores(9)="N" then response.write "corechart" else if valores(7)="S" then response.write "barchart" else response.write "corechart" end if end if%>"]});      
-	<%else%>
-		google.load("visualization", "1", {packages:["corechart"]});
-	<%end if%>
-	google.setOnLoadCallback(drawChart); 
-	
-	function drawChart() {
-	
-		var valores="<%=strDados%>";	
-		<% if sp<>"3" then %> 
-		   var entidades="<%=strHTML%>";
-		   var s=entidades.split(",");
-		<%end if%>
-		var t=valores.split(",");
-		var scaleH=t.length<5? 1.4: 1;
-		var flag=false;
-		for(i=0;i< t.length-1;i++) if (t[i]!=0) flag=true;
-		if (flag==false) {document.getElementById("chart_div").innerHTML="<div style='position: relative; background: url(../imagens/picgraficos/no-graph.png); width: 450px; height: 270px;'><div style='position: absolute; top: 1em; lefght: 2em;padding: 4px;color:red;'><b>Não há dados para mostrar!</b></div></div>";return}    
-		var data = new google.visualization.DataTable(); 
-		<% if sp<>"3" then %> 
-			   var c2='Instituições';  
-			   var nr= s.length-1;
-			<% else %>
-			   var c2='CDU'; 
-			   var nr=10; 		   
-			<% end if%>   	    
-		eval("data.addColumn('string', '"+c2+"')");        		
-		data.addColumn('number', 'Refªs');    
-		eval("data.addRows("+nr+")");
-		document.getElementById("chart_div").innerHTML="";   
-		for (i=0;i <nr;i++)
-		{	        
-		<% if sp="3" then %> var c3= 'CDU '+i <%else%>var c3= s[i]<%end if%>   
-		    data.setValue(i, 0, c3);
-		    data.setValue(i, 1, parseFloat(t[i]));               
-		}  
-		<% if sp<>"3" then %> 
-			<%if valores(9)="N"   then  %>    /* or (sigla<>"X" and lcase(sigla)<>lcase(base)) */
-			  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-			  chart.draw(data, {width: 555, height: 270, enableTootlTip: true, is3D: true,title: ''});      
-			<% else %>
-			<%if valores(7)="S" then %> 
-			 var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-			 var h=t.length*37*scaleH;
-			 <% else %>
-			 var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));  
-			  var h=270;  	
-			<% end if%>
-			var larg=550;
-			chart.draw(data, {width: larg, height: h, vAxis: {minValue:0}, enableTootlTip: true,  axisFontSize: 12, is3D: true, legend:'none',title:'',tooltipFontSize:12});   
-		<% end if%>
-	<%else%>
-		var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-		chart.draw(data, {width: 555, height: 340, enableTootlTip: true, is3D: true, 
-		           chartArea:{left:20,top:50,width:"100%",height:"75%"},
-		           legend: {position: 'right', textStyle: {color: 'blue',fontSize: 12}},
-				   tooltip: {fontSize:14},
-				   pieSliceTextStyle: {fontSize:14},
-		           slices:[{color:'#58ACFA'},{color:'#FE9A2E'},{color:'#C9BC67'},{color:'#5A9971'},{},{color:'#868A08'},
-				   {color:'#970A89'},{color:'#4D5F97'},{color:'#D2B12A'},{color:'#FE642E'}]});      
-	<%end if%>        
 
-   }	
-    <% if sp<>"3" and strBibs1<>"" then %>
-		google.setOnLoadCallback(drawChart1); 	
-		function drawChart1() {
-		
-        
-		var valores1="<%=strBibs%>";
-		<% if sp<>"3" then %> 
-		   var biblios="<%=strHTML1%>"; 
-		   var u=biblios.split(",");
+<head>
+	<title>Gráficos - <%=sentidadelonga%></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
+	<link rel="stylesheet" href="../css/tabcontent.min.css" type="text/css" />
+	<link rel="stylesheet" id="ui-theme" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/ui-lightness/jquery-ui.css" type="text/css" crossorigin="anonymous" />
+	<link rel="stylesheet" href="../js/jquery.jui_dropdown.css" type="text/css" />
+	<script type="text/javascript" src="../js/tableH.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../js/jquery.jui_dropdown.min.js"></script>
+	<script type="text/javascript" src="../js/tabcontent.min.js"></script>
+	<script>
+		var base = '<%=base%>';
 
-		<%end if%>
-
-		var z=valores1.split(",");
-		var flag=false;
-		for(i=0;i< z.length-1;i++) if (z[i]!=0) flag=true;
-		if (flag==false) {document.getElementById("chart_div1").innerHTML="<div style='position: relative; background: url(../imagens/picgraficos/no-graph.png); width: 350px; height: 270px;'><div style='position: absolute; top: 1em; lefght: 2em;padding: 4px;color:red;'><b>Não há dados para mostrar!</b></div></div>";return}    
-		var data = new google.visualization.DataTable(); 
-		<% if sp<>"3" then %> 
-		   var c2='Instituições';  
-		   var nr= u.length-1;
-		<% else %>
-		   var c2='CDU'; 
-		   var nr=10; 		   
-		<% end if%>   
-		eval("data.addColumn('string', '"+c2+"')");          	
-		data.addColumn('number', 'Referências');   
-		eval("data.addRows("+nr+")");
-		
-		document.getElementById("chart_div1").innerHTML="";     
-		for (i=0;i < nr;i++)      
-		{	        
-		<% if sp="3" then %> var c3= 'CDU '+i <%else%>var c3= u[i]<%end if%>	
-			data.setValue(i, 0, c3);	        
-			data.setValue(i, 1, parseFloat(z[i]));               
+		function start() {
+			if (!document.getElementsByTagName || !document.createTextNode) return;
+			var rows = document.getElementById("users").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+			for (i = 1; i < rows.length; i++) {
+				rows[i].title = "Clique para ver a coleção desta entidade";
+				rows[i].onclick = function() {
+					window.location.href="graficos.asp?base="+this.cells[0].firstChild.nodeValue.toLowerCase()+"&op=<%=request("op")%>&criterio=<%=request("criterio")%>&voltar=true&sigla="+ this.cells[0].firstChild.nodeValue;
+					//document.getElementById("frmseluser").submit();
+				}
+			}
 		}
-		var chart = new google.visualization.ColumnChart(document.getElementById('chart_div1'));  
-		<% if sp<>"3" then %> var titulo=""; <%else%> var titulo='Distribuição por classe da CDU';<%end if%>
-			eval("chart.draw(data, {width: 540, height: 270, vAxis: {minValue:0}, enableTootlTip: true,  axisFontSize: 12, is3D: true, legend:'none',title:'"+titulo+"'})");   
-			
-	   }    
-   <% end if%>
-   
-</script>  
 
+		function ver_grafcomp() {
+			var loc ="CDUcomp.asp?base=<%=request("base")%>&sBase=<%=siglaBase%>&sigla=<%=sigla%>";
+			popup = window.open(loc, "ID", "toolbar=no,location=no,directories=no,status=no,scrollbars=no,resizable=no,width=740,height=450,left=50,top=50");
+			if (window.focus) {
+				popup.focus()
+			}
+			return false;
+		}
+
+		function verCDU(bib) {
+			window.location.href="graficos.asp?base="+base.toLowerCase()+"&op=<%=request("op")%>&mnu=3&criterio=<%=trim(request("criterio"))%>&voltar=true&sigla="+bib;
+		}
+
+	</script>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		<% if sp<>"3" then %>
+		google.load("visualization", "1", {packages:["<%if valores(9)="N" then response.write "corechart" else if valores(7)="S" then response.write "barchart" else response.write "corechart" end if end if%>"]});
+		<%else%>
+		google.load("visualization", "1", {packages:["corechart"]});
+		<%end if%>
+		google.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+
+			var valores = "<%=strDados%>";
+			<% if sp<>"3" then %>
+			var entidades = "<%=strHTML%>";
+			var s = entidades.split(",");
+			<%end if%>
+			var t = valores.split(",");
+			var scaleH = t.length < 5 ? 1.4 : 1;
+			var flag = false;
+			for (i = 0; i < t.length - 1; i++)
+				if (t[i] != 0) flag = true;
+			if (flag == false) {
+				document.getElementById("chart_div").innerHTML = "<div style='position: relative; background: url(../imagens/picgraficos/no-graph.png); width: 450px; height: 270px;'><div style='position: absolute; top: 1em; lefght: 2em;padding: 4px;color:red;'><b>Não há dados para mostrar!</b></div></div>";
+				return
+			}
+			var data = new google.visualization.DataTable();
+			<% if sp<>"3" then %>
+			var c2 = 'Instituições';
+			var nr = s.length - 1;
+			<% else %>
+			var c2 = 'CDU';
+			var nr = 10;
+			<% end if%>
+			eval("data.addColumn('string', '" + c2 + "')");
+			data.addColumn('number', 'Refªs');
+			eval("data.addRows(" + nr + ")");
+			document.getElementById("chart_div").innerHTML = "";
+			for (i = 0; i < nr; i++) {
+				<% if sp="3" then %>
+				var c3 = 'CDU ' + i <%else%>
+				var c3 = s[i]
+				<%end if%>
+				data.setValue(i, 0, c3);
+				data.setValue(i, 1, parseFloat(t[i]));
+			}
+			<% if sp<>"3" then %>
+			<%if valores(9)="N"   then  %> /* or (sigla<>"X" and lcase(sigla)<>lcase(base)) */
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, {
+				width: 555,
+				height: 270,
+				enableTootlTip: true,
+				is3D: true,
+				title: ''
+			});
+			<% else %>
+			<%if valores(7)="S" then %>
+			var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+			var h = t.length * 37 * scaleH;
+			<% else %>
+			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+			var h = 270;
+			<% end if%>
+			var larg = 550;
+			chart.draw(data, {
+				width: larg,
+				height: h,
+				vAxis: {
+					minValue: 0
+				},
+				enableTootlTip: true,
+				axisFontSize: 12,
+				is3D: true,
+				legend: 'none',
+				title: '',
+				tooltipFontSize: 12
+			});
+			<% end if%>
+			<%else%>
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, {
+				width: 555,
+				height: 340,
+				enableTootlTip: true,
+				is3D: true,
+				chartArea: {
+					left: 20,
+					top: 50,
+					width: "100%",
+					height: "75%"
+				},
+				legend: {
+					position: 'right',
+					textStyle: {
+						color: 'blue',
+						fontSize: 12
+					}
+				},
+				tooltip: {
+					fontSize: 14
+				},
+				pieSliceTextStyle: {
+					fontSize: 14
+				},
+				slices: [{
+						color: '#58ACFA'
+					}, {
+						color: '#FE9A2E'
+					}, {
+						color: '#C9BC67'
+					}, {
+						color: '#5A9971'
+					}, {}, {
+						color: '#868A08'
+					},
+					{
+						color: '#970A89'
+					}, {
+						color: '#4D5F97'
+					}, {
+						color: '#D2B12A'
+					}, {
+						color: '#FE642E'
+					}
+				]
+			});
+			<%end if%>
+
+		}
+		<% if sp<>"3" and strBibs1<>"" then %>
+		google.setOnLoadCallback(drawChart1);
+
+		function drawChart1() {
+
+
+			var valores1 = "<%=strBibs%>";
+			<% if sp<>"3" then %>
+			var biblios = "<%=strHTML1%>";
+			var u = biblios.split(",");
+
+			<%end if%>
+
+			var z = valores1.split(",");
+			var flag = false;
+			for (i = 0; i < z.length - 1; i++)
+				if (z[i] != 0) flag = true;
+			if (flag == false) {
+				document.getElementById("chart_div1").innerHTML = "<div style='position: relative; background: url(../imagens/picgraficos/no-graph.png); width: 350px; height: 270px;'><div style='position: absolute; top: 1em; lefght: 2em;padding: 4px;color:red;'><b>Não há dados para mostrar!</b></div></div>";
+				return
+			}
+			var data = new google.visualization.DataTable();
+			<% if sp<>"3" then %>
+			var c2 = 'Instituições';
+			var nr = u.length - 1;
+			<% else %>
+			var c2 = 'CDU';
+			var nr = 10;
+			<% end if%>
+			eval("data.addColumn('string', '" + c2 + "')");
+			data.addColumn('number', 'Referências');
+			eval("data.addRows(" + nr + ")");
+
+			document.getElementById("chart_div1").innerHTML = "";
+			for (i = 0; i < nr; i++) {
+				<% if sp="3" then %>
+				var c3 = 'CDU ' + i <%else%>
+				var c3 = u[i]
+				<%end if%>
+				data.setValue(i, 0, c3);
+				data.setValue(i, 1, parseFloat(z[i]));
+			}
+			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
+			<% if sp<>"3" then %>
+			var titulo = "";
+			<%else%>
+			var titulo = 'Distribuição por classe da CDU';
+			<%end if%>
+			eval("chart.draw(data, {width: 540, height: 270, vAxis: {minValue:0}, enableTootlTip: true,  axisFontSize: 12, is3D: true, legend:'none',title:'" + titulo + "'})");
+
+		}
+		<% end if%>
+
+	</script>
+	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=002" />
 </head>
 <%dim v1
 v1= split(strDados,",")
@@ -316,33 +397,46 @@ next
 if lcase(base) <> lcase(sigla) then nomeAGRUP= " ["& siglaBASE &"]"
 if sp="3" then menu=3 else menu=2
 
-%> 
-  
-<body <% if (sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base)) or sigla="X" then response.write "onload='start()'" %>> 
-  <div class="destaque1">
-    <h1>Catálogo Coletivo: Avaliação de existências</h1>
-  </div>    
-<!-- Segmento Navegação topo -->
-  <div class="col3-contentor">
-    <div class="col3">
-    <p class="fil">» <a href="../default.asp">Zona pública</a> » <a href="admin.asp?id=3">Administração</a> » <% if sp="3" then %><a href="../cgi/www.exe/[in=mnucol.in]?mnu=3"><% else %><a href="colselop.asp?ut=<%=ucase(session("user"))%>&base=<%=lcase(base)%>&criterio=<%=sigla%>&users=<%=sigla%>"><% end if %>Avaliação de existências</a> » <% if sp<>"3" then %><a href="javascript:history.back()">Lista de Títulos</a> »<% end if %>  Gráficos</p>
-</p>
-    </div>
-    <div class="col3" id="lblutilizador">Utilizador: <span id="utilizador"> 	 
-		     <% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%><%if Session("LoggedIn") then%> [ <a href="admin.asp?Logout=1">Sair</a> ]<%end if%>
-      </span>
-    </div>
-  </div>
-<!-- Segmento Navegação topo - FIM -->
-<div id="principal">
-<div id="admbotoes" style="float:right"><a href="javascript:history.go(-1);"><img src="../imagens/picactions/icon_close.gif" border=0 alt="Voltar à página anterior"></a><% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 alt="Imprimir esta página" title="Imprimir esta página"></a><%end if%></div>
-<h3>Referências por instituição</h3>
-<div> 
-<% 'if request("voltar") then response.write "javascript:history.go(-1);" else if sigla="X" then response.write "../admin/admin.asp#tab7" else response.write "../cgi/www.exe/[in=mnucol.in]?mnu="& menu %>
-<span style="float:right;">
-	<% 
-	 if (lcase(base)= lcase(sigla)) and (sp<>"3") then
-	   if  ubound(biblios)>0 then
+%>
+
+<body <% if (sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base)) or sigla="X" then response.write "onload='start()'" %>>
+		<div class="destaque1">
+			<h1>Catálogo Coletivo: Avaliação de existências</h1>
+		</div>
+		<!-- Segmento Navegação topo -->
+		<div class="col3-contentor">
+			<div class="col3">
+				<p class="fil">» <a href="../default.asp">Zona pública</a> » <a href="admin.asp?id=3">Administração</a> »
+					<% if sp="3" then %><a href="../cgi/www.exe/[in=mnucol.in]?mnu=3">
+						<% else %><a href="colselop.asp?ut=<%=ucase(session("user"))%>&base=
+							<%=lcase(base)%>&criterio=
+							<%=sigla%>&users=
+							<%=sigla%>">
+							<% end if %>Avaliação de existências</a> »
+						<% if sp<>"3" then %><a href="javascript:history.back()">Lista de Títulos</a> »
+						<% end if %> Gráficos</p>
+				</p>
+			</div>
+			<div class="col3" id="lblutilizador">Utilizador: <span id="utilizador">
+					<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
+					<%if Session("LoggedIn") then%> [ <a href="admin.asp?Logout=1">Sair</a> ]
+					<%end if%>
+				</span>
+			</div>
+		</div>
+		<!-- Segmento Navegação topo - FIM -->
+		<div id="principal">
+			<div id="admbotoes" style="float:right"><a href="javascript:history.go(-1);"><img src="../imagens/picactions/icon_close.gif" border=0 alt="Voltar à página anterior"></a>
+				<% if flag=1 then %><a href="javascript:window.print()"><img src="../imagens/picactions/icon_imprimir.gif" border=0 alt="Imprimir esta página" title="Imprimir esta página"></a>
+				<%end if%>
+			</div>
+			<h3>Referências por instituição</h3>
+			<div>
+				<% 'if request("voltar") then response.write "javascript:history.go(-1);" else if sigla="X" then response.write "../admin/admin.asp#tab7" else response.write "../cgi/www.exe/[in=mnucol.in]?mnu="& menu %>
+				<span style="float:right;">
+					<% 
+		if (lcase(base)= lcase(sigla)) and (sp<>"3") then
+		if ubound(biblios)>0 then
 			response.write "<div id=""drop"">"
 			response.write "<div id=""launcher_container"">"
 			if ubound(biblios)>1 then
@@ -361,49 +455,53 @@ if sp="3" then menu=3 else menu=2
 			response.write "</div>"
 	 		
 	%>
-			<script>
-			    
-				$(function() {
-				  if ($("#drop").name =="undefined") return;
-				  $("#drop").jui_dropdown({
-					launcher_id: 'launcher4',
-					launcher_container_id: 'launcher_container',
-					menu_id: 'menu4',
-					launcherUIShowText: false,
-					launchOnMouseEnter: true,
-					launcherUISecondaryIconClass: 'ui-icon-gear',
-					menuClass: 'menu4',
-					containerClass: 'container4',
-					my_position: 'right top',
-					at_position: 'right bottom',
-					onSelect: function(event, data) {
-					  base= data.id;
-					}
-				  });
-				 
-				});
-				</script>
-			<%
+					<script>
+						$(function() {
+							if ($("#drop").name == "undefined") return;
+							$("#drop").jui_dropdown({
+								launcher_id: 'launcher4',
+								launcher_container_id: 'launcher_container',
+								menu_id: 'menu4',
+								launcherUIShowText: false,
+								launchOnMouseEnter: true,
+								launcherUISecondaryIconClass: 'ui-icon-gear',
+								menuClass: 'menu4',
+								containerClass: 'container4',
+								my_position: 'right top',
+								at_position: 'right bottom',
+								onSelect: function(event, data) {
+									base = data.id;
+								}
+							});
+
+						});
+
+					</script>
+					<%
 		else
 		   response.write "<div id=""launcher_container"">"
 	       response.write "<a id=""vgraf""	href=""javascript:void(0)"" onclick=""verCDU('"&base&"')""><input style=""width:32px;height:32px;padding:0;border:none"" type=""image"" src=""../imagens/picgraficos/graf_biblios.gif"" id=""launcher4"" title=""Distribuição por CDU""/></a>"	
 		   response.write "</div>"
-		end if	
-        
+		end if
+
 	end if
     if sigla="X" then 
 		 response.write "<div id=""launcher_container"">"
 	     response.write "<a id=""vgraf""	href=""javascript:void(0)"" onclick=""ver_grafcomp()""><img src=""../imagens/picgraficos/graf_comparative.gif"" alt=""Gráfico comparativo da CDU"" title=""Gráfico comparativo da CDU"" border=""0"" width=""32""></a>"	
 		 response.write "</div>"
-	end if	 
+	end if
 %>
-</span>
+				</span>
 
 
-<span style="font-size:0.9em"> critério: [<%if sp<>"3" then  response.write sfiltro else  response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)"%>] <% if sp<>"3" then%>em <% if sigla <>"X" then response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)" & nomeAGRUP  else response.write "Toda a rede"%><% end if%></span> 
-</div>
-<div style="clear:both;margin-bottom:5px"></div>
-<%
+				<span style="font-size:0.9em"> critério: [
+					<%if sp<>"3" then  response.write sfiltro else  response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)"%>]
+					<% if sp<>"3" then%>em
+					<% if sigla <>"X" then response.write sigla & " (<span style=""color:red"">" & trim(siglaEXT) & "</span>)" & nomeAGRUP  else response.write "Toda a rede"%>
+					<% end if%></span>
+			</div>
+			<div style="clear:both;margin-bottom:5px"></div>
+			<%
 flagtabs=false
 if sp<>"3" then
    if sigla<>"X" then 
@@ -415,32 +513,38 @@ if sp<>"3" then
 	end if 
  end if 
  if flagtabs then %>
-         <ul id="tabs" class="shadetabs"> 
-           <li><a href="#" rel="tab1" class="selected">Distribuição na Rede</a></li>											  
-           <li><a href="#" rel="tab2">Distribuição no Agrupamento  </a></li>														
-		 </ul>
-	   
-		 <div id="painel">      			
-     		 <div id="tab1" class="tabcontent">	
-			 <br />
-<%			 
+			<ul id="tabs" class="shadetabs">
+				<li><a href="#" rel="tab1" class="selected">Distribuição na Rede</a></li>
+				<li><a href="#" rel="tab2">Distribuição no Agrupamento </a></li>
+			</ul>
+
+			<div id="painel">
+				<div id="tab1" class="tabcontent">
+					<br>
+					<%
  else
     response.write "<div id=""painel"">"  
  end if 
-			 if sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base) then response.write "<b>A) Distribuição na REDE</b>"  else response.write "<br />" 
+			 if sp<>"3" and sigla<>"X" and lcase(sigla)=lcase(base) then response.write "<b>A) Distribuição na REDE</b>"  else response.write "<br>" 
 			 if sp="3" then response.write "<b>Distribuição por CDU</b>"
 			 %>
-			 <table>
-				<tr>
-				<td><div id="chart_div" style="width:555px">A carregar dados. Aguarde um momento, por favor</div></td>
-				<td>
-			<%
+					<table>
+						<tr>
+							<td>
+								<div id="chart_div" style="width:555px">A carregar dados. Aguarde um momento, por favor</div>
+							</td>
+							<td>
+								<%
 			if flag=1 then
-				%>		
-				<table id="users" class="graficos">
-				<th><%if sp<>"3" then%>Entidade<%else%>&nbsp;CDU<%end if%></th>
-				<th>Ref.ªs</th>
-				<% response.write "<th title=""Nº de refªs / Total encontrado para todas as entidades""> A </th>"
+				%>
+								<table id="users" class="graficos">
+							<th>
+								<%if sp<>"3" then%>Entidade
+								<%else%>&nbsp;CDU
+								<%end if%>
+							</th>
+							<th>Ref.ªs</th>
+							<% response.write "<th title=""Nº de refªs / Total encontrado para todas as entidades""> A </th>"
 				   if sigla<>"X" or criterio<>"$" then    
 					 if sp<>"3" then response.write "<th title=""Nº de refªs / Total de referências por entidade""> B </th>" 
 				   end if
@@ -469,35 +573,42 @@ if sp<>"3" then
 				end if
 				'response.write "<tr><td>Total</td><td align=""right""><b>" & total1 & "</b></td></tr>"
 				%>
-				</table>
-			<% end if
-			%> </td>
-			  </tr>
-			 </table>
-			
-<% 
+					</table>
+					<% end if
+			%>
+					</td>
+					</tr>
+					</table>
+
+					<% 
 
 response.write "</div>" 
 if sp<>"3" then
    if sigla<>"X" then 
       if  lcase(sigla)=lcase(base) then
 	    if ubound(biblios)>0 then  
-%>	   
+%>
 
-		   <div id="tab2" class="tabcontent">
-		    <br />
-     		<b>B) Distribuição no Agrupamento</b>
-			<table>
-			<tr>
-			<td><div id="chart_div1" style="width:540px;">A carregar dados... Aguarde um momento, por favor</div></td>
-			<td >
-<%
+					<div id="tab2" class="tabcontent">
+						<br>
+						<b>B) Distribuição no Agrupamento</b>
+						<table>
+							<tr>
+								<td>
+									<div id="chart_div1" style="width:540px;">A carregar dados... Aguarde um momento, por favor</div>
+								</td>
+								<td>
+									<%
 			if flag=1 then
 %>
-				<table id="users" class="graficos" >
-				<th><%if sp<>"3" then%>Entidade<%else%>CDU<%end if%></th>
-				<th>Ref.ªs</th>
-				<% response.write "<th title=""Nº de refªs / Total encontrado para todas as entidades""> A </th>"
+									<table id="users" class="graficos">
+								<th>
+									<%if sp<>"3" then%>Entidade
+									<%else%>CDU
+									<%end if%>
+								</th>
+								<th>Ref.ªs</th>
+								<% response.write "<th title=""Nº de refªs / Total encontrado para todas as entidades""> A </th>"
 				   if sigla<>"X" or criterio<>"$" then    
 					 if sp<>"3" then response.write "<th title=""Nº de refªs / Total de referências por entidade""> B </th>" 
 				   end if
@@ -525,27 +636,38 @@ if sp<>"3" then
 				end if
 				'response.write "<tr><td>Total</td><td align=""right""><b>" & total1 & "</b></td></tr>"
 				%>
-				</table>
-			<% end if%>
-			</td>
-		  </tr>
-		 </table>
-		</div>
-        </div>
-		<script type="text/javascript">
-			var menus=new ddtabcontent("tabs")
-			menus.setpersist(true)
-			menus.setselectedClassTarget("link") //"link" or "linkparent"
-			menus.init()
-		</script>
-		<script>menus.expandit(<% if request("id")="" then response.write 0 else response.write request("id") end if%>)</script> 
-<%    end if
+						</table>
+						<% end if%>
+						</td>
+						</tr>
+						</table>
+					</div>
+				</div>
+				<script type="text/javascript">
+					var menus = new ddtabcontent("tabs")
+					menus.setpersist(true)
+					menus.setselectedClassTarget("link") //"link" or "linkparent"
+					menus.init()
+
+				</script>
+				<script>
+					menus.expandit(<% if request("id")="" then response.write 0 else response.write request("id") end if%>)
+
+				</script>
+				<%    end if
      end if
    end if
  end if%>
 
- <p>Legenda: <ul> <li><b>coluna A</b> - Nº de refªs / Total de refªs para o critério de pesquisa </li>     <% if sp<>"3" and sigla<>"X" or (criterio<>"$" and sp<>"3") then %><li><b>coluna B</b> - Nº de refªs / Total de refªs por entidade</li><% end if%></ul></p>
- </div> 
- 
+				<p>Legenda: <ul>
+						<li><b>coluna A</b> - Nº de refªs / Total de refªs para o critério de pesquisa </li>
+						<% if sp<>"3" and sigla<>"X" or (criterio<>"$" and sp<>"3") then %>
+						<li><b>coluna B</b> - Nº de refªs / Total de refªs por entidade</li>
+						<% end if%>
+					</ul>
+				</p>
+			</div>
+
 </body>
+
 </html>

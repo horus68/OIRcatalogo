@@ -104,7 +104,7 @@ Class FreeASPUpload
 			Set streamFile = Nothing
 			fileItem.Path = path & fileItem.FileName
 	else
-		Response.Write("Tipo de ficheiro não autorizado a ser carregado : " & fileItem.FileName & "<br />")
+		Response.Write("Tipo de ficheiro não autorizado a ser carregado : " & fileItem.FileName & "<br>")
 		UploadedFiles.Remove(keys(i))
 	end if
 	Next

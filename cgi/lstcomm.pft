@@ -11,8 +11,8 @@ fi
 '     </script>'/
 '	</div>'/
 '   <div id="lp-name">'if v2<>'' then ref(['leitor']val(v1),v2) fi ', disse:</div>'
-'	<div id="lp-comment" class="wordwrap">'v3'</div><br />'
+'	<div id="lp-comment" class="wordwrap">'v3'</div><br>'
 if getenv('id')<> '-1' then
-'   <div style="clear:both;float:right"><img src="../../imagens/picactions/icon_abuso.gif" border="0" align="absmiddle" /> <a href="javascript:void(0)" onclick="mailabuso('mfn(1)','v1')" alt="" title="">Denunciar abuso</a></div>'
+'   <div style="clear:both;float:right"><img src="../../imagens/picactions/icon_abuso.gif" border="0" align="absmiddle" /> <a href="javascript:void(0)" onclick="mailabuso('mfn(1)','v1')" alt="Denunciar" title="Denunciar">Denunciar abuso</a></div>'
 fi
 '</div>'
