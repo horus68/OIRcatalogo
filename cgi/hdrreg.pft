@@ -3,9 +3,9 @@
 ,@toolbar.pft,
 '</div>'
 '<div class="col5">'
-'     <strong>Resultados da pesquisa:</strong><br /><span style="font-size:90%">'V1002' ficha(s) com documento(s)</span>'/
+'     <strong>Resultados da pesquisa:</strong><br><span style="font-size:90%">'V1002' ficha(s) com documento(s)</span>'/
 '</div>' 
 '<div class="col5">'
-'     <span style="font-size:80%">Base: 'MHU,V1051,' <br />('f(maxmfn-1,0,0),MHL' fichas no total)</span>'/
+'     <span style="font-size:80%">Base: 'MHU,V1051,' <br>('f(maxmfn-1,0,0),MHL' fichas no total)</span>'/
 '</div>'  
 '</div>'

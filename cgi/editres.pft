@@ -32,7 +32,7 @@
       fi	  
 	  '<div style="font-size:1.3em;font-weight:bold"><span id="aviso" style="color:red;float:right;font-size:0.8em">'if getenv('estado')='em curso' then 'ATENÇÃO! Falta(m) 'f(val(ref(['param']2,v20))-(val(mid(date,19,3))-val(v999^b*18.3)),0,0)' dia(s) para expirar a reserva&nbsp;' fi '</span>Reserva nº'mfn(1)'</div>'	  
 	  	  
-	  '<fieldset class="users"><legend>Dados da reserva</legend><br />'
+	  '<fieldset class="users"><legend>Dados da reserva</legend><br>'
   '<div class="col5-contentor" style="width:100%">'  
     '<div class="col5">'
 	  '<label for="dini">Data de início</label> <input type="text" id="dini" name="dini" value="'v999^b*6.2|-|v999^b*4.2|-|v999^b.4'" size="12" readonly>'
@@ -50,8 +50,8 @@
     '</div>'  
   '</div>'
 	  '</fieldset>'
-	  '<br /><br />'	  
-	  '<fieldset class="users" style="background-color:#f9f9ed;"><legend>Dados do documento</legend><br />'
+	  '<br><br>'	  
+	  '<fieldset class="users" style="background-color:#f9f9ed;"><legend>Dados do documento</legend><br>'
  	'<div class="col5-contentor" style="width:100%">'
 	'<div class="col5">'
 	  '<label for="bib">Biblioteca</label> <input type="text" id="bib" name="bib" value="'v300^a'" size="10" readonly>'
@@ -89,8 +89,8 @@
     '</div>'
 	'</div>'	
 	'</fieldset>'
-	  '<br /><br />'
-	  '<fieldset class="users"><legend>Dados do requisitante</legend><br />'
+	  '<br><br>'
+	  '<fieldset class="users"><legend>Dados do requisitante</legend><br>'
 	  if type(v999^a)='N' then
   '<div class="col5-contentor" style="width:100%">'  
     '<div class="col5">'
@@ -154,7 +154,7 @@
   '</div>'
 	  fi
       '</fieldset>'
-	  '<br /><br />'
+	  '<br><br>'
       '<div align="center">'
 	  '<input type="button" name="bt2" value="Voltar" class="botao botao5" onclick="javascript:history.go(-1);"></center>'
       '</div>'

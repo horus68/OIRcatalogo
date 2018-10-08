@@ -32,36 +32,36 @@
 	  '<input type="hidden" name="campo" value="'getenv('campo')'">'
 	  '<input type="hidden" name="from" value="'mfn(7)'">'
 	  '<input type="hidden" name="texto" value="'getenv('texto')'">'
-      '<fieldset class="validar"><legend>Campos a corrigir</legend><br />'
+      '<fieldset class="validar"><legend>Campos a corrigir</legend><br>'
 	  (
 	  
 	  select s(getenv('campo'))
 	  case '010': if p(v10) then '<label for="v10" >[010]: ISBN</label><input type="text" id="v10" name="v10" value="'v10'" size="48" ><br>' else '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '011': if p(v11) then '<label for="v11" >[011]: ISSN</label><input type="text" id="v11" name="v11" value="'v11'" size="48" ><br>' else '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
-	  case '101': if p(v101) then '<label for="v101">[101]: Código de Língua:</label><input type="text" id="v101" name="v101" value="'v101'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
-	  case '102': if p(v102) then '<label for="v102">[102]: Código de País:</label><input type="text" id="v102" name="v102" value="'v102'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
+	  case '101': if p(v101) then '<label for="v101">[101]: Código de idioma:</label><input type="text" id="v101" name="v101" value="'v101'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
+	  case '102': if p(v102) then '<label for="v102">[102]: Código de país:</label><input type="text" id="v102" name="v102" value="'v102'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '110': if p(v110) then '<label for="v10" >[010]: ISSN</label><input type="text" id="v10" name="v10" value="'v10'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
-      case '200': if p(v200) then '<label for="v200">[200]: Título/Menção resp.</label><input type="text" id="v200" name="v200" value="'v200'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
+	  case '200': if p(v200) then '<label for="v200">[200]: Título/Menção resp.</label><input type="text" id="v200" name="v200" value="'v200'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '210': if p(v210) then '<label for="v210">[210]: Publicação</label><input type="text" id="v210" name="v210" value="'v210'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '215': if p(v215) then '<label for="v215">[010]: Descrição física</label><input type="text" id="v215" name="v215" value="'v215'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '461': if p(v461) or p(v463) or p(v210) or p(v215) or p(v921) or p(v922) then '<label for="v461">[461]: Nível de conjunto </label><input type="text" id="v461" name="v461" value="'v461'" size="48" ><br>
-	              <label for="v463">[463]: Nível da parte </label><input type="text" id="v463" name="v463" value="'v463'" size="48" ><br>
+				  <label for="v463">[463]: Nível da parte </label><input type="text" id="v463" name="v463" value="'v463'" size="48" ><br>
 				  <label for="v210">[210]: Publicação </label><input type="text" id="v210" name="v210" value="'v210'" size="48" ><br>
 				  <label for="v215">[215]: Descrição física </label><input type="text" id="v215" name="v215" value="'v215'" size="48" ><br>
-                  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]:
-				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
-      case '207': if p(v207) or p(v303) or p(v921) or p(v922) then '<label for="v207">[207]: Descrição baseada em</label><input type="text" id="v207" name="v207" value="'v207'" size="48" ><br>
-                  <label for="v303">[303]: Numeração</label><input type="text" id="v303" name="v303" value="'v303'" size="48"><br>
 				  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]:
-				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,				  
-      case '326': if p(v326) or p(v921) or p(v922) then '<label for="v326">[326]: Periodicidade</label><input type="text" id="v326" name="v326" value="'v326'" size="48" ><br>
-                  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]:
+				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
+	  case '207': if p(v207) or p(v303) or p(v921) or p(v922) then '<label for="v207">[207]: Descrição baseada em</label><input type="text" id="v207" name="v207" value="'v207'" size="48" ><br>
+				  <label for="v303">[303]: Numeração</label><input type="text" id="v303" name="v303" value="'v303'" size="48"><br>
+				  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]:
+				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
+	  case '326': if p(v326) or p(v921) or p(v922) then '<label for="v326">[326]: Periodicidade</label><input type="text" id="v326" name="v326" value="'v326'" size="48" ><br>
+				  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]: 
 				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '620': if p(v620) or p(v921) or p(v922) then '<label for="v620">[620]: Periodicidade</label><input type="text" id="v620" name="v620" value="'v620'" size="48" ><br>
-                  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]:
-				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,			  				  
+				  <label for="v921">[921]: Tipo de documento</label><input type="text" id="v921" name="v921" value="'v921'" size="4">  [922]:
+				  <input type="text" id="v922" name="v922" value="'v922'" size="4"><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '675': if p(v675) then '<label for="v675">[675]: CDU</label><input type="text" id="v675'f(iocc,0,0)'" name="v675'f(iocc,0,0)'" value="'v675'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
-      case '700': if p(v700) then '<label for="v700">[700]: Resp. principal</label><input type="text" id="v700" name="v700" value="'v700'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
+	  case '700': if p(v700) then '<label for="v700">[700]: Resp. principal</label><input type="text" id="v700" name="v700" value="'v700'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '701': if p(v701) then '<label for="v701">[701]: Co-resp. principal</label><input type="text" id="v701'f(iocc,0,0)'" name="v701'f(iocc,0,0)'" value="'v701'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '702': if p(v702) then '<label for="v702">[702]: Resp. secundária</label><input type="text" id="v702'f(iocc,0,0)'" name="v702'f(iocc,0,0)'" value="'v702'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
 	  case '931': if p(v931) then '<label for="v931">[931]: Data de entrada</label><input type="text" id="v931" name="v931" value="'v931'" size="48" ><br>' else  '<p class="aviso" style="text-align:center">Campo(s) recentemente eliminado(s).<br>Feche esta janela e refresque a listagem de erros (F5)</p>' fi,
@@ -69,10 +69,10 @@
 	  endsel
 	  )
       if getenv('flag')<>'0' then
-	  '<br /><br /><center><input  type="submit" name="bt1" class="botao botao4" value="Atualizar">'
+	  '<br><br><center><input  type="submit" name="bt1" class="botao botao4" value="Atualizar">'
       '<input type="button" name="bt2" class="botao botao5" value="Cancelar" onclick="javascript:window.close();"></center>'
 	  fi
       '</fieldset>'
       '</form>'
-  
- 
+
+

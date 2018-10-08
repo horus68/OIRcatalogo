@@ -9,5 +9,5 @@
 '     </script>'/
 '	</div>'/
 '   <div id="lp-name">'if v2<>'' then ref(['leitor']val(v1),v2) fi ', disse:</div>'
-'	<div id="lp-comment" class="wordwrap">'v3'</div><br />'
+'	<div id="lp-comment" class="wordwrap">'v3'</div><br>'
 '</div>'

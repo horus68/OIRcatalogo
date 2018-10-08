@@ -3,7 +3,6 @@ Disallow: /admin/
 Disallow: /bases/
 Disallow: /cgi/
 Disallow: /css/
-Disallow: /imagens/
 Disallow: /js/
 Disallow: /outros/
 Disallow: /tmp/

@@ -59,23 +59,27 @@ End Function
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name=viewport content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<TITLE>Teste de componentes de Email</TITLE>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow">
+	<TITLE>Teste de componentes de Email</TITLE>
 </head>
+
 <BODY bgColor="white" text="midnightblue" link="darkblue" aLink="red" vLink="red">
-<font face="Verdana, Arial, Helvetica">
-<table border=0 cellspacing=0 cellpadding=0 align=center>
-  <tr valign="top">
-    <td bgcolor="black">
-    <table border=0 cellspacing=1 cellpadding=4>
-      <tr valign="top">
-        <td bgcolor="midnightblue" colspan="2" align="center"><font size="2" color="mintcream"><b>Teste de componentes de Email</b></font></td>
-      </tr>
-     
-        <% Dim i
+	<font face="Verdana, Arial, Helvetica">
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr valign="top">
+				<td bgcolor="black">
+					<table border=0 cellspacing=1 cellpadding=4>
+						<tr valign="top">
+							<td bgcolor="midnightblue" colspan="2" align="center">
+								<font size="2" color="mintcream"><b>Teste de componentes de Email</b></font>
+							</td>
+						</tr>
+
+						<% Dim i
            For i=0 to UBound(theComponent)
              Response.Write "<tr><td bgColor=""A0B0E0"" align=""right""><font face=""Verdana, Arial, Helvetica"" size=""2""><strong>" & theComponentName(i) & ":&nbsp;</strong></td><td bgColor=""A0B0E0"" align=""center"">"
 	     If Not IsObjInstalled(theComponent(i)) Then
@@ -85,20 +89,22 @@ End Function
 	     End If
 	     Response.Write "</td></font></tr>" & vbNewline
 	   Next %>
-    </table>
-    </td>
-  </tr>
-</table>
-<br>
-<table border=0 cellspacing=0 cellpadding=0 align=center>
-  <tr valign="top">
-    <td bgcolor="black">
-    <table border=0 cellspacing=1 cellpadding=4>
-      <tr valign="top">
-        <td bgcolor="midnightblue" colspan="2" align="center"><font size="2" color="mintcream"><b>Teste de componentes de E-mail</b></font></td>
-      </tr>
-      
-        <% Dim j
+					</table>
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr valign="top">
+				<td bgcolor="black">
+					<table border=0 cellspacing=1 cellpadding=4>
+						<tr valign="top">
+							<td bgcolor="midnightblue" colspan="2" align="center">
+								<font size="2" color="mintcream"><b>Teste de outros componentes de Email</b></font>
+							</td>
+						</tr>
+
+						<% Dim j
            For j=0 to UBound(theotherComponent)
              Response.Write "<tr><td bgColor=""A0B0E0"" align=""right""><font face=""Verdana, Arial, Helvetica"" size=""2""><strong>" & theotherComponentName(j) & ":&nbsp;</strong></td><td bgColor=""A0B0E0"" align=""center"">"
 	     If Not IsObjInstalled(theotherComponent(j)) Then
@@ -108,11 +114,11 @@ End Function
 	     End If
 	     Response.Write "</td></font></tr>" & vbNewline
 	   Next %>
-    </table>
-    </td>
-  </tr>
-</table>
-</font>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</font>
 </BODY>
-</HTML>
 
+</HTML>

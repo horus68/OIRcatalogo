@@ -1,2 +1,2 @@
-mx ..\..\bases\tags "gizmo=..\..\bases\g850ans" "pft=lw(1000),'mx ..\..\bases\rbct gizmo=gans850 proc=`A9900~'v1'~`'` from=`v3` count=1 copy=..\..\bases\rbct`/" from=100  now > addtags.bat
+mx ..\..\bases\tags "gizmo=..\..\bases\g850ans" "pft=lw(1000),'mx ..\..\bases\rbcatalogo gizmo=gans850 proc=`A9900~'v1'~`'` from=`v3` count=1 copy=..\..\bases\rbcatalogo`/" from=100  now > addtags.bat
 call addtags.bat

@@ -1,13 +1,12 @@
 <!--#include file="admin/functions.asp"-->
 <!--#include file="admin/config.asp"-->
-
- <% 
+<% 
    referer=request.servervariables("http_referer") 
    if referer = "" then  
 		response.end
    end if
    getUrl(strROOT & "/cgi/www.exe/[in=iduser.in]")%>
-  <%  
+<%  
 			  redim u1(2,1000)
 			  dim siglas
 			  Set ObjectoFicheiro = CreateObject("Scripting.fileSystemObject")
@@ -30,28 +29,29 @@
 			  Set LerTexto = nothing
 			  'response.write i
 			  'response.end
-  %>	 
+  %>
 <%
   sentidadelonga = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "GERAL", "entidadelonga")
   stitulo = ReadIniFile(Server.MapPath("cgi/cgi.ini"), "PORTAL", "titulo")
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="pt-PT" lang="pt-PT">
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<meta name=viewport content="width=device-width, initial-scale=1">
-	<meta name="robots" content="follow,index" />
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="index, follow" />
 	<title>Pesquisas <%=stitulo%></title>
-  <link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
-	<script language="JavaScript" src="js/geral.min.js"></script> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    if (typeof jQuery == 'undefined') {
+	<link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
+	<script language="JavaScript" src="js/geral.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script>
+		if (typeof jQuery == 'undefined') {
     document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
     } 
     </script>
 	<script>
-	function ChkLinkHref(tipo,formato,linha_in)
+		function ChkLinkHref(tipo,formato,linha_in)
 	{
 	  var dim=0;
 	  var tmp="",car="";
@@ -114,27 +114,41 @@
   });
 
 </script>
-	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
-  <link rel="icon" href="favicon.ico" type="image/ico"/>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-	<meta name="description" content="Pesquisar nas bibliotecas - Catálogo coletivo da Rede de Bibliotecas do Concelho"/>
-	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca" />
-	<meta name="author" content="Rede Concelhia de Bibliotecas" />
-  <meta property="og:title" content="Pesquisar nas bibliotecas. Catálogo da Rede de bibliotecas" />
-  <meta property="og:type" content="library" />
-  <meta property="og:site_name" content="Catálogo - Rede de bibliotecas" />
-  <meta property="og:description" content="Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos existentes nas bibliotecas deste concelho" />
+	<script defer async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+	<meta name="description" content="Pesquisar nas bibliotecas da Rede de Bibliotecas do Concelho - XPTO - Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
+	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca, OPAC, registo bibliográfico" />
+	<meta name="author" content="Rede Concelhia de Bibliotecas - XPTO" />
+	<!-- Favicon Geral -->
+	<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=002" />
+	<!-- Favicon Android -->
+	<link rel="manifest" href="manifest.json?v=002" />
+	<meta name="theme-color" content="#cdc8b1" />
+	<!-- Favicon Windows IE -->
+	<meta name="msapplication-config" content="IEconfig.xml?v=002" />
+	<meta name="application-name" content="Cat.RB XPTO" />
+	<meta name="msapplication-TileColor" content="#afa782" />
+	<!-- Favicon iOS -->
+	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=002" />
+	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=002" color="#5bbad5" />
+	<!-- OpenGraph Facebook -->
+	<meta property="og:title" content="XPTO - Pesquisar nas bibliotecas da Rede" />
+	<meta property="og:description" content="XPTO: Pesquisar nas bibliotecas da Rede de Bibliotecas do Concelho. Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
+	<meta property="og:image" content="http://www.pesquisardocumentos.com/rbcatalogo/partilhasocial.png" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Catálogo - XPTO - Rede de bibliotecas de XPTO" />
 </head>
 
 <body>
-  <div class="destaque1">
-    <h3>Catálogo Coletivo: <%=sentidadelonga%></h3>
-  </div>
-<!-- Segmento Navegação topo -->
-  <div class="col3-contentor">
-    <div class="col3">
-    <p class="fil"><a href="default.asp">Entrada</a> »
-        <% 
+	<div class="destaque1">
+		<h3>Catálogo Coletivo: <%=sentidadelonga%>
+		</h3>
+	</div>
+	<!-- Segmento Navegação topo -->
+	<div class="col3-contentor">
+		<div class="col3">
+			<p class="fil"><a href="default.asp">Entrada</a> »
+				<% 
 		select case request.querystring("bd")
 		case "col"
 		    base="rbcatalogo"
@@ -155,481 +169,484 @@
 		     response.write "Navegar por termos"
 		end select
 		%>
-    </div>
-    <div class="col3" id="lblutilizador">
-		<% if session("user")="" then 
+		</div>
+		<div class="col3" id="lblutilizador">
+			<% if session("user")="" then 
 		    response.write "Utilizador: Visitante"
 		  elseif session("LeitorIn") then 
 		    response.write "Utilizador: " & DecodeUTF8(session("user")) 
 		  else response.write "Utilizador: " & ucase(session("user")) 
 		  end if%>
-		<%if Session("LoggedIn") or session("LeitorIn") then%> [ <a href="logout.asp?sys=admin">Sair</a> ]<%end if%>
-    </div>
-  </div>
-<!-- Segmento Navegação topo - FIM -->
-<!-- Segmento Navegação de topo autenticado - Reservas desativado -->           
-<%if Session("LoggedIn") or session("LeitorIn") then %>
-<div class="navegatopo">
-  <% if session("nuser")<>"" then %>
-  <a href="javascript:void(0)" onclick="javascript:alterarPin()" rel="nofollow"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch" ></i><i class="fas fa-user" data-fa-transform="shrink-8" title="Alterar o meu PIN"></i></span></a>
-  <% end if%>
-<!--
-  <%if (session("user")<>"" and session("user")<>"ADMIN") or session("nuser")<>"" then %> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;<%=session("user")%>&quot;,&quot;<%=session("nuser")%>&quot;)" rel="nofollow"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch" ></i><i class="fas fa-shopping-cart" data-fa-transform="shrink-9" title="As minhas reservas"></i></span></a><br />
+			<%if Session("LoggedIn") or session("LeitorIn") then%> [ <a href="logout.asp?sys=admin">Sair</a> ]
+			<%end if%>
+		</div>
+	</div>
+	<!-- Segmento Navegação topo - FIM -->
+	<!-- Segmento Navegação de topo autenticado - Reservas desativado -->
+	<%if Session("LoggedIn") or session("LeitorIn") then %>
+	<div class="navegatopo">
+		<% if session("nuser")<>"" then %>
+		<a href="javascript:void(0)" onclick="javascript:alterarPin()" rel="nofollow"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch"></i><i class="fas fa-user" data-fa-transform="shrink-8" alt="Alterar o meu PIN" title="Alterar o meu PIN"></i></span></a>
+		<% end if%>
+		<!--
+  <%if (session("user")<>"" and session("user")<>"ADMIN") or session("nuser")<>"" then %> <a href="javascript:void(0)" onclick="javascript:build_reservas(&quot;<%=session("user")%>&quot;,&quot;<%=session("nuser")%>&quot;)" rel="nofollow"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch" ></i><i class="fas fa-shopping-cart" data-fa-transform="shrink-9" alt="As minhas reservas" title="As minhas reservas"></i></span></a><br>
   <% end if%>
 -->
-</div><% end if%>
-<!-- Segmento Navegação de topo autenticado FIM -->
-    <div id="principal"> 
-<!-- Segmento pesquisa orientada Filtros Cabeçalho -->
-      <% if request.querystring("id")=1 then %>
-      <form action="cgi/www.exe/[in=pesqger.in]" method="get" onSubmit="return ValidaData(this)">
-        <input type="hidden" name="expressao" value>
-        <input type="hidden" name="lim_inicio" value="1">
-        <input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
-		<input type="hidden" name="id" value="1">
-        <input type="hidden" name="base" value="<%=base%>">
-        <% if Session("LoggedIn") or session("LeitorIn") then %>
-        <input type="hidden" name="ut" value="<%=DecodeUTF8(session("user"))%>">
-        <% else %>
-        <input type="hidden" name="ut" value="guest">
-        <% end if%>
-		<input type="hidden" name="nut" value="<%=session("nuser")%>">
-		<input type="hidden" name="ent" value="<%=session("entidade")%>">
-    Filtros: <img id="slick-show" src="imagens/picactions/arrow_down.gif" border="0" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" width="24"/><span  style="font-size:0.8em;color:red;margin-left:15px" id="txtfilter"></span><br />
-<!-- Segmento pesquisa orientada Filtros Cabeçalho - FIM -->
-<!-- Segmento pesquisa orientada Filtros Campos -->		
-<div id="slickbox" style="margin-top: 12px;">
-		<div class="col4-contentor">
-    <div class="col4">
-	<p>Tipo de documento:<br /> 
-        <select  size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
-          <option selected value="XX">Todos os documentos</option>
-          <option value="AM">Monografia (Texto impresso)</option>
-          <option value="BM">Monografia (Texto manuscrito)</option>
-          <option value="CM">Partituras musicais - Impressas</option>
-          <option value="DM">Partituras musicais - Manuscritas</option>
-          <option value="EM">Material cartográfico - Impresso</option>
-          <option value="FM">Material cartográfico - Manuscrito</option>
-          <option value="GM">Material de projeção e vídeo</option>
-          <option value="IM">Registos sonoros não nusicais</option>
-          <option value="JM">Registos sonoros nusicais</option>
-          <option value="KM">Material gráfico a duas dimensões</option>
-          <option value="LM">Recursos eletrónicos</option>
-          <option value="MM">Multimédia</option>
-          <option value="RM">Artefatos tridimensionais e realia</option>
-          <option value="AA">Analítico</option>
-          <option value="AS">Publicação periódica</option>
-        </select>
-        </p> 
-        <p>Ano de publicação:<br /> 
-        <input type="text" size="4" name="DP" id="dp" maxlength="4" onchange="SwapFilter()">
-        </p> 
-		</div>
-		<div class="col4">
-        <p>Formato de visualização:<br />
-          <select  size="1" name="formato" id="formato" onchange="SwapFilter()">
-            <option selected value="wiusr">Completo</option>
-            <option value="wiabr">Abreviado</option>
-            <option value="winp405">Norma NP405</option>
-            <option value="wicmp">ISBD</option>
-            <option value="witit">Títulos</option>
-            <option value="wibol">Boletim</option>
-          </select>
-        </p> 
-        <p>Resultados por página:<br /> 
-          <select size="1" name="limites" id="limites" onchange="SwapFilter()">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option selected value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="250">250</option>
-          </select>
-        </p>
-		</div>
 	</div>
-</div>
-<br />
-<!-- Segmento pesquisa orientada Filtros  Campos - FIM -->	
-<!-- Segmento Caixa Pesquisa orientada -->
-        <table>
-          <th>Operador</th>
-          <th>Campo</th>
-          <th>Termo</th>
-          <th>Truncatura</th>
-          <tr> 
-            <td> </td>
-            <td> <select size="1" name="PRFX1">
-                <option selected value="AU">Autor</option>
-                <option value="TI">Título</option>
-                <option value="AS">Assunto</option>
-                <option value="COL">Coleção</option>
-                <option value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option value="SI">Biblioteca</option>
-              </select> </td>
-            <td><input type="text" size="40" name="Termo1" maxlength="80" class="form-pesquisa" placeholder="Escrever numa caixa e/ou escolher biblioteca"> </td>
-            <td><input type="checkbox" value="$" name="TR1" checked> </td>
-          </tr>
-          <tr> 
-            <td><select size="1" name="OP2">
-                <option value="OR">OU</option>
-                <option selected value="AND">E</option>
-                <option value="AND NOT">NÃO</option>
-                <!--<option value="(G)">Campo</option>
-                <option value="(F)">Ocorrência</option>-->
-              </select> </td>
-            <td> <select size="1" name="PRFX2">
-                <option value="AU">Autor</option>
-                <option selected value="TI">Título</option>
-                <option value="AS">Assunto</option>
-                <option value="COL">Coleção</option>
-                <option value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option value="SI">Biblioteca</option>
-              </select> 
-            <td><input type="text" size="40" name="Termo2" maxlength="80" class="form-pesquisa"> </td></td>
-            <td><input type="checkbox" value="$" name="TR2" checked> </td>
-          </tr>
-          <tr> 
-            <td> <select size="1" name="OP3">
-                <option value="OR">OU</option>
-                <option selected value="AND">E</option>
-                <option value="AND NOT">NÃO</option>
-                <!--<option value="(G)">Campo</option>
-                <option value="(F)">Ocorrência</option>-->
-              </select> </td>
-            <td> <select size="1" name="PRFX3">
-                <option value="AU">Autor</option>
-                <option value="TI">Título</option>
-                <option selected value="AS">Assunto</option>
-                <option value="COL">Coleção</option>
-                <option value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option value="SI">Biblioteca</option>
-              </select> </td>
-            <td><input type="text"  size="40" name="Termo3" maxlength="80" class="form-pesquisa"> </td>
-            <td><input type="checkbox" value="$" name="TR3" checked> </td>
-          </tr>
-          <tr> 
-            <td><select size="1"  name="OP4">
-                <option value="OR">OU</option>
-                <option selected value="AND">E</option>
-                <option value="AND NOT">NÃO</option>
-                <!--<option value="(G)">Campo</option>
-                <option value="(F)">Ocorrência</option>-->
-              </select> </td>
-            <td> <select size="1" name="PRFX4">
-                <option value="AU">Autor</option>
-                <option value="TI">Título</option>
-                <option value="AS">Assunto</option>
-                <option selected value="COL">Coleção</option>
-                <option value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option value="SI">Biblioteca</option>
-              </select> </td>
-            <td><input type="text"  size="40" name="Termo4" maxlength="80" class="form-pesquisa"> </td>
-            <td><input type="checkbox" value="$" name="TR4" checked> </td>
-          </tr>
-          <tr> 
-            <td><select size="1" name="OP5">
-                <option value="OR">OU</option>
-                <option selected value="AND">E</option>
-                <option value="AND NOT">NÃO</option>
-                <!--<option value="(G)">Campo</option>
-                <option value="(F)">Ocorrência</option>-->
-              </select> </td>
-            <td> <select size="1" name="PRFX5">
-                <option value="AU">Autor</option>
-                <option value="TI">Título</option>
-                <option value="AS">Assunto</option>
-                <option value="COL">Coleção</option>
-                <option selected value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option value="SI">Biblioteca</option>
-              </select> </td>
-            <td><input type="text" size="40" name="Termo5" maxlength="80" class="form-pesquisa"> </td>
-            <td><input type="checkbox" value="$" name="TR5" checked> </td>
-          </tr>
-          <tr> 
-            <td><select size="1"  name="OP6">
-                <option  value="OR">OU</option>
-                <option selected value="AND">E</option>
-                <option value="AND NOT">NÃO</option>
-                <!--<option value="(G)">Campo</option>
-                <option value="(F)">Ocorrência</option>-->
-              </select> </td>
-            <td> <select size="1" name="PRFX6">
-                <option value="AU">Autor</option>
-                <option value="TI">Título</option>
-                <option value="AS">Assunto</option>
-                <option value="COL">Coleção</option>
-                <option value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option selected value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option value="SI">Biblioteca</option>
-              </select> </td>
-            <td><input type="text"  size="40" name="Termo6" maxlength="80" class="form-pesquisa"> </td>
-            <td><input type="checkbox" value="$" name="TR6" checked> </td>
-          </tr>
-          <tr> 
-            <td><select size="1"  name="OP7">
-                <option value="OR">OU</option>
-                <option selected value="AND">E</option>
-                <option value="AND NOT">NÃO</option>
-                <!--<option value="(G)">Campo</option>
-                <option value="(F)">Ocorrência</option>-->
-              </select> </td>
-            <td><select size="1" name="PRFX7">
-                <option value="AU">Autor</option>
-                <option value="TI">Título</option>
-                <option value="AS">Assunto</option>
-                <option value="COL">Coleção</option>
-                <option value="ISBN">ISBN</option>
-                <option value="ISSN">ISSN</option>
-                <option value="CDU">CDU</option>
-                <option value="LED">Local</option>
-                <option  value="PAL">Palavra</option>
-                <option value="CT">Cota</option>
-                <option selected value="SI">Biblioteca</option>
-              </select> </td>
-            <!--<td><input type="text" size="30" name="Termo7" maxlength="80" class="form-pesquisa"> </td>-->
-			<td id="td7">  
-			    <select name="Termo7" style="width:390px;"><option value=""></option>
-				 <%for i=1 to ubound(u2)%>
-                     <option value=<%=u2(i,0)%>><%=u2(i,1)%></option>
-                  <%next%> 
-              </select> </td>
-            <td><input type="checkbox" value="$" name="TR7" checked> </td>
-          </tr>
-        </table>
-        <br>
-        <div align="center"> 
-          <input type="submit" value="Pesquisar" onClick="return ValidaExpress(this.form)" name="Submit" class="botao botao1">
-          <input type="reset" value="Limpar" name="Reset" class="botao botao2">
-        </div>
-      </form>
-<!-- Segmento Caixa Pesquisa orientada FIM -->
-  <p class="info">Informação: Esta pesquisa (orientada) permite utilizar operadores para relacionar dados em campos diferentes.
-<dl>
-  <dd>Ao pesquisar deve indicar pelo menos <b>uma palavra com o mínimo de dois carateres.</b></dd>
-  <dd>Sem truncatura = Pesquisa exata. Pesquisar com a <b>marca de truncatura ativa</b> permite obter resultados mesmo sem indicar os dados completos (por exemplo quando só conhece a parte inicial de um título ou para encontrar autores começados pelo mesmo nome)</dd>
-  <dd>A pesquisa será realizada em todo o catálogo mas <b>pode ser limitada a uma das bibliotecas</b> (ver campo de escolha de bibliotecas). </dd>
-  <dd>Pode escolher uma biblioteca e pesquisar sem preencher nenhum dos outros campos: obterá <b>todos os documentos dessa biblioteca</b>.</dd>
-  </dl>
-  </p>
-		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/setnav/pic_question.png" alt="Dicas de pesquisa" title="Dicas de pesquisa" border=0 align="absmiddle" hspace="3" width="24" height="24">Dúvidas? Carregue aqui para ver as dicas de pesquisa</a></h4>
-		 <br />
-<!-- Segmento pesquisa simples Filtros Cabeçalho -->
-      <% elseif request.QueryString("id")=0 then%>
-      <form action="cgi/www.exe/[in=pesqger.in]" method="get">
-        <input type="hidden" name="base" value="<%=base%>">
-        <input type="hidden" name="expressao" value>
-        <input type="hidden" name="html_form" value="rbcatalogo">
-        <input type="hidden" name="lim_inicio" value="1">
-        <input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
-		<input type="hidden" name="id" value="0">
-        <% if Session("LoggedIn") or session("LeitorIn") then %>
-        <input type="hidden" name="ut" value="<%=DecodeUTF8(session("user"))%>">
-        <% else %>
-        <input type="hidden" name="ut" value="guest">
-        <% end if%>
-		<input type="hidden" name="nut" value="<%=session("nuser")%>">
-		<input type="hidden" name="ent" value="<%=session("entidade")%>">    
-		 Filtros: <img id="slick-show" src="imagens/picactions/arrow_down.gif" border="0" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" width="24"/><span  style="font-size:0.8em;color:red;margin-left:45px" id="txtfilter"></span><br />
-<!-- Segmento pesquisa simples Filtros Cabeçalho - FIM -->
-<!-- Segmento pesquisa simples Filtros Campos -->	
-	<div id="slickbox" style="margin-top: 12px;">
-		<div class="col4-contentor">
-    <div class="col4">
-		<p>Tipo de documento:<br /> 
-          <select  size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
-            <option selected value="XX">Todos os documentos</option>
-            <option value="AM">Monografia (Texto impresso)</option>
-            <option value="BM">Monografia (Texto manuscrito)</option>
-            <option value="CM">Partituras musicais - Impressas</option>
-            <option value="DM">Partituras musicais - Manuscritas</option>
-            <option value="EM">Material cartográfico - Impresso</option>
-            <option value="FM">Material cartográfico - Manuscrito</option>
-            <option value="GM">Material de projeção e Vídeo</option>
-            <option value="IM">Registos sonoros não musicais</option>
-            <option value="JM">Registos sonoros musicais</option>
-            <option value="KM">Material gráfico a duas dimensões</option>
-            <option value="LM">Recursos eletrónicos</option>
-            <option value="MM">Multimédia</option>
-            <option value="RM">Artefatos tridimensionias e realia</option>
-            <option value="AA">Analítico</option>
-            <option value="AS">Publicação periódica</option>
-          </select>
-			</p>
-		  <p>Ano de publicação:<br />  
-          <input type="text" size="4" name="DP" id="dp" maxlength="4" onchange="SwapFilter()">
-			</p>
-    </div>
-		<div class="col4">
-		<p>Formato de visualização:<br /> 
-          <select  size="1" name="formato" id="formato" onchange="SwapFilter()">
-            <option selected value="wiusr">Completo</option>
-            <option value="wiabr">Abreviado</option>
-            <option value="winp405">Norma NP405</option>
-            <option value="wicmp">ISBD</option>
-            <option value="witit">Títulos</option>
-            <option value="wibol">Boletim</option>
-          </select>
-			</p>
-		<p>Resultados por página:<br /> 
-          <select size="1" name="limites" id="limites" onchange="SwapFilter()">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option selected value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="250">250</option>
-          </select>
-         </p>
-		</div>
-		</div>
-	</div> 
-<br />
-<!-- Segmento pesquisa simples Filtros Campos - FIM -->
-<!-- Segmento Caixa Pesquisa Simples -->
-        <div class="caixapesquisa" style="width:100%"> 
-		  <h2 style="text-align:left; font-variant: small-caps">Palavra/Expressão a pesquisar</h2>
-		  <p>
-      Irá procurar em todas as bibliotecas por palavras presentes na descrição do documento (título, autor, assunto, editora, etc.) <br /> 
-          <input type="text" size="768" name="termo" id="simptrm" maxlength="80" class="form-pesquisa" placeholder="Escrever aqui...">
-		  <div align="center">    
-			<input type="submit" value="Pesquisar" onClick="return ValidaExpress_3(this.form)" name="Submit" class="botao botao1">
-			<input type="reset" value="Limpar" name="Reset" class="botao botao2">
-		  </div>
-		</div>        
-      </form>
-</p><br />
-<!-- Segmento Caixa Pesquisa Simples FIM -->
-  <p class="info">Informação: Esta é uma pesquisa livre em <b>todos os campos da ficha do documento</b> (título, autor, etc.) e em <b>todas as bibliotecas</b>.
-	<br />Serão encontrados registos de documentos que contenham <b>pelo menos UMA das palavras</b> que escrever.
-		 <br />Se carregar apenas no botão "Pesquisar", <b>sem introduzir qualquer texto</b>, serão apresentados <b>todos os documentos do catálogo</b>.
-		 <br />
-     <br />Para que a pesquisa seja <b>mais exata</b> (e com menos resultados), pode:
-<dl>
-  <dd>Colocar aspas (") no início e final da expressão a pesquisar (ou um sinal + entre cada palavra)</dd>
-  <dd>Utilizar o modo de "Pesquisa orientada" (carregue acima em "ENTRADA" para voltar à página de entrada do catálogo)</dd>
-</dl>
-  </p> 
-		 <br />
-		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><img src="imagens/setnav/pic_question.png" alt="Dicas de pesquisa" title="Dicas de pesquisa" border=0 align="absmiddle" hspace="3" width="24" height="24">Dúvidas? Carregue aqui para ver as dicas de pesquisa</a></h4>
-<!-- Segmento Pesquisa por termos -->
-<!-- Segmento Pesquisa por termos - FIM -->
-<!-- Segmento pesquisa etiquetas Filtros Cabeçalho -->
-	  <%else %>
-	    <form action="cgi/www.exe/[in=pesqger.in]" method="get">
-        <input type="hidden" name="base" value="<%=base%>">
-        <input type="hidden" name="expressao" value>
-		<input type="hidden" name="lim_inicio" value="1">
-        <input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
-		<input type="hidden" name="id" value="2">
-        <% if Session("LoggedIn") or session("LeitorIn") then %>
-        <input type="hidden" name="ut" value="<%=DecodeUTF8(session("user"))%>">
-        <% else %>
-        <input type="hidden" name="ut" value="guest">
-        <% end if%>
-		<input type="hidden" name="nut" value="<%=session("nuser")%>">
-		<input type="hidden" name="ent" value="<%=session("entidade")%>">
-        Filtros: <img id="slick-show" src="imagens/picactions/arrow_down.gif" border="0" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" width="24"/><span  style="font-size:0.8em;color:red;margin-left:20px" id="txtfilter"></span><br />
-<!-- Segmento pesquisa etiquetas Filtros Cabeçalho - FIM -->
-<!-- Segmento pesquisa etiquetas Filtros Campos -->
-<div id="slickbox" style="margin-top: 12px;">
-	<div class="col4-contentor">
-		<div class="col4">
-		  <p>Tipo de documento:<br /> 
-          <select  size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
-            <option selected value="XX">Todos os documentos</option>
-            <option value="AM">Monografia (Texto impresso)</option>
-            <option value="BM">Monografia (Texto manuscrito)</option>
-            <option value="CM">Partituras musicais - Impressas</option>
-            <option value="DM">Partituras musicais - Manuscritas</option>
-            <option value="EM">Material cartográfico - Impresso</option>
-            <option value="FM">Material cartográfico - Manuscrito</option>
-            <option value="GM">Material de projeção e vídeo</option>
-            <option value="IM">Registos sonoros não Musicais</option>
-            <option value="JM">Registos sonoros Musicais</option>
-            <option value="KM">Material gráfico a duas dimensões</option>
-            <option value="LM">Recursos eletrónicos</option>
-            <option value="MM">Multimédia</option>
-            <option value="RM">Artefatos tridimensionais e realia</option>
-            <option value="AA">Analítico</option>
-            <option value="AS">Publicação periódica</option>          
-          </select>
-          </p>
-          <p>Ano de publicação:<br />
-          <input type="text" size="4" name="DP" id="dp" maxlength="4" onkeyup="SwapFilter()">
-          </p>
-		</div>
-		<div class="col4">
-          <p>Formato de visualização:<br /> 
-          <select  size="1" name="formato" id="formato" onchange="SwapFilter()">
-            <option selected value="wiusr">Completo</option>
-            <option value="wiabr">Abreviado</option>
-            <option value="winp405">Norma NP405</option>
-            <option value="wicmp">ISBD</option>
-            <option value="witit">Títulos</option>
-            <option value="wibol">Boletim</option>
-          </select>
-          </p>
-          <p>Resultados por página:<br />
-          <select size="1" name="limites" id="limites" onchange="SwapFilter()">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option selected value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="250">250</option>          
-          </select></p>
-          <p>&nbsp;&nbsp;&nbsp;Exata <input type="checkbox" class="checkbox" value="$" name="truncatura" id="truncatura" onclick="SwapFilter()">
-		 </p> 
-		</div>
-	</div>
-</div>
-<br />	
-<!-- Segmento pesquisa etiquetas Filtros - Campos - FIM -->	
-<!-- Segmento Caixa Pesquisa etiquetas -->	
-        <div class="caixapesquisa"> 
-		  <span class="txtexp">Etiquetas de leitor</span>: 
-          <input type="text" size="74" name="termo" maxlength="80" class="form-pesquisa" placeholder="Escrever aqui..."> 
-		  <div align="center"> 
-          <input type="submit" value="Pesquisar" onClick="return ValidaExpress_5(this.form)" name="Submit" class="botao botao1">
-          <input type="reset" value="Limpar" name="Reset" class="botao botao2">
-          </div>		  
-        </div>  
-        
-      </form>
-<!-- Segmento Caixa Pesquisa etiquetas FIM -->
-<!-- Segmento lista etiquetas -->
+	<% end if%>
+	<!-- Segmento Navegação de topo autenticado FIM -->
+	<div id="principal">
+		<!-- Segmento pesquisa orientada Filtros Cabeçalho -->
+		<% if request.querystring("id")=1 then %>
+		<form action="cgi/www.exe/[in=pesqger.in]" method="get" onSubmit="return ValidaData(this)">
+			<input type="hidden" name="expressao" value>
+			<input type="hidden" name="lim_inicio" value="1">
+			<input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
+			<input type="hidden" name="id" value="1">
+			<input type="hidden" name="base" value="<%=base%>">
+			<% if Session("LoggedIn") or session("LeitorIn") then %>
+			<input type="hidden" name="ut" value="<%=DecodeUTF8(session("user"))%>">
+			<% else %>
+			<input type="hidden" name="ut" value="guest">
+			<% end if%>
+			<input type="hidden" name="nut" value="<%=session("nuser")%>">
+			<input type="hidden" name="ent" value="<%=session("entidade")%>">
+			Filtros: <img id="slick-show" src="imagens/picactions/arrow_down.gif" border="0" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" width="24" /><span style="font-size:0.8em;color:red;margin-left:15px" id="txtfilter"></span><br>
+			<!-- Segmento pesquisa orientada Filtros Cabeçalho - FIM -->
+			<!-- Segmento pesquisa orientada Filtros Campos -->
+			<div id="slickbox" style="margin-top: 12px;">
+				<div class="col4-contentor">
+					<div class="col4">
+						<p>Tipo de documento:<br>
+							<select size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
+								<option selected value="XX">Todos os documentos</option>
+								<option value="AM">Monografia (Texto impresso)</option>
+								<option value="BM">Monografia (Texto manuscrito)</option>
+								<option value="CM">Partituras musicais - Impressas</option>
+								<option value="DM">Partituras musicais - Manuscritas</option>
+								<option value="EM">Material cartográfico - Impresso</option>
+								<option value="FM">Material cartográfico - Manuscrito</option>
+								<option value="GM">Material de projeção e vídeo</option>
+								<option value="IM">Registos sonoros não nusicais</option>
+								<option value="JM">Registos sonoros nusicais</option>
+								<option value="KM">Material gráfico a duas dimensões</option>
+								<option value="LM">Recursos eletrónicos</option>
+								<option value="MM">Multimédia</option>
+								<option value="RM">Artefatos tridimensionais e realia</option>
+								<option value="AA">Analítico</option>
+								<option value="AS">Publicação periódica</option>
+							</select>
+						</p>
+						<p>Ano de publicação:<br>
+							<input type="text" size="4" name="DP" id="dp" maxlength="4" onchange="SwapFilter()">
+						</p>
+					</div>
+					<div class="col4">
+						<p>Formato de visualização:<br>
+							<select size="1" name="formato" id="formato" onchange="SwapFilter()">
+								<option selected value="wiusr">Completo</option>
+								<option value="wiabr">Abreviado</option>
+								<option value="winp405">Norma NP405</option>
+								<option value="wicmp">ISBD</option>
+								<option value="witit">Títulos</option>
+								<option value="wibol">Boletim</option>
+							</select>
+						</p>
+						<p>Resultados por página:<br>
+							<select size="1" name="limites" id="limites" onchange="SwapFilter()">
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option selected value="25">25</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+								<option value="250">250</option>
+							</select>
+						</p>
+					</div>
+				</div>
+			</div>
+			<br>
+			<!-- Segmento pesquisa orientada Filtros  Campos - FIM -->
+			<!-- Segmento Caixa Pesquisa orientada -->
+			<table>
+				<th>Operador</th>
+				<th>Campo</th>
+				<th>Termo</th>
+				<th>Truncatura</th>
+				<tr>
+					<td> </td>
+					<td> <select size="1" name="PRFX1">
+							<option selected value="AU">Autor</option>
+							<option value="TI">Título</option>
+							<option value="AS">Assunto</option>
+							<option value="COL">Coleção</option>
+							<option value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option value="SI">Biblioteca</option>
+						</select> </td>
+					<td><input type="text" size="40" name="Termo1" maxlength="80" class="form-pesquisa" placeholder="Escrever numa caixa e/ou escolher biblioteca"> </td>
+					<td><input type="checkbox" value="$" name="TR1" checked> </td>
+				</tr>
+				<tr>
+					<td><select size="1" name="OP2">
+							<option value="OR">OU</option>
+							<option selected value="AND">E</option>
+							<option value="AND NOT">NÃO</option>
+							<!--<option value="(G)">Campo</option>
+							<option value="(F)">Ocorrência</option>-->
+						</select> </td>
+					<td> <select size="1" name="PRFX2">
+							<option value="AU">Autor</option>
+							<option selected value="TI">Título</option>
+							<option value="AS">Assunto</option>
+							<option value="COL">Coleção</option>
+							<option value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option value="SI">Biblioteca</option>
+						</select> </td>
+					<td><input type="text" size="40" name="Termo2" maxlength="80" class="form-pesquisa"> </td>
+					<td><input type="checkbox" value="$" name="TR2" checked> </td>
+				</tr>
+				<tr>
+					<td> <select size="1" name="OP3">
+							<option value="OR">OU</option>
+							<option selected value="AND">E</option>
+							<option value="AND NOT">NÃO</option>
+							<!--<option value="(G)">Campo</option>
+							<option value="(F)">Ocorrência</option>-->
+						</select> </td>
+					<td> <select size="1" name="PRFX3">
+							<option value="AU">Autor</option>
+							<option value="TI">Título</option>
+							<option selected value="AS">Assunto</option>
+							<option value="COL">Coleção</option>
+							<option value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option value="SI">Biblioteca</option>
+						</select> </td>
+					<td><input type="text" size="40" name="Termo3" maxlength="80" class="form-pesquisa"> </td>
+					<td><input type="checkbox" value="$" name="TR3" checked> </td>
+				</tr>
+				<tr>
+					<td><select size="1" name="OP4">
+							<option value="OR">OU</option>
+							<option selected value="AND">E</option>
+							<option value="AND NOT">NÃO</option>
+							<!--<option value="(G)">Campo</option>
+							<option value="(F)">Ocorrência</option>-->
+						</select> </td>
+					<td> <select size="1" name="PRFX4">
+							<option value="AU">Autor</option>
+							<option value="TI">Título</option>
+							<option value="AS">Assunto</option>
+							<option selected value="COL">Coleção</option>
+							<option value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option value="SI">Biblioteca</option>
+						</select> </td>
+					<td><input type="text" size="40" name="Termo4" maxlength="80" class="form-pesquisa"> </td>
+					<td><input type="checkbox" value="$" name="TR4" checked> </td>
+				</tr>
+				<tr>
+					<td><select size="1" name="OP5">
+							<option value="OR">OU</option>
+							<option selected value="AND">E</option>
+							<option value="AND NOT">NÃO</option>
+							<!--<option value="(G)">Campo</option>
+							<option value="(F)">Ocorrência</option>-->
+						</select> </td>
+					<td> <select size="1" name="PRFX5">
+							<option value="AU">Autor</option>
+							<option value="TI">Título</option>
+							<option value="AS">Assunto</option>
+							<option value="COL">Coleção</option>
+							<option selected value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option value="SI">Biblioteca</option>
+						</select> </td>
+					<td><input type="text" size="40" name="Termo5" maxlength="80" class="form-pesquisa"> </td>
+					<td><input type="checkbox" value="$" name="TR5" checked> </td>
+				</tr>
+				<tr>
+					<td><select size="1" name="OP6">
+							<option value="OR">OU</option>
+							<option selected value="AND">E</option>
+							<option value="AND NOT">NÃO</option>
+							<!--<option value="(G)">Campo</option>
+							<option value="(F)">Ocorrência</option>-->
+						</select> </td>
+					<td> <select size="1" name="PRFX6">
+							<option value="AU">Autor</option>
+							<option value="TI">Título</option>
+							<option value="AS">Assunto</option>
+							<option value="COL">Coleção</option>
+							<option value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option selected value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option value="SI">Biblioteca</option>
+						</select> </td>
+					<td><input type="text" size="40" name="Termo6" maxlength="80" class="form-pesquisa"> </td>
+					<td><input type="checkbox" value="$" name="TR6" checked> </td>
+				</tr>
+				<tr>
+					<td><select size="1" name="OP7">
+							<option value="OR">OU</option>
+							<option selected value="AND">E</option>
+							<option value="AND NOT">NÃO</option>
+							<!--<option value="(G)">Campo</option>
+							<option value="(F)">Ocorrência</option>-->
+						</select> </td>
+					<td><select size="1" name="PRFX7">
+							<option value="AU">Autor</option>
+							<option value="TI">Título</option>
+							<option value="AS">Assunto</option>
+							<option value="COL">Coleção</option>
+							<option value="ISBN">ISBN</option>
+							<option value="ISSN">ISSN</option>
+							<option value="CDU">CDU</option>
+							<option value="LED">Local</option>
+							<option value="PAL">Palavra</option>
+							<option value="CT">Cota</option>
+							<option selected value="SI">Biblioteca</option>
+						</select> </td>
+					<!--<td><input type="text" size="30" name="Termo7" maxlength="80" class="form-pesquisa"> </td>-->
+					<td id="td7">
+						<select name="Termo7" style="width:390px;">
+							<option value=""></option>
+							<%for i=1 to ubound(u2)%>
+							<option value=<%=u2(i,0)%>><%=u2(i,1)%></option>
+							<%next%>
+						</select> </td>
+					<td><input type="checkbox" value="$" name="TR7" checked> </td>
+				</tr>
+			</table>
+			<br>
+			<div align="center">
+				<input type="submit" value="Pesquisar" onClick="return ValidaExpress(this.form)" name="Submit" class="botao botao1">
+				<input type="reset" value="Limpar" name="Reset" class="botao botao2">
+			</div>
+		</form>
+		<!-- Segmento Caixa Pesquisa orientada FIM -->
+		<p class="info">Informação: Esta pesquisa (orientada) permite utilizar operadores para relacionar dados em campos diferentes.
+			<dl>
+				<dd>Ao pesquisar deve indicar pelo menos <b>uma palavra com o mínimo de dois carateres.</b></dd>
+				<dd>Sem truncatura = Pesquisa exata. Pesquisar com a <b>marca de truncatura ativa</b> permite obter resultados mesmo sem indicar os dados completos (por exemplo quando só conhece a parte inicial de um título ou para encontrar autores começados pelo mesmo nome)</dd>
+				<dd>A pesquisa será realizada em todo o catálogo mas <b>pode ser limitada a uma das bibliotecas</b> (ver campo de escolha de bibliotecas). </dd>
+				<dd>Pode escolher uma biblioteca e pesquisar sem preencher nenhum dos outros campos: obterá <b>todos os documentos dessa biblioteca</b>.</dd>
+			</dl>
+		</p>
+		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Dicas de pesquisa title=" Dicas de pesquisa"></i></span>Dúvidas? Carregue aqui para ver as dicas de pesquisa</a></h4>
+		<br>
+		<!-- Segmento pesquisa simples Filtros Cabeçalho -->
+		<% elseif request.QueryString("id")=0 then%>
+		<form action="cgi/www.exe/[in=pesqger.in]" method="get">
+			<input type="hidden" name="base" value="<%=base%>">
+			<input type="hidden" name="expressao" value>
+			<input type="hidden" name="html_form" value="rbcatalogo">
+			<input type="hidden" name="lim_inicio" value="1">
+			<input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
+			<input type="hidden" name="id" value="0">
+			<% if Session("LoggedIn") or session("LeitorIn") then %>
+			<input type="hidden" name="ut" value="<%=DecodeUTF8(session("user"))%>">
+			<% else %>
+			<input type="hidden" name="ut" value="guest">
+			<% end if%>
+			<input type="hidden" name="nut" value="<%=session("nuser")%>">
+			<input type="hidden" name="ent" value="<%=session("entidade")%>">
+			Filtros: <img id="slick-show" src="imagens/picactions/arrow_down.gif" border="0" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" width="24" /><span style="font-size:0.8em;color:red;margin-left:45px" id="txtfilter"></span><br>
+			<!-- Segmento pesquisa simples Filtros Cabeçalho - FIM -->
+			<!-- Segmento pesquisa simples Filtros Campos -->
+			<div id="slickbox" style="margin-top: 12px;">
+				<div class="col4-contentor">
+					<div class="col4">
+						<p>Tipo de documento:<br>
+							<select size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
+								<option selected value="XX">Todos os documentos</option>
+								<option value="AM">Monografia (Texto impresso)</option>
+								<option value="BM">Monografia (Texto manuscrito)</option>
+								<option value="CM">Partituras musicais - Impressas</option>
+								<option value="DM">Partituras musicais - Manuscritas</option>
+								<option value="EM">Material cartográfico - Impresso</option>
+								<option value="FM">Material cartográfico - Manuscrito</option>
+								<option value="GM">Material de projeção e Vídeo</option>
+								<option value="IM">Registos sonoros não musicais</option>
+								<option value="JM">Registos sonoros musicais</option>
+								<option value="KM">Material gráfico a duas dimensões</option>
+								<option value="LM">Recursos eletrónicos</option>
+								<option value="MM">Multimédia</option>
+								<option value="RM">Artefatos tridimensionias e realia</option>
+								<option value="AA">Analítico</option>
+								<option value="AS">Publicação periódica</option>
+							</select>
+						</p>
+						<p>Ano de publicação:<br>
+							<input type="text" size="4" name="DP" id="dp" maxlength="4" onchange="SwapFilter()">
+						</p>
+					</div>
+					<div class="col4">
+						<p>Formato de visualização:<br>
+							<select size="1" name="formato" id="formato" onchange="SwapFilter()">
+								<option selected value="wiusr">Completo</option>
+								<option value="wiabr">Abreviado</option>
+								<option value="winp405">Norma NP405</option>
+								<option value="wicmp">ISBD</option>
+								<option value="witit">Títulos</option>
+								<option value="wibol">Boletim</option>
+							</select>
+						</p>
+						<p>Resultados por página:<br>
+							<select size="1" name="limites" id="limites" onchange="SwapFilter()">
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option selected value="25">25</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+								<option value="250">250</option>
+							</select>
+						</p>
+					</div>
+				</div>
+			</div>
+			<br>
+			<!-- Segmento pesquisa simples Filtros Campos - FIM -->
+			<!-- Segmento Caixa Pesquisa Simples -->
+			<div class="caixapesquisa" style="width:100%">
+				<h2 style="text-align:left; font-variant: small-caps">Palavra/Expressão a pesquisar</h2>
+				<p>
+					Irá procurar em todas as bibliotecas por palavras presentes na descrição do documento (título, autor, assunto, editora, etc.) <br>
+					<input type="text" size="768" name="termo" id="simptrm" maxlength="80" class="form-pesquisa" placeholder="Escrever aqui...">
+					<div align="center">
+						<input type="submit" value="Pesquisar" onClick="return ValidaExpress_3(this.form)" name="Submit" class="botao botao1">
+						<input type="reset" value="Limpar" name="Reset" class="botao botao2">
+					</div>
+			</div>
+		</form>
+		</p><br>
+		<!-- Segmento Caixa Pesquisa Simples FIM -->
+		<p class="info">Informação: Esta é uma pesquisa livre em <b>todos os campos da ficha do documento</b> (título, autor, etc.) e em <b>todas as bibliotecas</b>.
+			<br />Serão encontrados registos de documentos que contenham <b>pelo menos UMA das palavras</b> que escrever.
+			<br />Se carregar apenas no botão "Pesquisar", <b>sem introduzir qualquer texto</b>, serão apresentados <b>todos os documentos do catálogo</b>.
+			<br>
+			<br />Para que a pesquisa seja <b>mais exata</b> (e com menos resultados), pode:
+			<dl>
+				<dd>Colocar aspas (") no início e final da expressão a pesquisar (ou um sinal + entre cada palavra)</dd>
+				<dd>Utilizar o modo de "Pesquisa orientada" (carregue acima em "ENTRADA" para voltar à página de entrada do catálogo)</dd>
+			</dl>
+		</p>
+		<br>
+		<h4><a style="text-decoration:none" href="ajuda_dicas.asp"><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Dicas de pesquisa" title="Dicas de pesquisa"></i></span>Dúvidas? Carregue aqui para ver as dicas de pesquisa</a></h4>
+		<!-- Segmento Pesquisa por termos -->
+		<!-- Segmento Pesquisa por termos - FIM -->
+		<!-- Segmento pesquisa etiquetas Filtros Cabeçalho -->
+		<%else %>
+		<form action="cgi/www.exe/[in=pesqger.in]" method="get">
+			<input type="hidden" name="base" value="<%=base%>">
+			<input type="hidden" name="expressao" value>
+			<input type="hidden" name="lim_inicio" value="1">
+			<input type="hidden" name="nomemnu" value="catpesq.asp?bd=<%=request.querystring("bd")%>">
+			<input type="hidden" name="id" value="2">
+			<% if Session("LoggedIn") or session("LeitorIn") then %>
+			<input type="hidden" name="ut" value="<%=DecodeUTF8(session("user"))%>">
+			<% else %>
+			<input type="hidden" name="ut" value="guest">
+			<% end if%>
+			<input type="hidden" name="nut" value="<%=session("nuser")%>">
+			<input type="hidden" name="ent" value="<%=session("entidade")%>">
+			Filtros: <img id="slick-show" src="imagens/picactions/arrow_down.gif" border="0" alt="mostrar filtros" title="mostrar filtros" align="absmiddle" style="cursor:pointer" width="24" /><span style="font-size:0.8em;color:red;margin-left:20px" id="txtfilter"></span><br>
+			<!-- Segmento pesquisa etiquetas Filtros Cabeçalho - FIM -->
+			<!-- Segmento pesquisa etiquetas Filtros Campos -->
+			<div id="slickbox" style="margin-top: 12px;">
+				<div class="col4-contentor">
+					<div class="col4">
+						<p>Tipo de documento:<br>
+							<select size="1" name="TDOC" id="tdoc" onchange="SwapFilter()">
+								<option selected value="XX">Todos os documentos</option>
+								<option value="AM">Monografia (Texto impresso)</option>
+								<option value="BM">Monografia (Texto manuscrito)</option>
+								<option value="CM">Partituras musicais - Impressas</option>
+								<option value="DM">Partituras musicais - Manuscritas</option>
+								<option value="EM">Material cartográfico - Impresso</option>
+								<option value="FM">Material cartográfico - Manuscrito</option>
+								<option value="GM">Material de projeção e vídeo</option>
+								<option value="IM">Registos sonoros não Musicais</option>
+								<option value="JM">Registos sonoros Musicais</option>
+								<option value="KM">Material gráfico a duas dimensões</option>
+								<option value="LM">Recursos eletrónicos</option>
+								<option value="MM">Multimédia</option>
+								<option value="RM">Artefatos tridimensionais e realia</option>
+								<option value="AA">Analítico</option>
+								<option value="AS">Publicação periódica</option>
+							</select>
+						</p>
+						<p>Ano de publicação:<br>
+							<input type="text" size="4" name="DP" id="dp" maxlength="4" onkeyup="SwapFilter()">
+						</p>
+					</div>
+					<div class="col4">
+						<p>Formato de visualização:<br>
+							<select size="1" name="formato" id="formato" onchange="SwapFilter()">
+								<option selected value="wiusr">Completo</option>
+								<option value="wiabr">Abreviado</option>
+								<option value="winp405">Norma NP405</option>
+								<option value="wicmp">ISBD</option>
+								<option value="witit">Títulos</option>
+								<option value="wibol">Boletim</option>
+							</select>
+						</p>
+						<p>Resultados por página:<br>
+							<select size="1" name="limites" id="limites" onchange="SwapFilter()">
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option selected value="25">25</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+								<option value="250">250</option>
+							</select></p>
+						<p>&nbsp;&nbsp;&nbsp;Exata <input type="checkbox" class="checkbox" value="$" name="truncatura" id="truncatura" onclick="SwapFilter()">
+						</p>
+					</div>
+				</div>
+			</div>
+			<br>
+			<!-- Segmento pesquisa etiquetas Filtros - Campos - FIM -->
+			<!-- Segmento Caixa Pesquisa etiquetas -->
+			<div class="caixapesquisa">
+				<span class="txtexp">Etiquetas de leitor</span>:
+				<input type="text" size="74" name="termo" maxlength="80" class="form-pesquisa" placeholder="Escrever aqui...">
+				<div align="center">
+					<input type="submit" value="Pesquisar" onClick="return ValidaExpress_5(this.form)" name="Submit" class="botao botao1">
+					<input type="reset" value="Limpar" name="Reset" class="botao botao2">
+				</div>
+			</div>
 
-	   <% if ucase(session("user"))="ADMIN" then
+		</form>
+		<!-- Segmento Caixa Pesquisa etiquetas FIM -->
+		<!-- Segmento lista etiquetas -->
+
+		<% if ucase(session("user"))="ADMIN" then
 	        strHTML=getUrl(strROOT & "/cgi/www.exe/[in=gettags.in]?expr=MFN $")
 	      else
 	        strHTML=getUrl(strROOT & "/cgi/www.exe/[in=gettags.in]?expr=(MFN $) AND (LTR " & session("nuser") & ")")
@@ -655,12 +672,13 @@
 		  response.write "</fieldset>"
 		  response.write "<div>"
        end if%>
-    </div>
+	</div>
 	<!-- Segmento lista etiquetas FIM -->
-		 <br />
-  <div class="txtrodape" align="center">
-  Catálogo Coletivo<br> &copy; <b><%=sentidadelonga%></b>
-  </div>
-		 <br />  
-		 </body>
+	<br>
+	<div class="txtrodape" align="center">
+		Catálogo Coletivo<br> &copy; <b><%=sentidadelonga%></b>
+	</div>
+	<br>
+</body>
+
 </html>

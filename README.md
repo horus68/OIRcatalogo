@@ -10,7 +10,7 @@ próprios programas de catalogação.
 
 
 # Instalação e gestão do software
-Apoio a técnicos e Guia do utilizador:
+Apoio a técnicos e guias do utilizador:
 https://sites.google.com/view/opacrbe/
 
 

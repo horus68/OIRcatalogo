@@ -7,11 +7,11 @@ Info: https://sites.google.com/view/opacrbe/oir/sobre
 
 
 ====== Alterações
-versão 1.0.5 - 20 julho 2018
-++ Revisão favicon
-++ Modo app e ecrã principal em móvel
-++ atualização versão fontawesome
-++ Registo de service works para móveis
+versão 1.0.7 - 02 outubro 2018
+++ Rev. geral indentação de código
+++ Atualização fontwaesome
+++ Licença + GIT
+++ QRcode
 
 ================ Apoio a técnicos de informática
 Guia de instalação e administração:

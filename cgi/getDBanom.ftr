@@ -4,7 +4,7 @@
      '<script>$("#resultados").html("<h3>»» Resultado:</h3> 'getenv('nr')' ficha(s)");addBtPrint("anomalias");</script>'
    else
 	 '<script>$("#resultados").html("»» <h3>Resultado:</h3> 'getenv('nr')' ficha(s)")</script>'  
-	 '<br /><br /><div class="aviso">Não foram encontrados registos correspondentes ao critério.</div>' 
+	 '<br><br><div class="aviso">Não foram encontrados registos correspondentes ao critério.</div>' 
    fi
     
    

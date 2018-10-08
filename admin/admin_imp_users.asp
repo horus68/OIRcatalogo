@@ -1,11 +1,19 @@
-
 <%If Not Session("LoggedIn") = True  Then response.redirect "admin.asp"%>
 <!--#include file="config.asp"-->
 <!--#include file="functions.asp"-->
-<!--#INCLUDE FILE="clsUpload.asp"-->
-<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" title="styles" />
-<script language="JavaScript">
-var flag=false;
+<!--#include file="clsUpload.asp"-->
+<!DOCTYPE html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
+
+<head>
+	<title>Importação de utilizadores</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" title="styles" />
+	<script language="JavaScript">
+		var flag=false;
 var ob;
 function fechar(){
 if (flag)
@@ -19,8 +27,8 @@ else {
 	  }
 }
 </script>
-<script language="JavaScript">
-function validar(user){
+	<script language="JavaScript">
+		function validar(user){
   var s=document.getElementById("FILE1").value;
   var pos= s.lastIndexOf('.');
   var fext= s.substring(pos+1);
@@ -38,15 +46,15 @@ function validar(user){
   }
 }
 </script>
-<style>
- body {margin-left:10px;margin-top:5px}
+	<style>
+		body {margin-left:10px;margin-top:5px}
  td {font-size: 0.9em}
  .fecho{font-size: 0.75em}
  </style>
-<%	If Session("LoggedIn") = True Then 
+	<%	If Session("LoggedIn") = True Then 
 %>
-	
-<%		If Request.QueryString("mode") = "doit" Then
+
+	<%		If Request.QueryString("mode") = "doit" Then
 			Server.ScriptTimeout = 1200		
 			Set Upload = New clsUpload
 			FileName = Upload.Fields("File1").FileName
@@ -125,44 +133,56 @@ function validar(user){
 											
 		Else
 		%>
-		</head>
-		<body >
-			<form id="frmimp" action="admin_imp_users.asp?mode=doit" method="post" ENCTYPE="multipart/form-data" onsubmit="return validar('<%=session("user")%>')">
-<p style="font-size:1.3em"><b>Importação de Utilizadores</b></p>	
-			    <table  border="0" width="100%" cellspacing="1" cellpadding="4">
-				 <tr>
-				  <td>Formato do ficheiro
-				  </td>
-				    <td>CSV <input type="radio" id="formato" name="impformato" value="csv" checked> Iso2709<input type="radio" id="formato1" name="impformato" value="iso">
-					</td>
-				</tr><tr>
-					<td>Reinicializar base de dados?
-					</td>
-					<td>Sim <input type="radio" id="reset" name="reset" value="1"> Não <input type="radio" id="reset1" name="reset" value="0" checked>
-					</td>
-			    </tr>
-	</table>
-			      <p>Selecione o ficheiro:<br />
-	<input type="file" id="FILE1" name="FILE1" size="54" class="botao botao5"></p>
-<p>
-<input type="submit" class="botao botao1" value="Enviar"></p>		      
-<p class="fecho"><input id="chkfecho" name="chkfecho" type="checkbox" checked> Fechar janela após conclusão da transferência</p>
-			</form>
-				  <p align="center"> <a href="#" onClick="window.close();">Fechar janela</a></p>
-	    </body>
+</head>
+
+<body>
+	<form id="frmimp" action="admin_imp_users.asp?mode=doit" method="post" ENCTYPE="multipart/form-data" onsubmit="return validar('<%=session("user")%>')">
+		<p style="font-size:1.3em"><b>Importação de Utilizadores</b></p>
+		<table border="0" width="100%" cellspacing="1" cellpadding="4">
+			<tr>
+				<td>Formato do ficheiro
+				</td>
+				<td>
+					<input type="radio" id="formato" name="impformato" value="csv" checked>CSV
+					<input type="radio" id="formato1" name="impformato" value="iso">Iso2709
+				</td>
+			</tr>
+			<tr>
+				<td>Reinicializar base de dados?
+				</td>
+				<td>
+					<input type="radio" id="reset" name="reset" value="1">Sim
+					<input type="radio" id="reset1" name="reset" value="0" checked>Não
+				</td>
+			</tr>
+		</table>
+		<p><b>Indicar ficheiro:</b>
+			<br>
+			<input name="FILE1" id="FILE1" type="file" size="54">
+		</p>
+		<p align="center">
+			<input type="submit" class="botao botao1" value="Enviar">
+		</p>
+		<p class="fecho">
+			<input id="chkfecho" name="chkfecho" type="checkbox" checked>Fechar janela após conclusão da transferência</p>
+	</form>
+	<p align="center"> <a href="#" onClick="window.close();">Fechar janela</a></p>
+</body>
 <%		End if
  	Else  
 	        %>
- <div id="upload"> 
-  <img src="../imagens/logotipo.png">
-  <br><br><br>
-  <h3>Atenção! A sua sessão expirou!!!</h3>
-  <p><%=session("nome")%></p>
-  <p></p>
-  <p>Por esse motivo terá que voltar a entrar no sistema para realizar a operação solicitada.</p>
-   <script>   
+<div id="upload">
+	<img src="../imagens/logotipo.png">
+	<br><br><br>
+	<h3>Atenção! A sua sessão expirou!!!</h3>
+	<p>
+		<%=session("nome")%>
+	</p>
+	<p></p>
+	<p>Terá de voltar a iniciar a sessão e a entrar no sistema para realizar a operação solicitada.</p>
+	<script>
 		fechar();
-    </script>
-  </div>
- <%end if %>
-		
+
+	</script>
+</div>
+<%end if %>

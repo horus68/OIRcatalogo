@@ -6,7 +6,7 @@
   '<div class="col7-contentor" style="width:100%">'    
 if val(v1002)>1 then
     '<div class="col7">'
-'    <input  onclick="this.value=check(forms[0].T8000);return false;" src="../../imagens/picactions/icon_select_all.png" name="img" type="image" title="Marcar/desmarcar todas as fichas desta página">'/
+'    <input  onclick="this.value=check(forms[0].T8000);return false;" src="../../imagens/picactions/icon_select_all.png" name="img" type="image" alt="Marcar/desmarcar todas as fichas desta página" title="Marcar/desmarcar todas as fichas desta página">'/
     '</div>'
     '<div class="col7">'
 if S((if v9000^n='selrec' then v9000^v fi))='1' then
@@ -23,10 +23,10 @@ if S((if v9000^n='selrec' then v9000^v fi))='1' then
    '<input type="hidden" name="user" value="'(if v9000^n='user' then v9000^v fi)'">'
    '<input type="hidden" name="nut" value="'(if v9000^n='nut' then v9000^v fi)'">'
    '<input type="hidden" name="sortfmt" value="'(if v9000^n='sortfmt' then v9000^v fi)'">'
-   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img" type="image" title="Carregue para mostrar apenas as fichas selecionadas">'
+   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"  name="img" id="img" type="image" alt="Carregue para mostrar apenas as fichas selecionadas" title="Carregue para mostrar apenas as fichas selecionadas">'
 else 
    '       '/
-   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"   name="img" type="image" title="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!"'
+   '<input style="display:none" border="0" src="../../imagens/picactions/icon_filter.png"   name="img" type="image" alt="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!" title="ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!"'
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' onclick="javascript:alert(&quot;ATENÇÃO! Esta funcionalidade não está disponível de momento. Tente mais tarde!&quot;)">'
 ,fi,
 else
@@ -56,7 +56,7 @@ proc('D9777A9777*'mid(s(mhu,V9777),instr(V9777,'.')+1,1000),mpl,'*'),
    '<img  src="'v859^u'" title="'v859^z'" onerror="ImageLoadFailed(this)" width="120" height="160" align="center">',
    if p(v859^x) then '</a>' fi,
    if p(v859^z) then
-   '<br />'v859^z, ''
+   '<br>'v859^z, ''
    fi,
    '</p>'
  fi,
@@ -71,7 +71,7 @@ else,
 	  ,fi
 	,fi,
 ,fi,
-   '<br /><br />'
+   '<br><br>'
   '</div>'
     '<div class="col7">'
     	 MHL,'<b>'(mhl,| ; |+v200^a,'</b>'| [|v200^b|]|,|. |v200^c,| : |v200^e,| |v200^d,|. |v200^i,|, |v200^h,|, |V200^v/) 
@@ -188,7 +188,7 @@ IF S(V600V601V602V604V605V606V607)<>''THEN" / "D610FI,if p(v610) then ('<a href=
 FI/
 
 ,@wiusrx.pft,
-'</table><br />'/
+'</table><br>'/
 
 ,if S(V930,V966)<>''  and v1051='rbcatalogo' then
 '<span style="float:right;font-size:0.7em;margin:-7px 8px 0 0;"><img id="vermais'mfn'" onclick="expandir(&quot;'mfn'&quot;,&quot;'v1051'&quot;,&quot;'v966^l[1]'&quot;,&quot;'getenv('user')'&quot;,&quot;'getenv('nuser')'&quot;,&quot;'getenv('ent')'&quot;);" src="../../imagens/picactions/plus.gif" border="0" align="absbottom" style="cursor:pointer" title="Expandir" alt="Expandir" >&nbsp;</span>'/
@@ -268,4 +268,4 @@ if val(V1002)>1 then
 ,@navereg.pft,
 '    </div>'/
 FI,
-  '<br /><br />'
+  '<br><br>'

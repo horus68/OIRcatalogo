@@ -24,7 +24,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta name=viewport content="width=device-width, initial-scale=1" />
 	<meta name="robots" content="index, follow" />
-	<title>Identificar bibliotecas - <%=stitulo%></title>
+	<title>Catálogo no telemóvel - <%=stitulo%></title>
 	<link rel="stylesheet" href="css/default.min.css?version=001" type="text/css" />
 	<script type="text/javascript" src="js/geral.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
         }
     </script>
 	<script defer async src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
-	<meta name="description" content="Identificar bibliotecas no catálogo coletivo - XPTO - Catálogo coletivo da Rede de Bibliotecas do concelho" />
+	<meta name="description" content="Como utilizar o catálogo coletivo em telemóveis - XPTO - Catálogo coletivo da Rede de Bibliotecas do concelho" />
 	<meta name="keywords" content="Catálogo coletivo, Bibliotecas, pesquisar biblioteca, OPAC, registo bibliográfico" />
 	<meta name="author" content="Rede Concelhia de Bibliotecas - XPTO" />
 	<!-- Favicon Geral -->
@@ -52,8 +52,8 @@
 	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=002" />
 	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=002" color="#5bbad5" />
 	<!-- OpenGraph Facebook -->
-	<meta property="og:title" content="Identificar bibliotecas - XPTO - Rede de bibliotecas" />
-	<meta property="og:description" content="XPTO: Identificar bibliotecas no catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos existentes nas bibliotecas deste concelho" />
+	<meta property="og:title" content="Catálogo no telemóvel - XPTO - Rede de bibliotecas" />
+	<meta property="og:description" content="XPTO: Como utilizar o catálogo coletivo em telemóveis. Pesquise os documentos existentes nas bibliotecas deste concelho" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Catálogo - XPTO - Rede de bibliotecas" />
 </head>
@@ -64,11 +64,10 @@
 			<%=sentidadelonga%>
 		</h1>
 	</div>
-
 	<!-- Segmento Navegação topo -->
 	<div class="col3-contentor">
 		<div class="col3">
-			<p class="fil">» <a href="default.asp">Entrada</a> » Ajuda: Identificar e localizar bibliotecas </p>
+			<p class="fil">» <a href="default.asp">Entrada</a> » Ajuda: Usar no telemóvel </p>
 		</div>
 		<div class="col3" id="lblutilizador">Utilizador:
 			<% if session("user")="" then response.write "Visitante" else response.write ucase(session("user"))%>
@@ -79,33 +78,46 @@
 		<div align="center">
 			<img src="<%=slogo%>" alt="Logótipo">
 		</div>
-		<h2><span class="fa-layers fa-fw" style="font-size:3em"><i class="fas fa-circle-notch"></i><i class="fas fa-graduation-cap" data-fa-transform="shrink-8" alt="Identificar e localizar uma biblioteca" title="Identificar e localizar uma biblioteca"></i></span>Como saber a que Biblioteca pertence um documento?</h2>
-		<p>Em cada resultado de pesquisa surge uma indicação de qual a biblioteca onde se encontra o documento, os contactos e morada da biblioteca bem como a localização no mapa.</p>
-		<p>Como é que chegamos até lá? Comece por pesquisar o que procura. Ao fazer uma pesquisa obtém os seus resultados, sob a forma de registos bibliográficos.
-			<br><img src="imagens/ajuda/pesquisa_simplificada.png" alt="Pesquisa simplificada" title="Pesquisa simplificada" border=0 align="center">
-		</p>
-		<p>
-			<dl>
-				<dt>Para ver a indicação das bibliotecas onde pode consultar esses documentos veja a linha "Localização" e carregue na sigla da biblioteca ou no sinal "+"</dt>
-				<dd>Todos os resultados têm uma indicação de “Localização” onde surgem as siglas das várias bibliotecas.</dd>
-				<dd>Como se trata de um catálogo coletivo vão aparecer várias siglas de acordo com os vários exemplares existentes no catálogo.</dd>
-				<dd>Clicando na sigla (ou no sinal +) surge uma informação detalhada sobre a Biblioteca onde está aquele documento.</dd>
-			</dl>
-			<br>
-			<img src="imagens/ajuda/bib_identificar1.png" alt="Resultado da pesquisa" title="Resultado da pesquisa" border=0 align="center">
-		</p>
-		<div class="destaquetexto">
-			<h2><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-map-marked-alt" data-fa-transform="shrink-9" alt="Ver no mapa" title="Ver no mapa"></i></span>Como chegar à biblioteca?</h2>
-			<p>Para saber como chegar à biblioteca pode carregar no ícone do carro/percurso para que se abra uma janela com o mapa de localização.
-				<br>
-				<img src="imagens/ajuda/bib_identificar2.png" alt="Resultado da pesquisa" title="Resultado da pesquisa" border=0 align="center">
-				<br> Na página inicial do catálogo pode ainda consultar os contactos das bibliotecas, clicando na hiperligação “Contactos das Bibliotecas”.
+		<h2><span class="fa-layers fa-fw" style="font-size:3em"><i class="fas fa-circle-notch"></i><i class="fas fa-graduation-cap" data-fa-transform="shrink-8" alt="Utilizar o catálogo coletivo em telemóveis" title="Utilizar o catálogo coletivo em telemóveis"></i></span>Como utilizar o catálogo em telemóveis?</h2>
+		<div class="col1-contentor">
+			<div class="col1">
+				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" alt="Utilização em telemóveis" title="Utilização em telemóveis"></i></span>No browswer e sem aplicações</h3>
+				<p>Pode utilizar o catálogo no telemóvel com o seu browser normal, basta entrar no endereço do catálogo.
+					<br> O catálogo adapta-se ao seu ecrã e terá as mesmas funcionalidades que num computador.
+					<br><img src="imagens/ajuda/movel_entrada.png" alt="Catálogo no telemóvel" title="Catálogo no telemóvel" border=0 align="center">
+					<br> No Google pesquise por "catálogo+rede bibliotecas + nome do seu concelho"
+				</p>
+			</div>
+			<div class="col1">
+				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-qrcode" data-fa-transform="shrink-8" alt="QR Code" title="QR Code"></i></span>Entrar por QR Code</h3>
+				<p>Escreva o endereço no browser ou capture a imagem com o leitor de QR Code do seu telemóvel.</p>
+				<p>No seu telemóvel, abra a aplicação de QR Code e aponte para esta imagem:
+					<br>
+					<br>
+					<img src="imagens/app/qrcode.png" alt="Ligação em QR Code para o catálogo" title="Ligação em QR Code para o catálogo" border=0 align="center">
+					<br>
+					<br> A aplicação vai ler o código diretamente do ecrã. Carregue no endereço que aparece na aplicação e entrará no catálogo.
+				</p>
+			</div>
+			<div class="col1">
+				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-th" data-fa-transform="shrink-8" alt="Acesso direto no ecrã" title="Acesso direto no ecrã"></i></span>Atalho no ecrã (acesso tipo aplicação)</h3>
+				<p>Depois de abrir o endereço, no browser do telemóvel, pode carregar no menu principal do browser e escolher "Adicionar ao ecrã principal".
+					<br />Será criado um ícone especial no seu ecrã de entrada e ficará com um acesso tipo App ao catálogo.
+					<br>
+					<img src="imagens/ajuda/movel_adicionar.png" alt="Menu do browser" title="Adicionar ao ecrã principal do telemóvel" border=0 align="center">
+					<br> Não é necessário instalar qualquer aplicação!
+					<br>
+			</div>
+		</div>
+		<br style="clear:left" />
+		<div class="destaquetexto1">
+			<h4 align="left"><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Dúvidas" title="Dúvidas"></i></span>Dúvidas sobre utilização em telemóveis?</h4>
+			<p>Encontre respostas (e sugestões de aplicações QR Code) aqui: <a style="text-decoration:none" href="https://sites.google.com/view/pesquisarcatalogo/movel" target="_blank">https://sites.google.com/view/pesquisarcatalogo/movel</a>
+			</p>
+			<p>Em caso de dúvidas, dirija-se à biblioteca mais próxima onde o podem ajudar nas pesquisas e empréstimos.
+				<br />Boas leituras!
 			</p>
 		</div>
-		<br>
-		<p><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Dúvidas" title="Dúvidas"></i></span>Em caso de dúvidas, dirija-se à biblioteca mais próxima onde o podem ajudar nas pesquisas e empréstimos.
-			<br />Boas leituras!
-		</p>
 		<div align="center" style="clear:both" class="txtvoltar">
 			<a style="text-decoration:none" href="default.asp">
 				<input type="button" name="bt2" value="Voltar" class="botao botao5" ;>

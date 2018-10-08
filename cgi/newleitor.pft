@@ -11,7 +11,7 @@
 	  '<input type="hidden" name="base" value="users">'
 	  '<input type="hidden" name="from" value="'mfn'">'
 	  '<input type="hidden" name="expressao" value="'(if v9000^n='expressao' then v9000^v fi)'">'
-      '<fieldset class="users"><legend>Campos</legend><br />'
+      '<fieldset class="users"><legend>Campos</legend><br>'
 	  '<div>'
       '<label for="v1" ><span>Código ID</span></label><input type="text" id="v1" name="v1" value="'v1'" size="9" readonly>'
 	  '<label class="esp" for="v2" >Sigla</label><input type="text" id="v2" name="v2" value="'v2'" size="9" readonly>'
@@ -31,7 +31,7 @@
     '<!--<label for="v17" ><span>Respons.</span></label><input type="text" id="v17" name="v17" value="'v17'" size="77" onblur="chgColor(this,false)" onfocus="chgColor(this,true)">-->'
 	  '<label for="v7" ><span>Senha</span></label><input type="password" id="v7" name="v7" value="'v7'" size="77" maxlength="18" onkeyup="pwdRob(this)" onblur="chgColor(this,false)" onfocus="chgColor(this,true)"><span id="pwd"></span>'
 	  
-      '<br /><center><input  type="submit" name="bt1" class="botao botao4" value="Atualizar">'
+      '<br><center><input  type="submit" name="bt1" class="botao botao4" value="Atualizar">'
       '<input type="button" name="bt2" class="botao botao5" value="Cancelar" onclick="javascript:window.location.href=&quot;../www.exe/[in=pesquser.in]?base=users&ut=admin&lim_inicio=1&limites=1000&expressao='(if v9000^n='expressao' then v9000^v fi)'&quot;"></center>'
       '</fieldset>'
       '</form>'

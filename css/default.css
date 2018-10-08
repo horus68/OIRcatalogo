@@ -845,7 +845,7 @@ fieldset.validar label span.corr {
   border: 2px solid #e7e7e7;
 }
 
-input[type=text], [type=password], [type=file], [type=date], textarea, select {
+input[type=date], [type=email], [type=file], [type=number], [type=new-password], [type=password], [type=text], [type=username], select, textarea {
   width: 100%;
   box-sizing: border-box;
   border: 2px solid #ccc;

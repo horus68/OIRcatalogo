@@ -59,7 +59,7 @@ function start() {
 '</div>'/
 '<div id="principal"> '/
 '<div id="admbotoes" style="float:right"><a href="../../admin/admin.asp?mnut=1"><img src="../../imagens/picactions/icon_close.gif" border=0 title="Voltar à página anterior" alt="Voltar à página anterior"></a></div>'
-'<br />'/
+'<br>'/
 '<div align="center">'/
 '<form name="frmseluser" id="frmseluser" action="../../cgi/www.exe/[in=pesquser.in]" method="post" >  '/
 ' <input type="hidden" name="ut" value="admin">'/

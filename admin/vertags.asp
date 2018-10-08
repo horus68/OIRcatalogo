@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001"  type="text/css" />
 <link rel="stylesheet" href="/rbcatalogo/js/jquery-tagbox/css/jquery.tagbox.css" type="text/css" />
 <script type="text/javascript" src="/rbcatalogo/js/prototype.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
   <script>
     if (typeof jQuery == 'undefined') {
     document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
@@ -88,7 +88,7 @@ document.getElementById('forme').toBeReloaded.value = 1;
 
   alfavalores=tmp
   'response.end
-  response.write "<br />"
+  response.write "<br>"
   response.write "<div style=float:right><input type=""image"" onclick=""window.close();"" src=""../imagens/picactions/icon_close.gif"" alt=""Fechar janela"" title=""Fechar janela""></div>"
   response.write "<form action=""/rbcatalogo/admin/chktag.asp"" method=""post"">"
   response.write "<input type=""hidden"" name=""mfn"" value=""" & request("mfn") & """>"
@@ -98,7 +98,7 @@ document.getElementById('forme').toBeReloaded.value = 1;
   response.write "Etiquetas de leitor: <input type=""text"" value="""" name=""tag"" id=""tag""><input type=""submit"" value=""Adicionar"" class=""botao botao1"" onclick=""return valida(this.form);"">"
   response.write "</form>"
   response.write "<div id=""alerta""></div>"
-  response.write "<br />"
+  response.write "<br>"
   response.write "<fieldset style=""padding:15px"">"
   response.write "<legend style=""padding-bottom:10px"">Lista de etiquetas associadas ao registo</legend>"
   for i=0 to ubound(alfavalores)

@@ -23,20 +23,19 @@ Session.CodePage  = 65001
 
 function OutputForm()
 %>
-    <br>
-    <form name="frmSend" method="POST" enctype="multipart/form-data" accept-charset="utf-8" action="admin_iso_upload.asp" onSubmit="return onSubmitForm();">
-	<B>Indicar ficheiro ISO: </B><br />
-	<input name="attach1" id="attach1" type="file" size="54">
-    <br /> 
-    <p align="center"><input style="margin-top:4" type=submit value="Enviar" class="botao botao1"></p>
-    </form>
-	<div style="font-size:0.8em"><input id="chkfecho" name="chkfecho" type="checkbox" checked> Fechar janela ap&oacute;s conclus&atilde;o do carregamento</div>
-	
+<br>
+<form name="frmSend" method="POST" enctype="multipart/form-data" accept-charset="utf-8" action="admin_iso_upload.asp" onSubmit="return onSubmitForm();">
+	<p><b>Indicar ficheiro ISO:</b><br>
+		<input name="attach1" id="attach1" type="file" size="54">
+	</p>
+	<p align="center"><input style="margin-top:4" type=submit value="Enviar" class="botao botao1"></p>
+	<p class="fecho"><input id="chkfecho" name="chkfecho" type="checkbox" checked>Fechar janela ap&oacute;s conclus&atilde;o do carregamento</p>
+</form>
 <%
 end function
 Function LinkClose()
 %>
-	<div style="float:right"><a   href="#" onClick="window.close();">Fechar janela</a></div><br>
+<div style="float:right"><a href="#" onClick="window.close();">Fechar janela</a></div><br>
 <%
 
 end function
@@ -95,74 +94,84 @@ end function
 %>
 
 <!DOCTYPE html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Carregamento de bases</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name=viewport content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" title="styles" />
-<style>
- td {font-size: 1em}
- td.fecho{font-size: 0.9em}
- body {margin-left:15px;margin-top:10px}
-</style>
-<script language="JavaScript">
-var flag=false;
-var ob;
-function fechar(){
-if (flag)
-{
-clearTimeout(ob);
-  window.close(); 
-}
-else {
-	  flag=true;
-	  ob=setTimeout("fechar()",3000); 
-	  }
-}
-</script>
-<script language="JavaScript">
-function validar(user){
-  var s=document.getElementById("attach1").value;
-  var pos= s.lastIndexOf('.');
-  var fext= s.substring(pos+1);
-  fext=fext.toUpperCase();
-  var posi= s.lastIndexOf('\\');
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-PT" lang="pt-PT">
 
-  s= s.substring(posi+1,pos);
-  s= s.toUpperCase();
-  if (s=="")  { alert("O campo NOME do ficheiro não pode ficar vazio! \nUtilize o botão ESCOLHER FICHEIRO e repita a operação."); return false;}
-  
-  if (fext=='ISO')
-  {
-	  
-	  if (s != user) 
-	  {
-		  var r=confirm("O sistema detetou que o nome do ficheiro ISO não confere com o nome do UTILIZADOR atual.\nATENÇÃO: O ficheiro ISO será carregado mas não será processado. \nTem a certeza que pretende continuar?")
-		  if (r==true) return true; else return false;
-	  }
-  }
-}
-</script>
-<script>
-function onSubmitForm() {
-    var formDOMObj = document.frmSend;
-    if (formDOMObj.attach1.value == "" )
-        alert("O campo NOME do ficheiro não pode ficar vazio! \nUtilize o botão ESCOLHER FICHEIRO e repita a operação.")
-    else
-        return validar('<%=session("user")%>');
-    return false;
-}
-</script>
+<head>
+	<title>Carregamento de bases</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name=viewport content="width=device-width, initial-scale=1" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" title="styles" />
+	<style>
+		body {
+			margin-left: 15px;
+			margin-top: 10px
+		}
+
+		.fecho {
+			font-size: 0.9em
+		}
+
+	</style>
+	<script language="JavaScript">
+		var flag=false;
+		var ob;
+		function fechar() {
+			if (flag) {
+				clearTimeout(ob);
+				window.close();
+			} else {
+				flag=true;
+				ob=setTimeout("fechar()",3000);
+			}
+		}
+
+	</script>
+	<script language="JavaScript">
+		function validar(user) {
+			var s=document.getElementById("attach1").value;
+			var pos= s.lastIndexOf('.');
+			var fext= s.substring(pos + 1);
+			fext=fext.toUpperCase();
+			var posi= s.lastIndexOf('\\');
+
+			s = s.substring(posi + 1, pos);
+			s = s.toUpperCase();
+			if (s == "") {
+				alert("O campo NOME do ficheiro não pode ficar vazio! \nUtilize o botão ESCOLHER FICHEIRO e repita a operação.");
+				return false;
+			}
+
+			if (fext == 'ISO') {
+
+				if (s != user) {
+					var r=confirm("O sistema detetou que o nome do ficheiro ISO não confere com o nome do UTILIZADOR atual.\nATENÇÃO: O ficheiro ISO será carregado mas não será processado. \nTem a certeza que pretende continuar?")
+					if (r==true) return true;
+					else return false;
+				}
+			}
+		}
+
+	</script>
+	<script>
+		function onSubmitForm() {
+			var formDOMObj = document.frmSend;
+			if (formDOMObj.attach1.value == "")
+				alert("O campo NOME do ficheiro não pode ficar vazio! \nUtilize o botão ESCOLHER FICHEIRO e repita a operação.")
+			else
+				return validar('<%=session("user")%>');
+			return false;
+		}
+
+	</script>
 </head>
 
 <body>
-<h3>Envio de ficheiros em formato ISO</h3>
+	<h3>Envio de ficheiros em formato ISO</h3>
 
 
-<%
+	<%
 Dim diagnostics
 if Request.ServerVariables("REQUEST_METHOD") <> "POST" then
     diagnostics = TestEnvironment()
@@ -189,5 +198,5 @@ end if
 %>
 
 </body>
-</html>
 
+</html>

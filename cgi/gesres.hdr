@@ -68,6 +68,6 @@ table#users td {font-size:8pt;}
 ' <input type="hidden" name="mfn" id="mfn" value="">'/
 ' <input type="hidden" name="mnu" id="mnu" value="mnures">'/
 ' <input type="hidden" name="lnk" id="lnk" value="base=reservas&dbmin='getenv('dbmin')'&lim_inicio=1&limites=9999999&ut='getenv('user')'&express='(if v9000^n='express' then v9000^v fi)'&estado='(if v9000^n='estado' then v9000^v fi)'">'/
-'<br />'/
+'<br>'/
 '<table id="users" summary="Listagem de pedidos de reserva" onMouseOver="javascript:trackTableHighlight(event, &quot;#FFFF99&quot;);" onMouseOut="javascript:highlightTableRow(0);">'/
 '  <th>ID</th><th>Título</th><th title="Biblioteca do documento">Bib. proprietária</th><th>Cota</th><th title="Número de registo do documento">Nº reg.</th><th title="Exemplares">Exe.</th><th title="Situação da reserva">Situação</th><th>Requisitante</th><th title="N.º leitor">N.º Leitor</th><th>Data</th><th class="resbotao"></th>'/

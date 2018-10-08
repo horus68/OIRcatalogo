@@ -49,7 +49,7 @@ return true;
 '  <div align="center">'/
 '  <center>'/
 '  <img src="../../imagens/logotipo.png" ><h3>ENVIO DE REGISTOS POR EMAIL</h3>'/
-'  <br />'/
+'  <br>'/
 '  <table border=0 width="440" cellspacing="1">'/
 '    <tr valign="top">'/
 '      <td  width="201"><font size="1" face="Verdana" color="#000000"><b>Remetente</b></font></td>'/

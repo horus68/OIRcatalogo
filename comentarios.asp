@@ -6,18 +6,19 @@
  strURL=strROOT & "/cgi/www.exe/[in=getmaillt.in]?expressao=" & request("id")
  strMAIL=getUrl(strURL)
  tmp=split(request("mfn"),"@@")
-%>  
+%>
 <link rel="stylesheet" href="/rbcatalogo/css/default.min.css?version=001" type="text/css" />
 <script type="text/javascript" src="/rbcatalogo/js/geral.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    if (typeof jQuery == 'undefined') {
-    document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
-    } 
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script>
+	if (typeof jQuery == 'undefined') {
+		document.write(unescape("%3Cscript src='js/jquery-3.3.1.min.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+
+</script>
 <script type="text/javascript" src="/rbcatalogo/js/md5.js"></script>
 <script>
-function filterText(sText) {
+	function filterText(sText) {
         var reBadWords = /<%=  ReadFile(Server.MapPath("/rbcatalogo/bases/bwords.stw"))%>/gi;
         return sText.replace(reBadWords, function (sMatch) {
 		  return sMatch.replace(/./g, "*");
@@ -27,7 +28,7 @@ function filterText(sText) {
 $(document).ready(function() {
 	$("#live-preview-form input, #live-preview-form textarea").bind("blur keyup",function() {
 		$("#lp-comment").text(filterText($("#comment").val()));
-		$("#lp-comment").html($("#lp-comment").html().replace(/\n/g,"<br />"));
+		$("#lp-comment").html($("#lp-comment").html().replace(/\n/g,"<br>"));
 		$("#ftext").val(filterText($("#comment").val()));
 		//name & websites 
 		if($("#name").val()) {
@@ -55,32 +56,37 @@ function check_comm(f) {
 }
 </script>
 <div id="principal" style="width:500px">
-<p style="font-size:0.8em;text-align:justify">
-AVISO IMPORTANTE:  O conteúdo dos comentários é da inteira responsabilidade do respetivo autor. 
-Não é permitida a utilização de linguagem imprópria ou injúrias a terceiros, sob pena de 
-suspensão da inscrição do utilizador.
-</p>
-<form action="/rbcatalogo/cgi/www.exe/[in=newcomm.in]" method="post" >
-<input type="hidden" name="id" value="<%=request("id")%>">
-<input type="hidden" name="expr1" value="<%=tmp(0)%>">
-<input type="hidden" name="expr2" value="<%=tmp(1)%>">
-<input type="hidden" name="ftext" id="ftext" value="">
-<div><span style="float:right;margin-right:30px"><a href="javascript:void(0)" onclick="javascript:history.go(-1)"><img src="imagens/picactions/icon_close.gif" alt="Fechar janela" title="Fechar janela" border="0"></a></span><span style="font-size:1.1em; font-weight:bold">ADICIONAR COMENTÁRIO</span>
-</div>
-<div id="live-preview-form" class="lp-block">
-	<p>
-		<strong>Nome:</strong><br />
-		<input type="text" name="name" id="name" readonly value="<%=strHTML %>" class="input" /><br /><br />
-		<strong>Comentário:</strong><br />
-		<textarea name="comment" id="comment" class="input" rows="4"></textarea>
+	<p style="font-size:0.8em;text-align:justify">
+		AVISO IMPORTANTE: O conteúdo dos comentários é da inteira responsabilidade do respetivo autor. 
+		<br>Não é permitida a utilização de linguagem imprópria ou injúrias a terceiros, sob pena de suspensão da inscrição do utilizador.
 	</p>
-</div>
-<div style="float:right;margin:-5px 15px 0 0"><input type="submit" value=" Enviar " class="botao botao1" onclick="return check_comm(this);"></div>
-<div style="margin:12px 0 0 0;font-style:italic;font-size:0.9em">Antevisão:</div>
-<div id="live-preview-display" class="lp-block" style="margin:0">
-	<div id="lp-avatar"></div>
-	<div id="lp-name"></div>
-	<div id="lp-comment" class="wordwrap"></div>
-</div>
-</form>
+	<form action="/rbcatalogo/cgi/www.exe/[in=newcomm.in]" method="post">
+		<input type="hidden" name="id" value="<%=request("id")%>">
+		<input type="hidden" name="expr1" value="<%=tmp(0)%>">
+		<input type="hidden" name="expr2" value="<%=tmp(1)%>">
+		<input type="hidden" name="ftext" id="ftext" value="">
+		<div><span style="float:right;margin-right:30px"><a href="javascript:void(0)" onclick="javascript:history.go(-1)"><img src="imagens/picactions/icon_close.gif" alt="Fechar janela" title="Fechar janela" border="0"></a></span><span style="font-size:1.1em; font-weight:bold">ADICIONAR COMENTÁRIO</span>
+		</div>
+		<div id="live-preview-form" class="lp-block">
+			<p>
+				<strong>Nome:</strong>
+				<br>
+				<input type="text" name="name" id="name" readonly value="<%=strHTML %>" class="input" />
+				<br>
+				<br>
+				<strong>Comentário:</strong>
+				<br>
+				<textarea name="comment" id="comment" class="input" rows="4"></textarea>
+			</p>
+		</div>
+		<div style="float:right;margin:-5px 15px 0 0">
+			<input type="submit" value=" Enviar " class="botao botao1" onclick="return check_comm(this);">
+		</div>
+		<div style="margin:12px 0 0 0;font-style:italic;font-size:0.9em">Antevisão:</div>
+		<div id="live-preview-display" class="lp-block" style="margin:0">
+			<div id="lp-avatar"></div>
+			<div id="lp-name"></div>
+			<div id="lp-comment" class="wordwrap"></div>
+		</div>
+	</form>
 </div>
