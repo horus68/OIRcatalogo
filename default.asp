@@ -43,17 +43,17 @@
 	<meta name="author" content="Rede Concelhia de Bibliotecas - XPTO" />
 	<!-- Favicon Geral -->
 	<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=002" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
 	<!-- Favicon Android -->
-	<link rel="manifest" href="manifest.json?v=002" />
+	<link rel="manifest" href="manifest.json?v=001" />
 	<meta name="theme-color" content="#cdc8b1" />
 	<!-- Favicon Windows IE -->
-	<meta name="msapplication-config" content="IEconfig.xml?v=002" />
+	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
 	<meta name="application-name" content="Cat.RB XPTO" />
 	<meta name="msapplication-TileColor" content="#afa782" />
 	<!-- Favicon iOS -->
-	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=002" />
-	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=002" color="#5bbad5" />
+	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001" />
+	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
 	<!-- OpenGraph Facebook -->
 	<meta property="og:title" content="XPTO - Catálogo da Rede de bibliotecas" />
 	<meta property="og:description" content="XPTO: Catálogo coletivo da Rede de Bibliotecas do Concelho. Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
@@ -164,7 +164,7 @@
     </div><%end if%>-->
 	</div>
 	<!-- Segmento Pesquisas - Tipo - FIM -->
-				<br>
+	<br>
 	<!-- Segmento Top Títulos -->
 	<div class="col-contentor">
 		<div class="col">
@@ -245,19 +245,19 @@
 	<!-- Segmento Móvel e Antiframe -->
 	<div id="noprint">
 		<br>
+		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-desktop" data-fa-transform="shrink-9" alt="Abrir numa janela a toda a largura" title="Abrir numa janela a toda a largura"></i></span><b><i>Está a ver no computador?</i></b><br>Abra no telemóvel capturando este QR Code:
+			<br>
+			<img src="imagens/app/qrcode.png" alt="Ligação em QR Code para o catálogo" title="Capture a imagem com o leitor de QR Code do seu telemóvel" border=0 align="center">
+			<br> Nota: depois de abrir o endereço, no browser do telemóvel, pode carregar em
+			<br> "Adicionar ao ecrã principal" e ficará com uma App para o catálogo (ver <a href="ajuda_movel.asp">ajuda aqui</a>).</p>
 		<br>
-		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" talt="Abrir numa janela a toda a largura" title="Abrir numa janela a toda a largura"></i></span>Está a ver no telemóvel ou numa janela pequena?
+		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" talt="Abrir numa janela a toda a largura" title="Abrir numa janela a toda a largura"></i></span><b><i>Está a ver no telemóvel ou numa janela pequena?</i></b>
 			<br>
 			<a href="default.asp" target="_blank" rel="noopener">
 				<button type="button" class="botao botao5" style="width:50%;">Carregue aqui para abrir numa janela a toda a largura</button>
 			</a>
 		</p>
 		<br>
-		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-desktop" data-fa-transform="shrink-9" alt="Abrir numa janela a toda a largura" title="Abrir numa janela a toda a largura"></i></span>Está a ver no computador?<br>Abra no telemóvel capturando este QR Code:
-			<br>
-			<img src="imagens/app/qrcode.png" alt="Ligação em QR Code para o catálogo" title="Capture a imagem com o leitor de QR Code do seu telemóvel" border=0 align="center">
-			<br> Nota: depois de abrir o endereço, no browser do telemóvel, pode carregar em
-			<br> "Adicionar ao ecrã principal" e ficará com uma App para o catálogo (ver <a href="ajuda_movel.asp">ajuda aqui</a>).</p>
 	</div>
 	<br>
 	<!-- Segmento Móvel e Antiframe - FIM -->

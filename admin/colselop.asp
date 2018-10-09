@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="../css/default.min.css?version=001" type="text/css" />
 	<script type="text/javascript" src="../js/users.min.js"></script>
 	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=002" />
+	<link rel="icon" type="image/png" sizes="32x32" href="../imagens/app/favicon-32x32.png?v=001" />
 </head>
 
 <body>
