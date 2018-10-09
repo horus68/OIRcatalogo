@@ -1,0 +1,59 @@
+========================================================================== 
+INICIO: - 09-10-2018 - 17:21:16,23 
+========================================================================== 
+*cal
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     8      2     41   0      0      0      0      0      0
+*cal
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     8      2     41   0      0      0      0      0      0
+========================================================================== 
+*reservas
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     1      1     65   0      0      0      0      0      0
+*reservas
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     1      1     65   0      0      0      0      0      0
+========================================================================== 
+*users
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+    12      5    327   0      0      0      0      0      0
+*users
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+    12      5    327   0      0      0      0      0      0
+========================================================================== 
+*leitor
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+    18     29    387   0      0      0      0      0      0
+*leitor
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+    18     29    387   0      0      0      0      0      0
+========================================================================== 
+*niplt
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     4      1    433   0      0      0      0      0      0
+*niplt
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     4      1    433   0      0      0      0      0      0
+========================================================================== 
+*prmusr
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+    52     21     87   0      0      0      0      0      0
+*prmusr
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+    52     21     87   0      0      0      0      0      0
+========================================================================== 
+*param
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     3     31    413   0      0      0      0      0      0
+*param
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     3     31    413   0      0      0      0      0      0
+========================================================================== 
+*vouchers
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     1      1     65   0      0      0      0      0      0
+*vouchers
+ nxtmfn nxtmfb nxtmfp  t  reccnt mfcxx1 mfcxx2 mfcxx3    RC
+     1      1     65   0      0      0      0      0      0
+FIM: - 09-10-2018 - 17:21:18,14 
