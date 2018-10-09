@@ -120,17 +120,17 @@
 	<meta name="author" content="Rede Concelhia de Bibliotecas - XPTO" />
 	<!-- Favicon Geral -->
 	<link rel="icon" href="/rbcatalogo/favicon.ico" type="image/x-icon" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=002" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/rbcatalogo/imagens/app/favicon-32x32.png?v=001" />
 	<!-- Favicon Android -->
-	<link rel="manifest" href="manifest.json?v=002" />
+	<link rel="manifest" href="manifest.json?v=001" />
 	<meta name="theme-color" content="#cdc8b1" />
 	<!-- Favicon Windows IE -->
-	<meta name="msapplication-config" content="IEconfig.xml?v=002" />
+	<meta name="msapplication-config" content="IEconfig.xml?v=001" />
 	<meta name="application-name" content="Cat.RB XPTO" />
 	<meta name="msapplication-TileColor" content="#afa782" />
 	<!-- Favicon iOS -->
-	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=002" />
-	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=002" color="#5bbad5" />
+	<link rel="apple-touch-icon-precomposed" href="/rbcatalogo/imagens/app/apple-touch-icon-precomposed.png?v=001" />
+	<link rel="mask-icon" href="/rbcatalogo/imagens/app/safari-pinned-tab.svg?v=001" color="#5bbad5" />
 	<!-- OpenGraph Facebook -->
 	<meta property="og:title" content="XPTO - Pesquisar nas bibliotecas da Rede" />
 	<meta property="og:description" content="XPTO: Pesquisar nas bibliotecas da Rede de Bibliotecas do Concelho. Pesquise os documentos no OPAC e saiba onde os pode requisitar. Ler, ver, sentir e viver" />
