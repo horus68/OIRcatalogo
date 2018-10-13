@@ -58,7 +58,7 @@
 				return new ActiveXObject("Microsoft.XMLHTTP"); //IE
 			} else {
 
-				alert("O seu browser não suporta o objecto XmlHttpRequest.");
+				alert("O seu navegador não suporta o objecto XmlHttpRequest.");
 			}
 		}
 
@@ -168,15 +168,15 @@
 	<br>
 	<div id="principal">
 		<p>Não sabe o que temos para pesquisar? <b>Navegue nas listas de termos</b>!
-			<br />- Pode limitar a lista por Autor, Título, Assunto, Colecção ou Palavra.
-			<br />- Na listagem carregue numa das entradas para ver a ficha do documento correspondente.</p>
+			<br>- Pode limitar a lista por Autor, Título, Assunto, Coleção ou Palavra.
+			<br>- Na listagem carregue numa das entradas para ver a ficha do documento correspondente.</p>
 		<div class="col5-contentor">
 			<div class="col5">
 				<select size="1" name="PRFX" id="PRFX" tabindex="1" onchange="mudaPainel()">
 					<option selected value="AU">Autor</option>
 					<option value="TI">Título</option>
 					<option value="AS">Assunto</option>
-					<option value="COL">Colecção</option>
+					<option value="COL">Coleção</option>
 					<option value="PAL">Palavra</option>
 				</select>
 			</div>

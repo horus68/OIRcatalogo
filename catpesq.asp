@@ -547,10 +547,10 @@
 		</p><br>
 		<!-- Segmento Caixa Pesquisa Simples FIM -->
 		<p class="info">Informação: Esta é uma pesquisa livre em <b>todos os campos da ficha do documento</b> (título, autor, etc.) e em <b>todas as bibliotecas</b>.
-			<br />Serão encontrados registos de documentos que contenham <b>pelo menos UMA das palavras</b> que escrever.
-			<br />Se carregar apenas no botão "Pesquisar", <b>sem introduzir qualquer texto</b>, serão apresentados <b>todos os documentos do catálogo</b>.
+			<br>Serão encontrados registos de documentos que contenham <b>pelo menos UMA das palavras</b> que escrever.
+			<br>Se carregar apenas no botão "Pesquisar", <b>sem introduzir qualquer texto</b>, serão apresentados <b>todos os documentos do catálogo</b>.
 			<br>
-			<br />Para que a pesquisa seja <b>mais exata</b> (e com menos resultados), pode:
+			<br>Para que a pesquisa seja <b>mais exata</b> (e com menos resultados), pode:
 			<dl>
 				<dd>Colocar aspas (") no início e final da expressão a pesquisar (ou um sinal + entre cada palavra)</dd>
 				<dd>Utilizar o modo de "Pesquisa orientada" (carregue acima em "ENTRADA" para voltar à página de entrada do catálogo)</dd>

@@ -589,8 +589,8 @@ If Session("LogError") < 3 Then
 			</table>
 		</form>
 		<p>Nota: depois de se autenticar será enviado para a entrada do catálogo, mas já como utilizador identificado.
-			<br />Para aceder à administração do catálogo terá então de clicar na ligação direta
-			<br />que ficará visível, à direita, no topo e ao fundo da página de entrada.</p>
+			<br>Para aceder à administração do catálogo terá então de clicar na ligação direta
+			<br>que ficará visível, à direita, no topo e ao fundo da página de entrada.</p>
 		<p>>> Também pode cancelar e <a href='../default.asp'>clicar aqui para voltar à entrada do catálogo</a> sem se autenticar.</p>
 		<%				End If
 	
@@ -1359,7 +1359,7 @@ If Session("LogError") < 3 Then
 	   	
 	Else
 		writeLog("LOGIN (insucesso): nº máx de tentativas")
-		Response.Write("<br><br><p>Esgotou as três tentativas de ENTRADA no sistema de administração. <br />Terá de fechar o browser e iniciar nova sessão!</p>")
+		Response.Write("<br><br><p>Esgotou as três tentativas de ENTRADA no sistema de administração.<br>Terá de fechar o navegador e iniciar nova sessão!</p>")
 		
 	End If
 %>

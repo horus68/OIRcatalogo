@@ -81,32 +81,39 @@
 		<h2><span class="fa-layers fa-fw" style="font-size:3em"><i class="fas fa-circle-notch"></i><i class="fas fa-graduation-cap" data-fa-transform="shrink-8" alt="Utilizar o catálogo coletivo em telemóveis" title="Utilizar o catálogo coletivo em telemóveis"></i></span>Como utilizar o catálogo em telemóveis?</h2>
 		<div class="col1-contentor">
 			<div class="col1">
-				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" alt="Utilização em telemóveis" title="Utilização em telemóveis"></i></span>No browswer e sem aplicações</h3>
-				<p>Pode utilizar o catálogo no telemóvel com o seu browser normal, basta entrar no endereço do catálogo.
-					<br> O catálogo adapta-se ao seu ecrã e terá as mesmas funcionalidades que num computador.
+				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" alt="Utilização em telemóveis" title="Utilização em telemóveis"></i></span>No navegador Web e sem aplicações</h3>
+				<p>Pode utilizar o catálogo no telemóvel com o seu navegador Web habitual, basta entrar no endereço do catálogo.
+					<br>O catálogo adapta-se ao seu ecrã e terá as mesmas funcionalidades que num computador.
 					<br><img src="imagens/ajuda/movel_entrada.png" alt="Catálogo no telemóvel" title="Catálogo no telemóvel" border=0 align="center">
-					<br> No Google pesquise por "catálogo+rede bibliotecas + nome do seu concelho"
+					<br>Dica: No Google pesquise por "catálogo + rede bibliotecas + nome do seu concelho"
 				</p>
 			</div>
 			<div class="col1">
 				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-qrcode" data-fa-transform="shrink-8" alt="QR Code" title="QR Code"></i></span>Entrar por QR Code</h3>
-				<p>Escreva o endereço no browser ou capture a imagem com o leitor de QR Code do seu telemóvel.</p>
+				<p>Escreva o endereço no navegador ou capture a imagem com o leitor de QR Code do seu telemóvel.</p>
 				<p>No seu telemóvel, abra a aplicação de QR Code e aponte para esta imagem:
 					<br>
 					<br>
 					<img src="imagens/app/qrcode.png" alt="Ligação em QR Code para o catálogo" title="Ligação em QR Code para o catálogo" border=0 align="center">
 					<br>
-					<br> A aplicação vai ler o código diretamente do ecrã. Carregue no endereço que aparece na aplicação e entrará no catálogo.
+					<br>A aplicação vai ler o código diretamente do ecrã. Carregue no endereço que aparece na aplicação e entrará no catálogo.
+				</p>
+			</div>
+					<br>
+		</div>
+		<br style="clear:left" />
+				<h2>Tenha o catálogo sempre à mão... no telemóvel</h2>
+		<div class="col1-contentor">
+			<div class="col1">
+				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-th" data-fa-transform="shrink-8" alt="Acesso direto no ecrã" title="Acesso direto no ecrã"></i></span>Atalho no ecrã principal (tipo aplicação)</h3>
+				<p>Depois de abrir o endereço, no navegador Web do telemóvel, pode carregar no menu principal do navegador e escolher "Adicionar ao ecrã principal".
+					<br>Será criado um ícone especial no seu ecrã de entrada e ficará com um acesso tipo App ao catálogo.
+				</p>
+				<p>Não é necessário instalar qualquer aplicação mas funciona de forma semelhante!
 				</p>
 			</div>
 			<div class="col1">
-				<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-th" data-fa-transform="shrink-8" alt="Acesso direto no ecrã" title="Acesso direto no ecrã"></i></span>Atalho no ecrã (acesso tipo aplicação)</h3>
-				<p>Depois de abrir o endereço, no browser do telemóvel, pode carregar no menu principal do browser e escolher "Adicionar ao ecrã principal".
-					<br />Será criado um ícone especial no seu ecrã de entrada e ficará com um acesso tipo App ao catálogo.
-					<br>
-					<img src="imagens/ajuda/movel_adicionar.png" alt="Menu do browser" title="Adicionar ao ecrã principal do telemóvel" border=0 align="center">
-					<br> Não é necessário instalar qualquer aplicação!
-					<br>
+					<img src="imagens/ajuda/movel_adicionar.png" alt="Menu do navegador Web" title="Adicionar ao ecrã principal do telemóvel" border=0 align="center">
 			</div>
 		</div>
 		<br style="clear:left" />
@@ -115,7 +122,7 @@
 			<p>Encontre respostas (e sugestões de aplicações QR Code) aqui: <a style="text-decoration:none" href="https://sites.google.com/view/pesquisarcatalogo/movel" target="_blank">https://sites.google.com/view/pesquisarcatalogo/movel</a>
 			</p>
 			<p>Em caso de dúvidas, dirija-se à biblioteca mais próxima onde o podem ajudar nas pesquisas e empréstimos.
-				<br />Boas leituras!
+				<br>Boas leituras!
 			</p>
 		</div>
 		<div align="center" style="clear:both" class="txtvoltar">

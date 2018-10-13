@@ -527,12 +527,12 @@
 							<option value="AS">Publicação periódica</option>
 						</select>
 					</p>
-					<p>Ano<br />
+					<p>Ano<br>
 						<input type="text" size="4" name="DP" maxlength="4"><br><span class="notas"> (Ex. 2001) </span>
 						<p>
 				</div>
 				<div class="col5" style="background-color:#f9f9ed">
-					<p>Formato<br />
+					<p>Formato<br>
 						<select size="1" name="formato">
 
 							<option selected value="wiusr">Completo</option>
@@ -543,7 +543,7 @@
 							<option value="wibol">Boletim</option>
 						</select>
 					</p>
-					<p>Registos por página<br />
+					<p>Registos por página<br>
 						<select size="1" name="limites">
 							<option value="5">5</option>
 							<option value="10">10</option>

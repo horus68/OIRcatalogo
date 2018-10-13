@@ -84,7 +84,7 @@
 		<br>
 		<h2><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-search" data-fa-transform="shrink-8" alt="Tipos de pesquisa" title="Tipos de pesquisa"></i></span>A- Tipos de pesquisa</h2>
 		<p>O catálogo oferece vários tipos de pesquisa e combináveis com filtros e operadores. Recomendamos que, dependendo do tipo de informação pretendida, utilize a pesquisa Simplificada ou a Orientada.<br>
-			Nota: pode pesquisar um autor pela forma normal("Nome Apelido") ou forma inversa (“Apelido, Nome”)
+			Nota: pode pesquisar um autor pela forma normal ("Nome Apelido") ou forma inversa (“Apelido, Nome”)
 		</p>
 		<br style="clear:left;" />
 		<br>
@@ -110,7 +110,7 @@
 		<br style="clear:left;" />
 		<br>
 		<h3><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-sort-alpha-down" data-fa-transform="shrink-8" alt="Navegação por termos" title="Navegação por termos"></i></span>A3- Pesquisa/navegação por termos</h3>
-		<p>A pesquisa por termos permite encontrar documentos mesmo sem escrever. É uma lista do que existe no catálogo e com navegação simples<br />
+		<p>A pesquisa por termos permite encontrar documentos mesmo sem escrever. É uma lista do que existe no catálogo e com navegação simples<br>
 			Deve ser utilizada quando não sabemos que tipo de documentos existem numa biblioteca ou quando não sabemos como se escreve um determinado título ou nome de autor.<br>
 			<img src="imagens/ajuda/pesquisa_termos.png" alt="Pesquisa por termos" title="Pesquisa por termos" border=0 align="center">
 			<br style="clear:left;" />
@@ -132,7 +132,7 @@
 		<br style="clear:left;" />
 		<br>
 		<h2><span class="fa-layers fa-fw" style="font-size:2.5em"><i class="fas fa-circle-notch"></i><i class="fas fa-search-plus" data-fa-transform="shrink-9" alt="Pesquisar com operadores" title="Pesquisar com operadores"></i></span>C- Pesquisar com operadores</h2>
-		<p>A utilização de operadores nas pesquisas permite limitar os resultados obtidos<br />
+		<p>A utilização de operadores nas pesquisas permite limitar os resultados obtidos<br>
 			São utilizados os operadores [ E ][ OU ][ NÃO ] que permitem condicionar uma pesquisa de forma a mostrar documentos que, por exemplo, possuam duas palavras específicas ou em que tenham uma mas não a outra palavra.
 		</p>
 		<h3>C1- Operadores na pesquisa orientada</h3>
@@ -166,7 +166,7 @@
 		<br style="clear:left;" />
 		<div class="destaquetexto1">
 			<p><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Dúvidas" title="Dúvidas"></i></span> Em caso de dúvidas, dirija-se à biblioteca mais próxima onde terão todo o gosto de o ajudar nas pesquisas e empréstimos, mesmo que o documento não esteja nessa biblioteca.
-				<br />Boas leituras!
+				<br>Boas leituras!
 			</p>
 			<p>[Mais informações sobre como pesquisar no catálogo: <a style="text-decoration:none" href="https://sites.google.com/view/pesquisarcatalogo" target="_blank">https://sites.google.com/view/pesquisarcatalogo</a>]
 			</p>

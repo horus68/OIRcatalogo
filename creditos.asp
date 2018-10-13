@@ -79,7 +79,7 @@
 	<div id="principal">
 		<div class="col5-contentor" style="width:100%">
 			<div class="col5">
-				<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-info" data-fa-transform="shrink-8" alt="Informações" title="Informações"></i></span><br />Informações sobre o catálogo</h3>
+				<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-info" data-fa-transform="shrink-8" alt="Informações" title="Informações"></i></span><br>Informações sobre o catálogo</h3>
 				<dl>
 					<dt>Propriedade e gestão do catálogo:</dt>
 					<dd>
@@ -91,7 +91,7 @@
 			</div>
 			<div class="col5">
 				<div class="destaquetexto1">
-					<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-id-card" data-fa-transform="shrink-8" alt="Contactos da rede de bibliotecas" title="Contactos da rede de bibliotecas"></i></span><br />Contactos</h3>
+					<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-id-card" data-fa-transform="shrink-8" alt="Contactos da rede de bibliotecas" title="Contactos da rede de bibliotecas"></i></span><br>Contactos</h3>
 					<dl>
 						<dt>Portal da Rede Concelhia</dt>
 						<dd>Atividades e recursos - Visitar sítio
@@ -107,7 +107,7 @@
 				</div>
 			</div>
 		</div>
-		<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fab fa-cuttlefish" data-fa-transform="shrink-8" alt="Direitos de autor" title="Direitos de autor"></i></span><br />Direitos de autor</h3>
+		<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fab fa-cuttlefish" data-fa-transform="shrink-8" alt="Direitos de autor" title="Direitos de autor"></i></span><br>Direitos de autor</h3>
 		<dl>
 			<dt>Direitos de autor e de utilização</dt>
 			<dd>Direitos do catálogo coletivo e conteúdos:
@@ -117,19 +117,20 @@
 			<dd>Não é permitida a comercialização dos registos bibliográficos nem a sua disponibilização em pacotes comerciais.</dd>
 		</dl>
 		<br>
-		<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-user-secret" data-fa-transform="shrink-8" alt="Privacidade e dados pessoais" title="Privacidade e dados pessoais - RGPD"></i></span><br />Proteção de dados pessoais</h3>
+		<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-user-secret" data-fa-transform="shrink-8" alt="Privacidade e dados pessoais" title="Privacidade e dados pessoais - RGPD"></i></span><br>Proteção de dados pessoais</h3>
+    <p>O sistema de OPAC apenas permite a funcionalidade de pesquisa de documentos em bases de dados bibliográficas. Não existem funcionalidades de empréstimos ou de comentários nem utilização de dados pessoais.
+    </p>
 		<dl>
 			<dt>Privacidade e cumprimento do Regulamento Geral da Proteção de Dados (RGPD)</dt>
-			<dd>Informação utilizada: não é utilizada qualquer informação pessoal de visitantes, leitores ou de técnicos de bibliotecas.</dd>
-			<dd>O sistema de OPAC permite apenas a funcionalidade de pesquisa de documentos em bases de dados bibliográficas. Não existem funcionalidades de empréstimos ou de comentários.</dd>
-			<dd>Não existem contas de utilizador individuais. As contas dos utilizadores institucionais não utilizam dados pessoais.</dd>
-			<dd>As bases de dados bibliográficas são fornecidas e atualizadas pelas bibliotecas parceiras de cada catálogo.</dd>
-			<dd>As informações sobre bibliotecas são dados de contacto disponíveis publicamente: Entidade da biblioteca, morada, telefone e endereço de email. Estes dados foram fornecidos pelos responsáveis pelas bibliotecas listadas e são editáveis pelos próprios utilizando a autenticação interna da sua biblioteca.</dd>
-			<dd>Informação de navegação recolhida/Cookies: na operação do sistema na web não é recolhida informação pessoal dos visitantes. Pode existir recolha anónima de dados através de cookies destinados apenas ao funcionamento do programa. Ver <a style="text-decoration:none" href="https://sites.google.com/view/opacrbe/utilizadores" target="_blank" rel="noopener">mais detalhes aqui</a></dd>
+			<dd>Informação pessoal utilizada: não é utilizada qualquer informação pessoal de visitantes, leitores ou de técnicos de bibliotecas.</dd>
+			<dd>Dados de utilizadores: Não existem contas de utilizador individuais. As contas dos utilizadores institucionais não utilizam dados pessoais.</dd>
+			<dd>Dados bibliográficas são neutros: As bases de dados são fornecidas e atualizadas pelas bibliotecas parceiras de cada catálogo.</dd>
+			<dd>Contactos de bibliotecas são neutros e públicos: As informações sobre bibliotecas são dados disponíveis publicamente e restritos a: Entidade da biblioteca, morada, telefone e endereço de email. Estes dados foram fornecidos pelos responsáveis pelas bibliotecas listadas e são editáveis pelos próprios utilizando a autenticação interna da sua biblioteca.</dd>
+			<dd>Informação de navegação recolhida/Cookies: na operação do sistema na web não é recolhida informação pessoal dos visitantes. Pode existir recolha anónima de dados através de Cookies destinados apenas ao funcionamento técnico do software. Ver <a style="text-decoration:none" href="https://sites.google.com/view/opacrbe/utilizadores" target="_blank" rel="noopener">mais detalhes aqui</a></dd>
 			<br>
 			<div class="col5-contentor" style="width:100%">
 				<div class="col5">
-					<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fa fa-puzzle-piece" data-fa-transform="shrink-9" alt="Créditos" title="Créditos e tecnologia"></i></span><br />Créditos e tecnologia</h3>
+					<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fa fa-puzzle-piece" data-fa-transform="shrink-9" alt="Créditos" title="Créditos e tecnologia"></i></span><br>Créditos e tecnologia</h3>
 					<dl>
 						<dt>Catalogação e bases bibliográficas</dt>
 						<dd>Bibliotecas parceiras da
@@ -147,7 +148,7 @@
 				</div>
 				<div class="col5">
 					<div class="destaquetexto1">
-						<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-folder-open" data-fa-transform="shrink-8" alt="Guias" title="Guias e Tutoriais"></i></span><br />Guias de utilização</h3>
+						<h3><span class="fa-layers fa-fw" style="font-size:4em"><i class="fas fa-circle-notch"></i><i class="fas fa-folder-open" data-fa-transform="shrink-8" alt="Guias" title="Guias e Tutoriais"></i></span><br>Guias de utilização</h3>
 						<dl>
 							<dt>Guia do utilizador (Básico)</dt>
 							<dd><a style="text-decoration:none" href="ajuda_dicas.asp"><a style="text-decoration:none" href="ajuda_dicas.asp"><span class="fa-layers fa-fw" style="font-size:2em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Como pesquisar" title="Como pesquisar"></i></span>Ajuda: Dicas de pesquisa</a></dd>

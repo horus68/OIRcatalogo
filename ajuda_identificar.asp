@@ -104,7 +104,7 @@
 		</div>
 		<br>
 		<p><span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Dúvidas" title="Dúvidas"></i></span>Em caso de dúvidas, dirija-se à biblioteca mais próxima onde o podem ajudar nas pesquisas e empréstimos.
-			<br />Boas leituras!
+			<br>Boas leituras!
 		</p>
 		<div align="center" style="clear:both" class="txtvoltar">
 			<a style="text-decoration:none" href="default.asp">

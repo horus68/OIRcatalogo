@@ -71,7 +71,7 @@
 
 				</div>
 				<div class="col5" style="width:60%">
-					Termo a pesquisar:<br><input type="text" size="60" id="termo" "name="termo"><br />Apenas ocorrências exatas: <input type="checkbox" id="PFX" name="PFX">
+					Termo a pesquisar:<br><input type="text" size="60" id="termo" "name="termo"><br>Apenas ocorrências exatas: <input type="checkbox" id="PFX" name="PFX">
 				</div>
 			</div>
 			<div align="center"><input type="button" value="Pesquisar" class="botao botao1" onClick="getOpCol();return false;"></div>
