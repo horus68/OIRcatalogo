@@ -112,7 +112,7 @@ else {
 					writeFile Server.MapPath("../upload/files/admin_imp.html"), texto
 				
 					if  texto<>"" then					
-						Response.Write("<br><p align='center'>O ficheiro foi carregado e processado com successo.  [<a href=""../upload/files/admin_imp.html"" target=""_blank"">Ver ficheiro</a>] <a  href='#' onClick='window.close();'><br />Clique aqui para fechar a janela</a>!</p>")
+						Response.Write("<br><p align='center'>O ficheiro foi carregado e processado com successo.  [<a href=""../upload/files/admin_imp.html"" target=""_blank"">Ver ficheiro</a>] <a  href='#' onClick='window.close();'><br>Clique aqui para fechar a janela</a>!</p>")
 					else
 						Response.Write("<br><p align='center'>O ficheiro foi carregado, mas não pôde ser processado. <a  href='#' onClick='window.close();'>Clique aqui para fechar a janela</a>!</p>")
 					end if 			
@@ -120,11 +120,11 @@ else {
 
 				Else
 					Response.Write "<p align='center'>Erro: O tamanho máximo do ficheiro(100 Mb) foi excedido!<br>"
-					Response.Write("<p align='center'>Use o botão Retroceder do Browser para tentar de novo ou clique <a  href='javascript:history.go(-1)'>aqui</a>!</p>")				
+					Response.Write("<p align='center'>Use o botão Retroceder do navegador para tentar de novo ou clique <a  href='javascript:history.go(-1)'>aqui</a>!</p>")				
 				End If	
 			Case Else
 				Response.Write "<p align='center'>Erro: Tipo de ficheiro não permitido.<br>"
-				Response.Write("<p align='center'>Use o botão Retroceder do Browser para tentar de novo ou clique <a  href='javascript:history.go(-1)'>aqui</a>!</p>")				
+				Response.Write("<p align='center'>Use o botão Retroceder do navegador para tentar de novo ou clique <a  href='javascript:history.go(-1)'>aqui</a>!</p>")				
 			End Select
 			
        

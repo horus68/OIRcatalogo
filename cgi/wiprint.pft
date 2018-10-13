@@ -4,10 +4,10 @@
 '    <tr>'/
     
 '      <td width="10%" valign="top" align="left">  '/
-'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) window.print(); else alert(&quot;Esta funcionalidade não está disponível!\n\nPara imprimir, utilize a opção disponível no seu browser\n(use clique direito para menu / Imprimir...)&quot;);">Imprimir</a>'/
+'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) window.print(); else alert(&quot;Esta funcionalidade não está disponível!\n\nPara imprimir, utilize a opção disponível no seu navegador Web\n(use clique direito para menu / Imprimir...)&quot;);">Imprimir</a>'/
 '      </td>'/
 '        <td width="70%" valign="top" align="left"> '/
-'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) doSaveAs(); else alert(&quot;Esta funcionalidade não está disponível no seu browser!\n(use clique direito para menu / Guardar como...)&quot;);">Guardar para ficheiro</a>'/
+'      <a href="javascript:void(0);" onclick="javascript:if (ChkVer()) doSaveAs(); else alert(&quot;Esta funcionalidade não está disponível no seu navegador Web!\n(use clique direito para menu / Guardar como...)&quot;);">Guardar para ficheiro</a>'/
 '      </td>'
 '     <td align=right width="20%"><b>' if val(v1002)>25 then f(val(v1083),0,0) else f(val(v1002),0,0) fi'</b> ficha(s)</td>'/
 '    </tr>'/

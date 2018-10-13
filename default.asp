@@ -97,7 +97,7 @@
 
 <body>
 	<div class="destaque1">
-		<h1 style="font-variant: small-caps">Catálogo Coletivo<br />
+		<h1 style="font-variant: small-caps">Catálogo Coletivo<br>
 			<%=sentidadelonga%>
 		</h1>
 	</div>
@@ -215,20 +215,20 @@
 			<p class="fil"><a style="text-decoration:none" href="ajuda_dicas.asp">
 					<span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Como pesquisar" title="Como pesquisar"></i>
 					</span>Ajuda - <b>Dicas de pesquisa</b></a>
-				<br />Pequenos truques para obter melhores resultados
-				<br />na pesquisa de documentos
+				<br>Pequenos truques para obter melhores resultados
+				<br>na pesquisa de documentos
 			</p>
 			<p class="fil"><a style="text-decoration:none" href="ajuda_identificar.asp">
 					<span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Como identificar bibliotecas" title="Como identificar bibliotecas"></i>
 					</span>Ajuda - <b>Identificar e localizar bibliotecas</b></a>
-				<br />A pesquisa permite identificar no mapa
-				<br />a biblioteca que tenha o documento pretendido
+				<br>A pesquisa permite identificar no mapa
+				<br>a biblioteca que tenha o documento pretendido
 			</p>
 			<p class="fil"><a style="text-decoration:none" href="ajuda_movel.asp">
 					<span class="fa-layers fa-fw" style="font-size:1.3em"><i class="fas fa-circle-notch"></i><i class="fas fa-question" data-fa-transform="shrink-8" alt="Como identificar bibliotecas" title="Como identificar bibliotecas"></i>
 					</span>Ajuda - <b>Usar o catálogo no telemóvel</b></a>
-				<br />Aceder no telemóvel sem instalar aplicações
-				<br />Pode entrar com acesso por QR Code
+				<br>Aceder no telemóvel sem instalar aplicações
+				<br>Pode entrar com acesso por QR Code
 			</p>
 		</div>
 	</div>
@@ -238,7 +238,7 @@
 		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-book" data-fa-transform="shrink-8" alt="O que pode fazer aqui?" title="O que pode fazer aqui?"></i></span>Pesquise os <b>documentos</b> existentes nas <b>bibliotecas</b> deste concelho.
 			<br>
 			<b>Contacte ou visite</b> a biblioteca onde esteja o livro ou audiovisual que pretende <b>consultar</b>.
-			<br />Conheça ainda as <b>atividades</b> das nossas bibliotecas ao visitar o nosso <b>portal</b>.
+			<br>Conheça ainda as <b>atividades</b> das nossas bibliotecas ao visitar o nosso <b>portal</b>.
 		</p>
 	</div>
 	<!-- Segmento Extra FIM -->
@@ -248,7 +248,7 @@
 		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-desktop" data-fa-transform="shrink-9" alt="Abrir numa janela a toda a largura" title="Abrir numa janela a toda a largura"></i></span><b><i>Está a ver no computador?</i></b><br>Abra no telemóvel capturando este QR Code:
 			<br>
 			<img src="imagens/app/qrcode.png" alt="Ligação em QR Code para o catálogo" title="Capture a imagem com o leitor de QR Code do seu telemóvel" border=0 align="center">
-			<br> Nota: depois de abrir o endereço, no browser do telemóvel, pode carregar em
+			<br> Nota: depois de abrir o endereço, no navegador Web do telemóvel, pode carregar em
 			<br> "Adicionar ao ecrã principal" e ficará com uma App para o catálogo (ver <a href="ajuda_movel.asp">ajuda aqui</a>).</p>
 		<br>
 		<p align="center"><span class="fa-layers fa-fw" style="font-size:1.8em"><i class="fas fa-circle-notch"></i><i class="fas fa-mobile-alt" data-fa-transform="shrink-8" talt="Abrir numa janela a toda a largura" title="Abrir numa janela a toda a largura"></i></span><b><i>Está a ver no telemóvel ou numa janela pequena?</i></b>

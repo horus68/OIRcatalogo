@@ -59,7 +59,7 @@ Response.CacheControl = "no-cache"
 				Session("ImageArray") = True
 	
 				If Image(ArraySize + 1) = "None" Then						
-					Response.Write("<br><br><p align='center'>Não foi possível carregar a imagem! Use o botão Retroceder do Browser para tentar de novo ou clique <a href='javascript:history.go(-1)'>aqui</a>!</p>")				
+					Response.Write("<br><br><p align='center'>Não foi possível carregar a imagem! Use o botão Retroceder do navegador para tentar de novo ou clique <a href='javascript:history.go(-1)'>aqui</a>!</p>")				
 				elseif Image(ArraySize + 1) = "Existe" then
 					 Response.Write("<br><br><p align='center'>Já existe uma imagem com esse nome no servidor! <br><br><a  href='javascript:window.resizeTo(500,420);history.go(-1)'>Voltar</a></p>")
 				Else

@@ -260,7 +260,7 @@ If Session("LogError") < 3 Then
 <% end if
 Else
 		writeLog("LOGIN (insucesso): nº máx de tentativas")
-		Response.Write("<br><p>&nbsp;</p><p>Esgotou as três tentativas de ENTRADA. <br />Terá de fechar esta janela e iniciar nova sessão!</p>")
+		Response.Write("<br><p>&nbsp;</p><p>Esgotou as três tentativas de ENTRADA. <br>Terá de fechar esta janela e iniciar nova sessão!</p>")
 	
 End If
 
